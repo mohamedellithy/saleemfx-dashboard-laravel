@@ -1,0 +1,4 @@
+[16-Dec-2021 13:09:32 Asia/Gaza] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home2/saleeoup/dashboard.saleem-group.com/vendor/laravel/framework/src/Illuminate/Hashing/BcryptHasher.php on line 48
+[16-Dec-2021 13:13:31 Asia/Gaza] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home2/saleeoup/dashboard.saleem-group.com/vendor/laravel/framework/src/Illuminate/Hashing/BcryptHasher.php on line 48
+[17-Dec-2021 22:44:22 Asia/Gaza] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home2/saleeoup/dashboard.saleem-group.com/vendor/laravel/framework/src/Illuminate/Hashing/BcryptHasher.php on line 48
+[27-Dec-2021 14:04:00 Asia/Gaza] PHP Fatal error:  Cannot use try without catch or finally in /home2/saleeoup/dashboard.saleem-group.com/app/Imports/CashBacksImport.php on line 19
