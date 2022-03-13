@@ -1,0 +1,21 @@
+# build, test, and ftp deploy a jekyll site
+name: Publish Website on Cpanel
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      BASEURL: ''
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - name: FTP-Deploy-Action
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        with:
+          server: ${{secrets.FTP_SERVER}}
+          username: ${{secrets.FTP_USERNAME}}@{{secrets.FTP_SERVER}}
+          password: ${{secrets.FTP_PASSWORD}}
