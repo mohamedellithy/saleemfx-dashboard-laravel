@@ -11,7 +11,7 @@ jobs:
         lfs: true
         fetch-depth : 100
     
-    - name: 📂 Sync files
+    - name: 📂 Sync files 
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
           server: ${{ secrets.FTP_SERVER }}
