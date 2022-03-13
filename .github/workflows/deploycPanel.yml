@@ -1,4 +1,3 @@
-# build, test, and ftp deploy a jekyll site
 name: Publish Website on Cpanel
 on:
   push:
