@@ -1,20 +1,16 @@
-name: Publish Website on Cpanel
-on:
-  push:
-    branches:
-      - main
+on: push
+name: 🚀 Deploy website on push
 jobs:
-  deploy:
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
-    env:
-      BASEURL: ''
     steps:
-      - name: Get latest code
-      - uses: actions/checkout@v2
-      
-      - name: Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
-        with:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
           server: ftp.saleem-group.com
           username: saleemfx@dashboard.saleemfx.com
           password: L-ZqTJjL?#}^
