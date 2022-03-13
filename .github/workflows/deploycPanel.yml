@@ -17,6 +17,6 @@ jobs:
         with:
           server: ftp.saleem-group.com
           username: saleemfx@dashboard.saleemfx.com
-          password: ${{secrets.FTP_PASSWORD}}
+          password: L-ZqTJjL?#}^
           protocol: ftps
           port: 21
