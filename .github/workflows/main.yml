@@ -10,10 +10,10 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2
-      
-      
+      with:
+         fetch-depth: 2
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
