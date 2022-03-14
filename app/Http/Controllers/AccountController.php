@@ -86,4 +86,9 @@ class AccountController extends Controller
     {
         //
     }
+
+    public function update_accounts_status_bulk(Request $request){
+        return $request->all();
+
+    }
 }

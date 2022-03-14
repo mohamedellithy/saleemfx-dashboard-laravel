@@ -42,17 +42,17 @@
                     </div>
             @endif
             <div class="show-buttons-filter">
-                <select name="vipOrders" class="vipOrders status">
-                    <option value="">طلبات ال vip</option>
-                    <option value="1">المشتركين فى الخدمة</option>
-                    <option value="2">الغير مشتركين</option>
-                </select>
+                <form onsubmit="alert('hi')" method="post" action="{{ route('update-accounts-bulk') }}">
+                    {{ csrf_token() }}
+                    <select name="vipOrders" class="vipOrders status">
+                        <option value="">حالة الطلب</option>
+                        <option value="0">قيد التنفيذ</option>
+                        <option value="1">موافقة </option>
+                        <option value="2">رفض </option>
+                    </select>
 
-                <select name="cashbacks" class="cashbacks status">
-                    <option value="">الكاش باك</option>
-                    <option value="1">لديهم كاش باك</option>
-                    <option value="2">ليس لديهم</option>
-                </select>
+                    <button name="cashbacks" class="cashbacks status">تحديث الحالة</button>
+                </form>
             </div>
             {!! $dataTable->table() !!}
         </div>

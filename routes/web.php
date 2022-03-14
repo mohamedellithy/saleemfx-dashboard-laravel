@@ -41,6 +41,7 @@ Route::middleware(['auth','IfAdmin'])->group(function(){
 
     Route::resource('users','UserController');
     Route::resource('accounts','AccountController');
+    Route::post('update-accounts-bulk','AccountController@update_accounts_status_bulk');
 
     Route::resource('experts-files','ExpertsFilesController');
     Route::resource('wallet-recharge-orders','WalletRechargeOrderController');
