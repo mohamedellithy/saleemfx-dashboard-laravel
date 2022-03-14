@@ -88,7 +88,7 @@ class AccountController extends Controller
     }
 
     public function update_accounts_status_bulk(Request $request){
-        return $request->query('select-accounts');
+        return $request->input('select-accounts');
 
     }
 }
