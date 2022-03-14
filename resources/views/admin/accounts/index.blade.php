@@ -55,7 +55,7 @@
                         <option value="2">رفض </option>
                     </select>
 
-                    <input id="inputAccounts" type="hidden" name="select-accounts[]" />
+                    <input id="inputAccounts" type="hidden" name="select-accounts" />
 
                     <button name="cashbacks" class="cashbacks status btn btn-success">تحديث الحالة</button>
                 </form>
@@ -93,9 +93,9 @@
             document.querySelectorAll('input.select-accounts:checked').forEach((item) => {
                 accounts_id.push(item.getAttribute('data-value'));
             });
-            document.getElementById('inputAccounts').value = accounts_id.serializeArray();
-            console.log(accounts_id.serializeArray());
-            return false;
+            document.getElementById('inputAccounts').value = Array.from(accounts_id);
+            console.log(Array.from(accounts_id));
+            return true;
         });
         function FormSubmitDelete(e) {
             e.preventDefault();
