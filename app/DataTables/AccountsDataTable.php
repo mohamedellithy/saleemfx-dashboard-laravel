@@ -48,8 +48,8 @@ class AccountsDataTable extends DataTable
             ->addColumn('created_at',function(Account $row){
                 return $row->created_at;
             })
-            ->addColumn('updated_at',function(Account $row){
-                return $row->updated_at;
+            ->addColumn('checkbox',function(Account $row){
+                return '<input type="checkbox" name="accounts[]" />';
             });
 
     }
@@ -104,13 +104,13 @@ class AccountsDataTable extends DataTable
     protected function getColumns()
     {
         return [
+            Column::make('checkbox')->title(''),
             Column::make('id'),
             Column::make('user_name')->title('اسم المستخدم'),
             Column::make('company_name')->title('اسم الشركة'),
             Column::make('account_number')->title('رقم حساب الشركة'),
             Column::make('account_balance')->title('مبلغ الايداع'),
             Column::make('created_at')->title('تاريخ الانشاء'),
-            Column::make('updated_at')->title('تاريخ تحديث الحالة'),
             Column::make('status')->title('حالة الطلب'),
             Column::computed('action')->title('')
                   ->exportable(false)
