@@ -42,7 +42,7 @@
                     </div>
             @endif
             <div class="show-buttons-filter">
-                <form onsubmit="alert('hi')" method="post" action="{{ route('update-accounts-bulk') }}">
+                <form onsubmit="alert('hi')" method="post" action="{{ url('update-accounts-bulk') }}">
                     {{ csrf_token() }}
                     <select name="vipOrders" class="vipOrders status">
                         <option value="">حالة الطلب</option>
