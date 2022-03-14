@@ -46,7 +46,7 @@
                     </div>
             @endif
             <div class="show-buttons-filter">
-                <form class="form-status" onsubmit="handleSelectCheckbox()" method="post" action="{{ url('update-accounts-bulk') }}">
+                <form class="form-status" method="post" action="{{ url('update-accounts-bulk') }}">
                     @csrf
                     <select name="vipOrders" class="vipOrders status">
                         <option value="">حالة الطلب</option>
@@ -88,16 +88,15 @@
             $('select.status').niceSelect();
         });
 
-        function handleSelectCheckbox(){
+        $('.form-status').submit(function(event){
             let accounts_id = [];
             document.querySelectorAll('input.select-accounts',function(item){
                 accounts_id.push(item.getAttribute('data-value'));
                 console.log(item);
             });
-            //document.getElementById('inputAccounts').val = accounts_id;
             console.log(accounts_id);
             return false;
-        }
+        });
         function FormSubmitDelete(e) {
             e.preventDefault();
             var confirm = window.confirm('هل انت متأكد من حذف هذا العنصر ؟');
