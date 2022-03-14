@@ -90,9 +90,8 @@
 
         $('.form-status').submit(function(event){
             let accounts_id = [];
-            document.querySelectorAll('input.select-accounts').forEach((item) => {
+            document.querySelectorAll('input.select-accounts[checked=true]').forEach((item) => {
                 accounts_id.push(item.getAttribute('data-value'));
-                console.log(item);
             });
             console.log(accounts_id);
             return false;
