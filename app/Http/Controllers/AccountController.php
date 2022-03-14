@@ -88,7 +88,8 @@ class AccountController extends Controller
     }
 
     public function update_accounts_status_bulk(Request $request){
-        return $request->input('select-accounts');
+        $selectedAccounts = implode(',', $request->input('select-accounts'));
+        return $selectedAccounts;
 
     }
 }
