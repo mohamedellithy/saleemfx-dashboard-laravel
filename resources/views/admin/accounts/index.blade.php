@@ -26,7 +26,7 @@
             float: left;
         }
         .nice-select{
-            float:none !important;
+            float:right !important;
         }
     </style>
 
