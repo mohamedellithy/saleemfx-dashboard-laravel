@@ -18,6 +18,9 @@
         table.dataTable{
             width:100% !important;
         }
+        .table td, .table th {
+            padding: 1rem 0em 0.8em 0.8em;
+        }
     </style>
 @stop
 
