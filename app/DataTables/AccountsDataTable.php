@@ -11,7 +11,6 @@ use Yajra\DataTables\Services\DataTable;
 use App\Account;
 class AccountsDataTable extends DataTable
 {
-    protected $actions = ['print', 'excel', 'AcceptAccount'];
     /**
      * Build DataTable class.
      *
@@ -92,8 +91,7 @@ class AccountsDataTable extends DataTable
                         'lengthMenu' => [
                             [ 25, 50,100,-1 ],
                             [ '25 rows', '50 rows', '100 rows', 'Show all' ]
-                        ],
-                        'buttons'      => ['print', 'excel','reset', 'AcceptAccount'],
+                        ]
                     ]);
     }
 
@@ -131,9 +129,4 @@ class AccountsDataTable extends DataTable
         return 'Accounts_' . date('YmdHis');
     }
 
-    public function AcceptAccount()
-    {
-        //...your code here.
-        return "<script type='text/javascript'>alert('hi')</script>";
-    }
 }

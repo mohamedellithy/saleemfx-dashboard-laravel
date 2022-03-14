@@ -24,11 +24,11 @@ class UsersDataTable extends DataTable
         return datatables()
             ->of($query)
             ->addColumn('action', function(User $row){
-               $data  ='<a href="'.url('users/'.$row->id).'" class="btn btn-sm btn-info action-datatable-btn">تفاصيل </a>';
+               $data  ='<a href="'.url('users/'.$row->id).'" class="btn btn-info action-datatable-btn">تفاصيل </a>';
                $data .= '<form method="post" action="'.url('users/'.$row->id).'" onsubmit="FormSubmitDelete(event)">
                <input type="hidden" name="_token" value="'.csrf_token().'" />
                <input type="hidden" name="_method" value="DELETE" />
-               <button type="submit" class="btn btn-sm btn-danger">حذف</button>
+               <button type="submit" class="btn btn-danger">حذف</button>
                </form>';
                return $data;
             })
@@ -102,11 +102,11 @@ class UsersDataTable extends DataTable
                         'colvis'
                     )
                     ->parameters([
-                        'responsive' => true,
+                       'responsive' => true,
                         'autoWidth' => false,
                         'lengthMenu' => [
-                            [ 25, 50,100,-1 ],
-                            [ '25 rows', '50 rows', '100 rows', 'Show all' ]
+                                [ 25, 50,100,-1 ],
+                                [ '25 rows', '50 rows', '100 rows', 'Show all' ]
                         ]
                     ]);
     }
@@ -132,7 +132,7 @@ class UsersDataTable extends DataTable
             Column::computed('action')
                   ->exportable(false)
                   ->printable(false)
-                  ->width(200)
+                  ->width(160)
                   ->addClass('text-center')
                   ->title(''),
         ];
