@@ -38,9 +38,9 @@ class WalletRechargeOrderDataTable extends DataTable
                 return $row->status_order;
             })
             ->addColumn('action', function(WalletRechargeOrder $row){
-                $data = '<div class="btn-group">
-                    <button type="button" class="btn '.($row->status == 0 ? 'btn-danger' : 'btn-success').'">تغير الحالة</button>
-                    <button type="button" class="btn '.($row->status == 0 ? 'btn-danger' : 'btn-success').' dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+                $data = '<div class="btn-sm btn-group">
+                    <button type="button" class="btn btn-sm '.($row->status == 0 ? 'btn-danger' : 'btn-success').'">تغير الحالة</button>
+                    <button type="button" class="btn btn-sm '.($row->status == 0 ? 'btn-danger' : 'btn-success').' dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
                       <span class="sr-only">Toggle Dropdown</span>
                     </button>
                     <div class="dropdown-menu" role="menu" style="">

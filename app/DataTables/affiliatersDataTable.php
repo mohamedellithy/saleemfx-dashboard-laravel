@@ -47,7 +47,7 @@ class affiliatersDataTable extends DataTable
                 return $row->created_at;
             })
             ->addColumn('action',function(Affiliate $row){
-                $data  ='<a href="'.url('affiliater/'.$row->affiliaters->id).'" class="btn btn-info action-datatable-btn">تفاصيل </a>';
+                $data  ='<a href="'.url('affiliater/'.$row->affiliaters->id).'" class="btn btn-sm btn-info action-datatable-btn">تفاصيل </a>';
                 return $data;
             });
     }

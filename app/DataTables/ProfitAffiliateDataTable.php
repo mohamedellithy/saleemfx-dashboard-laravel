@@ -34,7 +34,7 @@ class ProfitAffiliateDataTable extends DataTable
                 return $row->created_at;
             })
              ->addColumn('action',function(ProfitAffiliate $row){
-                $data  ='<a href="'.url('affiliater/'.$row->affiliater->affiliaters->id).'" class="btn btn-info action-datatable-btn">تفاصيل </a>';
+                $data  ='<a href="'.url('affiliater/'.$row->affiliater->affiliaters->id).'" class="btn btn-sm btn-info action-datatable-btn">تفاصيل </a>';
                 return $data;
             });
     }

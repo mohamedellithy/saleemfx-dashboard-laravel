@@ -37,9 +37,9 @@ class CashBackDataTable extends DataTable
                 $data = '<form method="post" action="'.url('cashback-accounts/'.$row->id).'" onsubmit="FormSubmitDelete(event)">
                     <input type="hidden" name="_token" value=" '.csrf_token().' ">
                     <input type="hidden" name="_method" value="DELETE">
-                    <button type="submit" class="btn btn-danger btn-sm">حذف</button>
+                    <button type="submit" class="btn btn-sm btn-danger btn-sm">حذف</button>
                     </form>';
-                $data .= '<div class="btn-group btn-sm" style="margin:0px 3px;">
+                $data .= '<div class="btn-sm btn-group btn-sm" style="margin:0px 3px;">
                     <button type="button" class="btn '.($row->allow == 0 ? 'btn-info' : 'btn-success').' btn-sm">اجراءات</button>
                     <button type="button" class="btn '.($row->allow == 0 ? 'btn-info' : 'btn-success').' btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
                       <span class="sr-only">Toggle Dropdown</span>

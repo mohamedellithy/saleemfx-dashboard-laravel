@@ -22,14 +22,14 @@ class MyDirectrixDataTable extends DataTable
         return datatables()
             ->of($query)
             ->addColumn('action', function(Directrix $row){
-                $data ='<a href="'.url('storage/'.$row->attachments()->first()->attachment_url).'" class="btn btn-success btn-sm" download>تحميل</a>';
+                $data ='<a href="'.url('storage/'.$row->attachments()->first()->attachment_url).'" class="btn btn-sm btn-success btn-sm" download>تحميل</a>';
                 if($row->allow == 0):
                     $order = auth()->user()->directrix_orders()->where('directrix_file_id',$row->id)->first();
                     if(empty($order)):
                         $data ='<form method="post" action="'.url('directrix-files-orders').'">
                                     <input type="hidden" name="_token" value="'.csrf_token().'">
                                     <input type="hidden" name="directrix_file_id" value="'.$row->id.'">
-                                    <button type="submit" href="'.url('storage/'.$row->attachments()->first()->attachment_url).'" class="btn btn-warning btn-sm"> طلب  </button>
+                                    <button type="submit" href="'.url('storage/'.$row->attachments()->first()->attachment_url).'" class="btn btn-sm btn-warning btn-sm"> طلب  </button>
                                 </form>';
                     else:
                         if($order->status == 0):

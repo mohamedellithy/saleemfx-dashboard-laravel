@@ -29,7 +29,7 @@ class MyExpertsFilesDataTable extends DataTable
                         $data ='<form method="post" action="'.url('experts-files-orders').'">
                                     <input type="hidden" name="_token" value="'.csrf_token().'">
                                     <input type="hidden" name="expert_file_id" value="'.$row->id.'">
-                                    <button type="submit" href="'.url('storage/'.$row->attachments()->first()->attachment_url).'" class="btn btn-warning btn-sm"> طلب  </button>
+                                    <button type="submit" href="'.url('storage/'.$row->attachments()->first()->attachment_url).'" class="btn btn-sm btn-warning btn-sm"> طلب  </button>
                                 </form>';
                     else:
                         if($order->status == 0):

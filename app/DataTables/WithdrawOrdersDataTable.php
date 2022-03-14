@@ -40,9 +40,9 @@ class WithdrawOrdersDataTable extends DataTable
                 return $row->status_order;
             })
             ->addColumn('action', function(BalanceWithdraw $row){
-                $data = '<div class="btn-group">
-                    <button type="button" class="btn btn-warning">تغير الحالة</button>
-                    <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+                $data = '<div class="btn-sm btn-group">
+                    <button type="button" class="btn btn-sm btn-warning">تغير الحالة</button>
+                    <button type="button" class="btn btn-sm btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
                       <span class="sr-only">Toggle Dropdown</span>
                     </button>
                     <div class="dropdown-menu" role="menu" style="">

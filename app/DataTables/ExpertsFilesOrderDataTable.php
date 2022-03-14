@@ -28,9 +28,9 @@ class ExpertsFilesOrderDataTable extends DataTable
                 return $row->expert_file->name ?? '-';
             })
             ->addColumn('action', function(FileOrder $row){
-                $data = '<div class="btn-group">
-                    <button type="button" class="btn '.($row->status == 1 ? 'btn-success' : 'btn-danger').'">'.$row->status_order.'</button>
-                    <button type="button" class="btn '.($row->status == 1 ? 'btn-success' : 'btn-danger').' dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+                $data = '<div class="btn-sm btn-group">
+                    <button type="button" class="btn btn-sm '.($row->status == 1 ? 'btn-success' : 'btn-danger').'">'.$row->status_order.'</button>
+                    <button type="button" class="btn btn-sm '.($row->status == 1 ? 'btn-success' : 'btn-danger').' dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
                       <span class="sr-only">Toggle Dropdown</span>
                     </button>
                     <div class="dropdown-menu" role="menu" style="">

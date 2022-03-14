@@ -25,15 +25,15 @@ class ExpertsFilesDataTable extends DataTable
                $data = '<form method="post" action="'.url('experts-files/'.$row->id).'" onsubmit="FormSubmitDelete(event)">
                <input type="hidden" name="_token" value=" '.csrf_token().' ">
                <input type="hidden" name="_method" value="DELETE">
-               <button type="submit" class="btn btn-danger">حذف</button>
+               <button type="submit" class="btn btn-sm btn-danger">حذف</button>
                </form>';
-               $data .='<a href="'.url('experts-files/'.$row->id.'/edit').'" class="btn btn-info action-datatable-btn">تعديل </a>';
+               $data .='<a href="'.url('experts-files/'.$row->id.'/edit').'" class="btn btn-sm btn-info action-datatable-btn">تعديل </a>';
                return $data;
             })
             ->addColumn('status', function(ExpertsFiles $row){
-               $data = '<div class="btn-group">
-                    <button type="button" class="btn '.($row->allow == 0 ? 'btn-danger' : 'btn-success').'">'.($row->allow == 0 ? 'غير مسموح' : 'مسموح').'</button>
-                    <button type="button" class="btn '.($row->allow == 0 ? 'btn-danger' : 'btn-success').' dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+               $data = '<div class="btn-sm btn-group">
+                    <button type="button" class="btn btn-sm '.($row->allow == 0 ? 'btn-danger' : 'btn-success').'">'.($row->allow == 0 ? 'غير مسموح' : 'مسموح').'</button>
+                    <button type="button" class="btn btn-sm '.($row->allow == 0 ? 'btn-danger' : 'btn-success').' dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
                       <span class="sr-only">Toggle Dropdown</span>
                     </button>
                     <div class="dropdown-menu" role="menu" style="">

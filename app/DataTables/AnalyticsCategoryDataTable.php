@@ -25,9 +25,9 @@ class AnalyticsCategoryDataTable extends DataTable
                $data = '<form method="post" action="'.url('analytics-categories/'.$row->id).'">
                <input type="hidden" name="_token" value=" '.csrf_token().' ">
                <input type="hidden" name="_method" value="DELETE">
-               <button type="submit" class="btn btn-danger">حذف</button>
+               <button type="submit" class="btn btn-sm btn-danger">حذف</button>
                </form>';
-               $data .='<a href="'.url('analytics-categories/'.$row->id.'/edit').'" class="btn btn-info action-datatable-btn">تعديل </a>';
+               $data .='<a href="'.url('analytics-categories/'.$row->id.'/edit').'" class="btn btn-sm btn-info action-datatable-btn">تعديل </a>';
                return $data;
             })
             ->addColumn('created_at',function(AnalyticsCategory $row){
