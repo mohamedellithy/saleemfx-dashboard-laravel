@@ -48,7 +48,7 @@
             <div class="show-buttons-filter">
                 <form class="form-status" method="post" action="{{ url('update-accounts-bulk') }}">
                     @csrf
-                    <select name="vipOrders" class="vipOrders status">
+                    <select name="status" class="vipOrders status">
                         <option value="">حالة الطلب</option>
                         <option value="0">قيد التنفيذ</option>
                         <option value="1">موافقة </option>
