@@ -88,12 +88,12 @@
             $('select.status').niceSelect();
         });
 
-        $('.form-status').submit(function(event){
+        $('.form-status').submit(async function(event){
             let accounts_id = [];
-            document.querySelectorAll('input.select-accounts:checked').forEach((item) => {
+            await document.querySelectorAll('input.select-accounts:checked').forEach((item) => {
                 accounts_id.push(item.getAttribute('data-value'));
             });
-            document.getElementById('inputAccounts').value = accounts_id;
+            await document.getElementById('inputAccounts').value = accounts_id;
             console.log(accounts_id);
             return true;
         });
