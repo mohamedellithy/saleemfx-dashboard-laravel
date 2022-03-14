@@ -94,7 +94,7 @@
                 accounts_id.push(item.getAttribute('data-value'));
             });
             document.getElementById('inputAccounts').value = accounts_id;
-            console.log(accounts_id);
+            console.log(event);
             return true;
         });
         function FormSubmitDelete(e) {
