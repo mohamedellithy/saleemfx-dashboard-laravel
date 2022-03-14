@@ -28,6 +28,19 @@
                         </ul>
                     </div>
             @endif
+            <div class="show-buttons-filter">
+                <select name="vipOrders" class="vipOrders status">
+                    <option value="">طلبات ال vip</option>
+                    <option value="1">المشتركين فى الخدمة</option>
+                    <option value="2">الغير مشتركين</option>
+                </select>
+
+                <select name="cashbacks" class="cashbacks status">
+                    <option value="">الكاش باك</option>
+                    <option value="1">لديهم كاش باك</option>
+                    <option value="2">ليس لديهم</option>
+                </select>
+            </div>
             {!! $dataTable->table() !!}
         </div>
     </div>
