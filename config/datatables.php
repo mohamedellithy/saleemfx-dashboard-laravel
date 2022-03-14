@@ -97,7 +97,7 @@ return [
          * List of columns that are allowed to display html content.
          * Note: Adding columns to list will make us available to XSS attacks.
          */
-        'raw'       => ['action','company_link','images','status','details','paymentmethod'],
+        'raw'       => ['action','checkbox','company_link','images','status','details','paymentmethod'],
 
         /*
          * List of columns are are forbidden from being searched/sorted.
