@@ -25,6 +25,9 @@
             display: inline-block;
             float: left;
         }
+        .nice-select{
+            float:none !important;
+        }
     </style>
 
 @stop
@@ -93,9 +96,18 @@
             document.querySelectorAll('input.select-accounts:checked').forEach((item) => {
                 accounts_id.push(item.getAttribute('data-value'));
             });
+
             document.getElementById('inputAccounts').value = Array.from(accounts_id);
-            console.log(Array.from(accounts_id));
-            return true;
+            if(accounts_id.length == 0){
+                return false;
+            }
+
+            var confirm = window.confirm('هل انت متأكد من تحديث الحسابات المحددة ؟');
+            if (confirm == true) {
+                return true;
+            }
+
+            return false;
         });
         function FormSubmitDelete(e) {
             e.preventDefault();
