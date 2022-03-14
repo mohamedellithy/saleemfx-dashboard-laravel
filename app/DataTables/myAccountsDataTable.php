@@ -73,10 +73,14 @@ class myAccountsDataTable extends DataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->dom('Lfrtip')
-                    ->orderBy(1)
+                    ->orderBy(5)
                     ->parameters([
                        'responsive' => true,
-                        'autoWidth' => false
+                        'autoWidth' => false,
+                        'lengthMenu' => [
+                            [ 25, 50,100,-1 ],
+                            [ '25 rows', '50 rows', '100 rows', 'Show all' ]
+                        ]
                     ]);
     }
 

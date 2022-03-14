@@ -70,7 +70,7 @@ class ExpertsFilesOrderDataTable extends DataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->dom('Bfrtip')
-                    ->orderBy(1)
+                    ->orderBy(3)
                     ->buttons(
                         Button::make('create'),
                         Button::make('export'),
@@ -80,7 +80,11 @@ class ExpertsFilesOrderDataTable extends DataTable
                     )
                     ->parameters([
                        'responsive' => true,
-                        'autoWidth' => false
+                        'autoWidth' => false,
+                        'lengthMenu' => [
+                            [ 25, 50,100,-1 ],
+                            [ '25 rows', '50 rows', '100 rows', 'Show all' ]
+                        ]
                     ]);
     }
 

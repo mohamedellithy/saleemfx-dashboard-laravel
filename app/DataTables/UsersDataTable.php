@@ -93,7 +93,7 @@ class UsersDataTable extends DataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->dom('Blfrtip')
-                    ->orderBy(1)
+                    ->orderBy(8)
                     ->buttons(
                         Button::make('export')->columns(':visible'),
                         Button::make('print')->columns('visible'),
@@ -102,8 +102,12 @@ class UsersDataTable extends DataTable
                         'colvis'
                     )
                     ->parameters([
-                       'responsive' => true,
-                        'autoWidth' => false
+                        'responsive' => true,
+                        'autoWidth' => false,
+                        'lengthMenu' => [
+                            [ 25, 50,100,-1 ],
+                            [ '25 rows', '50 rows', '100 rows', 'Show all' ]
+                        ]
                     ]);
     }
 

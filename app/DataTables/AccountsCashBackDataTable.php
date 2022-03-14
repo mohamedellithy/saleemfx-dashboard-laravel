@@ -64,7 +64,7 @@ class AccountsCashBackDataTable extends DataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->dom('frtip')
-                    ->orderBy(3)
+                    ->orderBy(4)
                     ->buttons(
                         Button::make('create'),
                         Button::make('export'),
@@ -74,7 +74,11 @@ class AccountsCashBackDataTable extends DataTable
                     )
                     ->parameters([
                        'responsive' => true,
-                        'autoWidth' => false
+                        'autoWidth' => false,
+                        'lengthMenu' => [
+                            [ 25, 50,100,-1 ],
+                            [ '25 rows', '50 rows', '100 rows', 'Show all' ]
+                        ]
                     ]);
     }
 
