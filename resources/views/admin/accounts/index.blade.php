@@ -43,7 +43,7 @@
             @endif
             <div class="show-buttons-filter">
                 <form onsubmit="alert('hi')" method="post" action="{{ url('update-accounts-bulk') }}">
-                    {{ csrf_token() }}
+                    @csrf
                     <select name="vipOrders" class="vipOrders status">
                         <option value="">حالة الطلب</option>
                         <option value="0">قيد التنفيذ</option>
@@ -51,7 +51,7 @@
                         <option value="2">رفض </option>
                     </select>
 
-                    <button name="cashbacks" class="cashbacks status">تحديث الحالة</button>
+                    <button name="cashbacks" class="cashbacks status btn btn-success">تحديث الحالة</button>
                 </form>
             </div>
             {!! $dataTable->table() !!}
