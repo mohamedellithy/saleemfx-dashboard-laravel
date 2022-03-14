@@ -88,7 +88,16 @@ class AccountController extends Controller
     }
 
     public function update_accounts_status_bulk(Request $request){
+        $this->validate($request,[
+            'select-accounts' => 'required',
+            'status'          => 'required'
+        ]);
+
         $selectedAccounts = explode(',', $request->input('select-accounts'));
+        $update_status = Account::whereIn('id',$selectedAccounts)->update(['status' => $request->input('status') ]);
+        if($update_status){
+            return redirect()->route('accounts.index')->with('message','تم تحديث الحسابات بنجاح');
+        }
         return $selectedAccounts;
 
     }
