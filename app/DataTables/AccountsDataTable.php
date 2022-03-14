@@ -82,11 +82,9 @@ class AccountsDataTable extends DataTable
                     ->dom('Blfrtip')
                     ->orderBy(6)
                     ->buttons(
-                        Button::make('AcceptAccount')->title('موافقة'),
                         Button::make('export'),
                         Button::make('print'),
-                        Button::make('reset'),
-                        Button::make('reload')
+                        Button::make('reset')
                     )
                     ->parameters([
                        'responsive' => true,
@@ -94,7 +92,8 @@ class AccountsDataTable extends DataTable
                         'lengthMenu' => [
                             [ 25, 50,100,-1 ],
                             [ '25 rows', '50 rows', '100 rows', 'Show all' ]
-                        ]
+                        ],
+                        'buttons'      => ['print', 'excel','reset', 'AcceptAccount'],
                     ]);
     }
 
