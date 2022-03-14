@@ -93,8 +93,8 @@
             document.querySelectorAll('input.select-accounts:checked').forEach((item) => {
                 accounts_id.push(item.getAttribute('data-value'));
             });
-            document.getElementById('inputAccounts').value = accounts_id;
-            console.log(event);
+            document.getElementById('inputAccounts').value = accounts_id.serializeArray();
+            console.log(accounts_id.serializeArray());
             return false;
         });
         function FormSubmitDelete(e) {
