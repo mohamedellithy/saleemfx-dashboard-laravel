@@ -49,7 +49,7 @@ class AccountsDataTable extends DataTable
                 return $row->created_at;
             })
             ->addColumn('checkbox',function(Account $row){
-                return '<input type="checkbox" name="accounts[]" />';
+                return '<input class="select-accounts" data-value="'.$row->id.'" type="checkbox" name="accounts[]" />';
             });
 
     }

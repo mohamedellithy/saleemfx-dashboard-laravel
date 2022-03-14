@@ -9,6 +9,19 @@
 
     <link rel="stylesheet" href="{{ asset('css/Adminlte-rtl.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin_custom.css') }}">
+    <style>
+        .select2-container {
+            width: 25% !important;
+            float: left;
+            margin: 0px 10px;
+        }
+        table.dataTable{
+            width:100% !important;
+        }
+        .table td, .table th {
+            padding: 1rem 0em 0.8em 0.8em;
+        }
+    </style>
 
 @stop
 
@@ -71,6 +84,14 @@
             if (confirm == true) {
                 e.target.submit();
             }
+        }
+
+        function http_query_build(url_dataTable){
+            let params;
+            params = new URLSearchParams(url_dataTable);
+            const str = params.toString();
+            console.log("{{ url()->current() }}?"+str);
+            $('#usersdatatable-table').DataTable().ajax.url("{{ url()->current() }}?"+str).load();
         }
     </script>
 @stop
