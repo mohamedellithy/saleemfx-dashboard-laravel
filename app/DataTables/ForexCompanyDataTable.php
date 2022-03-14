@@ -67,7 +67,7 @@ class ForexCompanyDataTable extends DataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->dom('Blfrtip')
-                    ->orderBy(1)
+                    ->orderBy(4)
                     ->buttons(
                         Button::make('create'),
                         Button::make('export'),
