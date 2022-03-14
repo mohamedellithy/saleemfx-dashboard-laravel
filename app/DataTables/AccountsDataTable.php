@@ -11,6 +11,7 @@ use Yajra\DataTables\Services\DataTable;
 use App\Account;
 class AccountsDataTable extends DataTable
 {
+    protected $actions = ['print', 'excel', 'AcceptAccount'];
     /**
      * Build DataTable class.
      *
@@ -81,7 +82,7 @@ class AccountsDataTable extends DataTable
                     ->dom('Blfrtip')
                     ->orderBy(6)
                     ->buttons(
-                        Button::make('accept')->action("alert('hi')"),
+                        Button::make('AcceptAccount')->title('موافقة'),
                         Button::make('export'),
                         Button::make('print'),
                         Button::make('reset'),
@@ -129,5 +130,11 @@ class AccountsDataTable extends DataTable
     protected function filename()
     {
         return 'Accounts_' . date('YmdHis');
+    }
+
+    public function AcceptAccount()
+    {
+        //...your code here.
+        return "<script type='text/javascript'>alert('hi')</script>";
     }
 }
