@@ -79,7 +79,7 @@ class AccountsDataTable extends DataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->dom('Blfrtip')
-                    ->orderBy(5)
+                    ->orderBy(6)
                     ->buttons(
                         Button::make('export'),
                         Button::make('print'),
