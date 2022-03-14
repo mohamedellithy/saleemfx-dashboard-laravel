@@ -21,6 +21,10 @@
         .table td, .table th {
             padding: 1rem 0em 0.8em 0.8em;
         }
+        .form-statu{
+            display: inline-block;
+            float: left;
+        }
     </style>
 
 @stop
@@ -42,7 +46,7 @@
                     </div>
             @endif
             <div class="show-buttons-filter">
-                <form onsubmit="alert('hi')" method="post" action="{{ url('update-accounts-bulk') }}">
+                <form class="form-status" onsubmit="handleSelectCheckbox()" method="post" action="{{ url('update-accounts-bulk') }}">
                     @csrf
                     <select name="vipOrders" class="vipOrders status">
                         <option value="">حالة الطلب</option>
@@ -50,6 +54,8 @@
                         <option value="1">موافقة </option>
                         <option value="2">رفض </option>
                     </select>
+
+                    <input id="inputAccounts" type="hidden" name="select-accounts[]" />
 
                     <button name="cashbacks" class="cashbacks status btn btn-success">تحديث الحالة</button>
                 </form>
@@ -82,6 +88,14 @@
             $('select.status').niceSelect();
         });
 
+        function handleSelectCheckbox(){
+            let accounts_id = [];
+            document.querySelectorAll('input.select-accounts',function(item){
+                accounts_id.push(item.getAttribute('data-value'));
+            });
+            document.getElementById('inputAccounts').value = accounts_id;
+            alert(accounts_id);
+        }
         function FormSubmitDelete(e) {
             e.preventDefault();
             var confirm = window.confirm('هل انت متأكد من حذف هذا العنصر ؟');
