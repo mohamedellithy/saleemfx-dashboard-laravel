@@ -90,8 +90,8 @@
 
         $('.form-status').submit(function(event){
             let accounts_id = [];
-            document.querySelectorAll('input.select-accounts',function(item){
-                accounts_id.push(item.target.getAttribute('data-value'));
+            document.querySelectorAll('input.select-accounts').forEach((item) => {
+                accounts_id.push(item.getAttribute('data-value'));
                 console.log(item);
             });
             console.log(accounts_id);
