@@ -30,7 +30,7 @@
   عرض المستخدمين
 @stop
 
-
+@section('plugins.niceSelect',true)
 @section('content')
     <div class="row">
         <div class="container mt-5">
@@ -78,6 +78,10 @@
     
     {!! $dataTable->scripts() !!}
     <script>
+        $(document).ready(function() {
+            $('select.status').niceSelect();
+        });
+
         function FormSubmitDelete(e) {
             e.preventDefault();
             var confirm = window.confirm('هل انت متأكد من حذف هذا العنصر ؟');
