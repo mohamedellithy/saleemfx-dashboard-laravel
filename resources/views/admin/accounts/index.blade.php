@@ -92,9 +92,10 @@
             let accounts_id = [];
             document.querySelectorAll('input.select-accounts',function(item){
                 accounts_id.push(item.getAttribute('data-value'));
+                console.log(item);
             });
-            document.getElementById('inputAccounts').value = accounts_id;
-            alert(accounts_id);
+            document.getElementById('inputAccounts').val = accounts_id;
+            console.log(accounts_id);
         }
         function FormSubmitDelete(e) {
             e.preventDefault();
