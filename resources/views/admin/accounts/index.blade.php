@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.5.3/css/bootstrap.min.css" integrity="sha384-JvExCACAZcHNJEc7156QaHXTnQL3hQBixvj5RV5buE7vgnNEzzskDtx9NQ4p6BJe" crossorigin="anonymous">
     <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css" rel="stylesheet">
-    
+
     <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('css/Adminlte-rtl.css') }}">
@@ -60,7 +60,7 @@
 
                     <input id="inputAccounts" type="hidden" name="select-accounts" />
 
-                    <button name="cashbacks" class="cashbacks status btn btn-success">تحديث الحالة</button>
+                    <button name="cashbacks" class="cashbacks status btn btn- btn-success">تحديث الحالة</button>
                 </form>
             </div>
             {!! $dataTable->table() !!}
@@ -84,7 +84,7 @@
     <script src="{{ asset('js/admin_custom.js') }}" ></script>
     <script src="{{ asset('vendor/datatables/buttons.server-side.js') }}"></script>
     <script> console.log('Hi!'); </script>
-    
+
     {!! $dataTable->scripts() !!}
     <script>
         $(document).ready(function() {

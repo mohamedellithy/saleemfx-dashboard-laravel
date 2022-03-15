@@ -45,16 +45,16 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('manage-item-as-user', function ($user) {
            return $user->isUser();
         });
-        
+
         Gate::define('manage-item-as-affiliater', function ($user) {
            return $user->isAffiliater();
         });
-        
+
         Gate::define('manage-item-as-employee', function ($user) {
            return $user->isEmployee();
         });
-        
-        
+
+
 
         Gate::define('service_ordered',function ($user) {
             return true;
@@ -67,20 +67,20 @@ class AppServiceProvider extends ServiceProvider
             $count_recharge_order   = WalletRechargeOrder::where('status',0)->count();
             $order_download_experts = FileOrder::where('status',0)->count();
             $order_download_directrix = DirectrixOrder::where('status',0)->count();
-            $event->menu->add([
-                'text'    => ' طلبات VIP',
-                'icon'    => 'fas fa-user-shield',
-                'label'       => $count_vip_order > 0 ? $count_vip_order : '',
-                'label_color' => $count_vip_order > 0 ? 'danger' : '',
-                'can'     => "manage-item",
-                'submenu' => [
-                    [
-                        'text' => 'عرض طلبات VIP',
-                        'icon_color' => 'red',
-                        'url'  => 'vip-services'
-                    ]
-                ]
-            ],
+            // $event->menu->add([
+            //     'text'    => ' طلبات VIP',
+            //     'icon'    => 'fas fa-user-shield',
+            //     'label'       => $count_vip_order > 0 ? $count_vip_order : '',
+            //     'label_color' => $count_vip_order > 0 ? 'danger' : '',
+            //     'can'     => "manage-item",
+            //     'submenu' => [
+            //         [
+            //             'text' => 'عرض طلبات VIP',
+            //             'icon_color' => 'red',
+            //             'url'  => 'vip-services'
+            //         ]
+            //     ]
+            // ],
             [
                 'text'    => 'طلبات الخدمات',
                 'icon'    => 'fas fa-box',
