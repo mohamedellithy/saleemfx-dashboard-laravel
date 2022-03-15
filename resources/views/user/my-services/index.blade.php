@@ -37,32 +37,32 @@
             @endif
             <h5 class="heading-ad-services"> الخدمات المشترك بها </h5>
 
-            <div class="services-vip">
-                @if(auth()->user()->vip_order->first())
-                    @if(auth()->user()->vip_order->first()->status == 0 )
+            <!-- <div class="services-vip">
+                if(auth()->user()->vip_order->first())
+                    if(auth()->user()->vip_order->first()->status == 0 )
                         <a class="btn btn-warning" href="#"> طلب الاستراك فى خدمة vip قيد التنفيذ</a>
-                    @elseif(auth()->user()->vip_order->first()->status == 1 )
+                    elseif(auth()->user()->vip_order->first()->status == 1 )
                         <a class="btn btn-success" href="#"> تم الاشتراك فى خدمة vip</a>
-                    @else
+                    else
                     <a class="btn btn-primary"  href="{{ route('vip-services.create') }}"> الاشتراك فى خدمة ال vip</a>
-                    @endif
-                @else
+                    endif
+                else
                     <a class="btn btn-primary"  href="{{ route('vip-services.create') }}"> الاشتراك فى خدمة ال vip</a>
-                @endif
-            </div>
+                endif
+            </div> -->
 
             <div class="row" >
                     @forelse(auth()->user()->allow_services_order() as $order)
                             <div class="col-md-4 ad-services my-services ">
                                 <div class="content-ad-services" style="background-image:url('{{ $order->services->thumbnail ?? asset('images/social.png') }}')">
                                     <h6> {{ $order->services->post_title }} </h6>
-                                    
+
                                     @if($order->acount)
                                         <div class="footer-ad-services" >
                                              <p class="">{{ $order->acount->forex_company->name_ar ?? '' }}</p>
                                         </div>
                                     @endif
-                                    
+
                                     <div class="footer-ad-services" >
                                         @if(($order->expire_at != null) && ($order->status != 0))
                                             <button type="button" type-form="edit" order-id="{{ $order->id }}" SERVICES-ID="{{ $order->service_id }}" class="btn btn-success activateServices"> تجديد الاشتراك فى الخدمة </button>
@@ -70,17 +70,17 @@
                                             <button type="button" class="btn btn-info"> بانتظار مراجعة الطلب  </button>
                                         @endif
                                     </div>
-        
+
                                     @if($order->expire_at != null)
                                         <p class="subscription-date"> تاريخ انتهاء الاشتراك {{ $order->expire_at }} </p>
                                     @endif
                                 </div>
                             </div>
-                        
+
                     @empty
                         <p class="no-adds text-center" style="margin-top:10px"> لا يوجد اى خدمات متاحة  </p>
                     @endforelse
-               
+
             </div>
 
 
