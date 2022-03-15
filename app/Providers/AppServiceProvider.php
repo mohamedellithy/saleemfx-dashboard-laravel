@@ -67,7 +67,8 @@ class AppServiceProvider extends ServiceProvider
             $count_recharge_order   = WalletRechargeOrder::where('status',0)->count();
             $order_download_experts = FileOrder::where('status',0)->count();
             $order_download_directrix = DirectrixOrder::where('status',0)->count();
-            // $event->menu->add([
+            $event->menu->add(
+            // [
             //     'text'    => ' طلبات VIP',
             //     'icon'    => 'fas fa-user-shield',
             //     'label'       => $count_vip_order > 0 ? $count_vip_order : '',
