@@ -65,11 +65,7 @@
             </div>
 
             <div class="show-buttons-filter">
-                <select name="vipOrders" class="vipOrders status">
-                    <option value="">طلبات ال vip</option>
-                    <option value="1">المشتركين فى الخدمة</option>
-                    <option value="2">الغير مشتركين</option>
-                </select>
+                <input name="vipOrders" class="vipOrders status" type="text" id="datetimerange-input1" />
             </div>
             {!! $dataTable->table() !!}
         </div>
@@ -99,6 +95,12 @@
 
     {!! $dataTable->scripts() !!}
     <script>
+        new DateRangePicker('datetimerange-input1', {
+            // options here
+        }, function (start, end) {
+            // callback
+            alert(start.format() + " - " + end.format());
+        })
         $(document).ready(function() {
             $('select.status').niceSelect();
         });
