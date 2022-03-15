@@ -70,6 +70,8 @@ class AccountsDataTable extends DataTable
 
         $accounts_Query = $accounts_Query->get();
 
+        return "<script> console.log(".$this->DateBetween.") </script>";
+
         return $this->applyScopes($accounts_Query);
         # return $model->newQuery();
     }
