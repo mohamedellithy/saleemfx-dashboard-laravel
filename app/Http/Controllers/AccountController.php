@@ -18,7 +18,7 @@ class AccountController extends Controller
         $query_search   = [];
 
         if($request->query('datebetween')):
-          $query_search['datebetween']  = array('2022-03-01','2022-03-05');
+          $query_search['datebetween']  = explode('-',$request->query('datebetween'));
         endif;
 
         if($query_search):
