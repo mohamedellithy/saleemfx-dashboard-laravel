@@ -28,6 +28,10 @@
         .nice-select{
             float:right !important;
         }
+        #datetimerange-input1{
+            width: auto;
+            float: left;
+        }
     </style>
 
 @stop
