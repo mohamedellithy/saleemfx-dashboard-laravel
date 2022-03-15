@@ -104,7 +104,7 @@
             locale: {
                 direction: 'rtl',
                 format: moment.localeData().longDateFormat('L'),
-                separator: ' - ',
+                separator: '-',
                 applyLabel: 'بحث',
                 cancelLabel: 'الغاء',
                 weekLabel: 'W',
@@ -112,13 +112,14 @@
                 daysOfWeek: moment.weekdaysMin(),
                 monthNames: moment.monthsShort(),
                 firstDay: moment.localeData().firstDayOfWeek()
-            }
+            },
             // options here
         }, function (start, end) {
             // callback
             let DateBetween = jQuery('#datetimerange-input1').val();
             url_dataTable.datebetween = DateBetween;
             http_query_build(url_dataTable);
+            console.log(start.format() + " - " + end.format());
         })
         $(document).ready(function() {
             $('select.status').niceSelect();
