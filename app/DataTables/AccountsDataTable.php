@@ -62,11 +62,11 @@ class AccountsDataTable extends DataTable
      */
     public function query(AccountsDataTable $model)
     {
-        $accounts_Query = Account::select('*');
+        //$accounts_Query = Account::select('*');
         
-        if($this->from){
-            $accounts_Query = $accounts_Query->where('created_at','2022-03-05')->get();
-        }
+        //if($this->from){
+            $accounts_Query = Account::select('*')->where('created_at','2022-03-05')->get();
+        //}
 
         //$accounts_Query = $accounts_Query->get();
 
