@@ -65,7 +65,7 @@ class AccountsDataTable extends DataTable
         $accounts_Query = Account::select('*');
         
         if($this->from){
-            $accounts_Query = $accounts_Query->whereBetween('created_at',[$this->from,$this->to])->get();
+            $accounts_Query = $accounts_Query->where('created_at',$this->from)->get();
         }
 
         //$accounts_Query = $accounts_Query->get();
