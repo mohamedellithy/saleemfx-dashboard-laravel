@@ -6,7 +6,7 @@
     <link href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css" rel="stylesheet">
 
     <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="{{ asset('css/vanilla-datetimerange-picker.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/Adminlte-rtl.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin_custom.css') }}">
     <style>
@@ -63,6 +63,14 @@
                     <button name="cashbacks" class="cashbacks status btn btn- btn-success">تحديث الحالة</button>
                 </form>
             </div>
+
+            <div class="show-buttons-filter">
+                <select name="vipOrders" class="vipOrders status">
+                    <option value="">طلبات ال vip</option>
+                    <option value="1">المشتركين فى الخدمة</option>
+                    <option value="2">الغير مشتركين</option>
+                </select>
+            </div>
             {!! $dataTable->table() !!}
         </div>
     </div>
@@ -80,9 +88,13 @@
     <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.colVis.min.js" type="text/javascript"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
     <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="{{ asset('js/vanilla-datetimerange-picker.js') }}"></script>
 
     <script src="{{ asset('js/admin_custom.js') }}" ></script>
     <script src="{{ asset('vendor/datatables/buttons.server-side.js') }}"></script>
+
+
     <script> console.log('Hi!'); </script>
 
     {!! $dataTable->scripts() !!}
