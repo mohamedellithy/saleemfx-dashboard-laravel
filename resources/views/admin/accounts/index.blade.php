@@ -116,8 +116,8 @@
             // options here
         }, function (start, end) {
             // callback
-            url_dataTable.from = start.format("DD-MM-YYYY");
-            url_dataTable.to   = end.format("DD-MM-YYYY");
+            url_dataTable.from = start.format("YYYY-MM-DD");
+            url_dataTable.to   = end.format("YYYY-MM-DD");
             http_query_build(url_dataTable);
             console.log(start.format("DD-MM-YYYY") + "," + end.format("DD-MM-YYYY"));
         })
