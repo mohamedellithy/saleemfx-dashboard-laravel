@@ -62,13 +62,13 @@ class AccountsDataTable extends DataTable
      */
     public function query(AccountsDataTable $model)
     {
-        //$accounts_Query = Account::select('*');
+        $accounts_Query = Account::select('*');
         
-        //if($this->from){
-            $accounts_Query = Account::select('*')->where('created_at',$this->from)->get();
-        //}
+        if($this->from){
+            $accounts_Query = $accounts_Query->whereBetween('created_at',[$this->from,$this->to]);
+        }
 
-        //$accounts_Query = $accounts_Query->get();
+        $accounts_Query = $accounts_Query->get();
 
 
         return $this->applyScopes($accounts_Query);
@@ -91,8 +91,7 @@ class AccountsDataTable extends DataTable
                     ->buttons(
                         Button::make('export'),
                         Button::make('print'),
-                        Button::make('reset'),
-                        'colvis'
+                        Button::make('reset')
                     )
                     ->parameters([
                        'responsive' => true,
