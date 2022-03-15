@@ -64,9 +64,8 @@ class AccountsDataTable extends DataTable
     {
         $accounts_Query = Account::select('*');
         
-        if($this->DateBetween){
-            $accounts_Query = $accounts_Query->whereBetween('created_at',$this->DateBetween);
-            return "<script> console.log(".$this->DateBetween[0].") </script>";
+        if($this->datebetween){
+            $accounts_Query = $accounts_Query->whereBetween('created_at',$this->datebetween);
         }
 
         $accounts_Query = $accounts_Query->get();
