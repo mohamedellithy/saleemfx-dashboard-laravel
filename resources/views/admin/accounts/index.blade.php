@@ -101,6 +101,18 @@
     <script>
         let url_dataTable = {};
         new DateRangePicker('datetimerange-input1', {
+            locale: {
+                direction: 'rtl',
+                format: moment.localeData().longDateFormat('L'),
+                separator: ' - ',
+                applyLabel: 'بحث',
+                cancelLabel: 'الغاء',
+                weekLabel: 'W',
+                customRangeLabel: 'Custom Range',
+                daysOfWeek: moment.weekdaysMin(),
+                monthNames: moment.monthsShort(),
+                firstDay: moment.localeData().firstDayOfWeek()
+            }
             // options here
         }, function (start, end) {
             // callback
