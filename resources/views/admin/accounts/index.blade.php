@@ -69,7 +69,7 @@
             </div>
 
             <div class="show-buttons-filter">
-                <input name="vipOrders" class="form-control vipOrders status" type="text" id="datetimerange-input1" />
+                <input name="vipOrders" class="form-control vipOrders status" type="text" placeholder="البحث بالتاريخ" id="datetimerange-input1" />
             </div>
             {!! $dataTable->table() !!}
         </div>
@@ -99,11 +99,15 @@
 
     {!! $dataTable->scripts() !!}
     <script>
+        let url_dataTable = {};
         new DateRangePicker('datetimerange-input1', {
             // options here
         }, function (start, end) {
             // callback
-            alert(start.format() + " - " + end.format());
+            // alert(start.format() + " - " + end.format());
+            let vipOrders = jQuery('#datetimerange-input1').val();
+            url_dataTable.vipOrders = vipOrders;
+            http_query_build(url_dataTable);
         })
         $(document).ready(function() {
             $('select.status').niceSelect();
@@ -127,6 +131,7 @@
 
             return false;
         });
+
         function FormSubmitDelete(e) {
             e.preventDefault();
             var confirm = window.confirm('هل انت متأكد من حذف هذا العنصر ؟');
