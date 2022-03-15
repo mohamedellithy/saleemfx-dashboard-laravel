@@ -119,7 +119,7 @@
             let DateBetween = jQuery('#datetimerange-input1').val();
             url_dataTable.datebetween = DateBetween;
             http_query_build(url_dataTable);
-            console.log(start.format("d-m-Y") + " - " + end.format("d-m-Y"));
+            console.log(start.format("DD-MM-YY") + " - " + end.format("DD-MM-YY"));
         })
         $(document).ready(function() {
             $('select.status').niceSelect();
