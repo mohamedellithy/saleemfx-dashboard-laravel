@@ -65,7 +65,7 @@
             </div>
 
             <div class="show-buttons-filter">
-                <input name="vipOrders" class="vipOrders status" type="text" id="datetimerange-input1" />
+                <input name="vipOrders" class="form-control vipOrders status" type="text" id="datetimerange-input1" />
             </div>
             {!! $dataTable->table() !!}
         </div>
