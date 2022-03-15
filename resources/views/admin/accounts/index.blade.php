@@ -69,7 +69,7 @@
             </div>
 
             <div class="show-buttons-filter">
-                <input name="vipOrders" class="form-control vipOrders status" type="text" placeholder="البحث بالتاريخ" id="datetimerange-input1" />
+                <input name="datebetween" class="form-control vipOrders status" type="text" placeholder="البحث بالتاريخ" id="datetimerange-input1" />
             </div>
             {!! $dataTable->table() !!}
         </div>
@@ -104,7 +104,6 @@
             // options here
         }, function (start, end) {
             // callback
-            // alert(start.format() + " - " + end.format());
             let vipOrders = jQuery('#datetimerange-input1').val();
             url_dataTable.vipOrders = vipOrders;
             http_query_build(url_dataTable);

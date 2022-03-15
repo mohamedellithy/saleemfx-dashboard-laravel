@@ -62,8 +62,15 @@ class AccountsDataTable extends DataTable
      */
     public function query(AccountsDataTable $model)
     {
-        $accounts = Account::select('*')->latest()->get();
-        return $this->applyScopes($accounts);
+        $accounts_Query = Account::select('*');
+        
+        if($this->DateBetween){
+            $accounts_Query = $accounts_Query->whereBetween('created_at',$this->DateBetween);
+        }
+
+        $accounts_Query = $accounts_Query->get();
+
+        return $this->applyScopes($accounts_Query);
         # return $model->newQuery();
     }
 

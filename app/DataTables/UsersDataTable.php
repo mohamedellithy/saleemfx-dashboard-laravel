@@ -150,8 +150,3 @@ class UsersDataTable extends DataTable
 
 
 }
-
-
-# if ($request->has('action') && in_array($request->get('action'), ['print', 'pdf'])) {
-# if ($request->has('visible_columns')) {
-# $visibleColumns = (array) $request->get('visible_columns');

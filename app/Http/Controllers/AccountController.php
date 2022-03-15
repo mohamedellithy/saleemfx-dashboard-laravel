@@ -12,10 +12,21 @@ class AccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(AccountsDataTable $dataTable)
+    public function index(AccountsDataTable $dataTable,Request $request)
     {
         //
-         return $dataTable->render('admin.accounts.index');
+        $query_search   = [];
+
+        if($request->query('datebetween')):
+          $query_search['DateBetween']  = $request->query('datebetween');
+        endif;
+
+        if($query_search):
+            return $dataTable->with($query_search)->render('admin.accounts.index');
+        else:
+            return $dataTable->render('admin.accounts.index');
+        endif;
+
     }
 
     /**
