@@ -116,7 +116,7 @@
             // options here
         }, function (start, end) {
             // callback
-            let DateBetween = start.format("DD-MM-YYYY") + "," + end.format("DD-MM-YYYY");
+            let DateBetween = start.format("DD-MM-YYYY") + "+" + end.format("DD-MM-YYYY");
             url_dataTable.datebetween = DateBetween;
             http_query_build(url_dataTable);
             console.log(start.format("DD-MM-YYYY") + "," + end.format("DD-MM-YYYY"));
