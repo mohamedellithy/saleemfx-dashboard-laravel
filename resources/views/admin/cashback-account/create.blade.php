@@ -25,6 +25,7 @@
                         @endforelse
                     </select>
                 </div>
+                
 
                 <div class="input-group mb-3">
                     <p class="label-model">شهر التداول</p>
