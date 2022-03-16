@@ -99,7 +99,8 @@ class AccountsDataTable extends DataTable
                         'lengthMenu' => [
                             [ 25, 50,100,-1 ],
                             [ '25 rows', '50 rows', '100 rows', 'Show all' ]
-                        ]
+                        ],
+                        'buttons'      => ['excel', 'csv'],
                     ]);
     }
 
