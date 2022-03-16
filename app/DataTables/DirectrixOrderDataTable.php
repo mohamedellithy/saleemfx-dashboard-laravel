@@ -73,10 +73,9 @@ class DirectrixOrderDataTable extends DataTable
                     ->orderBy(3)
                     ->buttons(
                         Button::make('create'),
-                        Button::make('export'),
+                        Button::make('excel')->columns(':visible'),
                         Button::make('print'),
-                        Button::make('reset'),
-                        Button::make('reload')
+                        Button::make('reset')
                     )
                     ->parameters([
                        'responsive' => true,

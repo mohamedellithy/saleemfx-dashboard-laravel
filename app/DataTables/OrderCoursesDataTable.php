@@ -60,7 +60,7 @@ class OrderCoursesDataTable extends DataTable
                     ->dom('Blfrtip')
                     ->orderBy(8)
                     ->buttons(
-                        Button::make('export'),
+                        Button::make('excel')->columns(':visible'),
                         Button::make('print'),
                         Button::make('reset'),
                         Button::make('reload'),

@@ -72,7 +72,7 @@ class VipServicesOrdersDataTable extends DataTable
                     ->dom('Bfrtip')
                     ->orderBy(3)
                     ->buttons(
-                        Button::make('export'),
+                        Button::make('excel')->columns(':visible'),
                         Button::make('print'),
                         Button::make('reset'),
                         Button::make('reload')

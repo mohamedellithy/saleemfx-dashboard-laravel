@@ -89,7 +89,7 @@ class AccountsDataTable extends DataTable
                     ->dom('Blfrtip')
                     ->orderBy(6)
                     ->buttons(
-                        Button::make('excel'),
+                        Button::make('excel')->columns(':visible'),
                         Button::make('print'),
                         Button::make('reset')
                     )

@@ -66,7 +66,7 @@ class ProfitAffiliateDataTable extends DataTable
                     ->dom('Blfrtip')
                     ->orderBy(4)
                     ->buttons(
-                        Button::make('export')->columns(':visible'),
+                        Button::make('excel')->columns(':visible'),
                         Button::make('print')->columns('visible'),
                         Button::make('reset'),
                         Button::make('reload'),

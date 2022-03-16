@@ -67,7 +67,7 @@ class myProfitsOrderAffiliateDataTable extends DataTable
                     ->dom('Lfrtip')
                     ->orderBy(4)
                     ->buttons(
-                        Button::make('export'),
+                        Button::make('excel')->columns(':visible'),
                         Button::make('print'),
                         Button::make('reset'),
                         Button::make('reload')

@@ -56,10 +56,9 @@ class EmployeeSalariesDataTable extends DataTable
                     ->dom('Lfrtip')
                     ->orderBy(2)
                     ->buttons(
-                        Button::make('export')->columns(':visible'),
+                        Button::make('excel')->columns(':visible'),
                         Button::make('print')->columns('visible'),
                         Button::make('reset'),
-                        Button::make('reload'),
                         'colvis'
                     )
                     ->parameters([

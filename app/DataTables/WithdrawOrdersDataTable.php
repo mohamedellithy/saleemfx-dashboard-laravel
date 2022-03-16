@@ -93,10 +93,9 @@ class WithdrawOrdersDataTable extends DataTable
                     ->dom('Blfrtip')
                     ->orderBy(7)
                     ->buttons(
-                        Button::make('export'),
+                        Button::make('excel')->columns(':visible'),
                         Button::make('print'),
                         Button::make('reset'),
-                        Button::make('reload'),
                         'colvis'
                     )
                     ->parameters([

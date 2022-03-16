@@ -80,10 +80,9 @@ class WithdrawProfitsOrderAffiliateDataTable extends DataTable
                     ->dom('Blfrtip')
                     ->orderBy(4)
                     ->buttons(
-                        Button::make('export'),
+                        Button::make('excel')->columns(':visible'),
                         Button::make('print'),
-                        Button::make('reset'),
-                        Button::make('reload')
+                        Button::make('reset')
                     )
                     ->parameters([
                        'responsive' => true,
