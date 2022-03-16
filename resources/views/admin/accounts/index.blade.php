@@ -101,6 +101,7 @@
     <script>
         let url_dataTable = {};
         new DateRangePicker('datetimerange-input1', {
+            autoUpdateInput: false,
             locale: {
                 direction: 'rtl',
                 format: moment.localeData().longDateFormat('L'),

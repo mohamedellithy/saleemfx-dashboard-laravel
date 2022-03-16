@@ -21,8 +21,6 @@
     padding: 20px 0px;
 }
 
-
-
 @media (max-width: 768px) {
     .sidebar-collapse .main-sidebar,
     .sidebar-collaps e .main-sidebar::before {
