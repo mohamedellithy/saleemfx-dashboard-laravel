@@ -156,8 +156,8 @@
             let params;
             params = new URLSearchParams(url_dataTable);
             const str = params.toString();
-            console.log("{{ route('accounts') }}?"+str);
-            $('#accountsdatatable-table').DataTable().ajax.url("{{ route('accounts') }}?"+str).load();
+            console.log("{{ route('accounts.index') }}?"+str);
+            $('#accountsdatatable-table').DataTable().ajax.url("{{ route('accounts.index') }}?"+str).load();
         }
     </script>
 @stop
