@@ -246,11 +246,12 @@ table thead tr {
     text-align: center;
     padding: 5px;
 }
-.footer-ad-services p
-{
+
+.footer-ad-services p {
     background-color: #d9d7d0;
     padding: 5px 5px;
 }
+
 .no-adds {
     width: 100%;
     background-color: #eaecf0;
@@ -356,64 +357,66 @@ table thead tr {
 .send-invitation td {
     padding-top: 28px;
 }
-.mobile{
-    display:none !important;
+
+.mobile {
+    display: none !important;
 }
-.navbar-nav>.user-menu>.dropdown-menu>.user-footer{
+
+.navbar-nav>.user-menu>.dropdown-menu>.user-footer {
     padding: 3px 0px;
 }
-.navbar-nav>.user-menu>.dropdown-menu>.user-footer a{
-    text-align:right;
+
+.navbar-nav>.user-menu>.dropdown-menu>.user-footer a {
+    text-align: right;
 }
-.navbar-nav>.user-menu>.dropdown-menu>.user-body{
+
+.navbar-nav>.user-menu>.dropdown-menu>.user-body {
     padding: 1px;
 }
-.card-body{
+
+.card-body {
     overflow-y: auto;
 }
 
 @media(max-width: 1000px) {
     .navbar-nav .menu-items {
-        display:none !important;
+        display: none !important;
     }
     .dashboard-name-menu {
-         padding: 2px 8px;
+        padding: 2px 8px;
     }
-    .navbar-expand .navbar-toggler{
-        display:inline-block !important;
+    .navbar-expand .navbar-toggler {
+        display: inline-block !important;
         background-color: #000000;
     }
-    .navbar-expand .navbar-toggler .fa-bars
-    {
+    .navbar-expand .navbar-toggler .fa-bars {
         color: orange;
     }
     .navbar-toggler {
         padding: 0.2rem 0.2rem;
     }
-    .mobile{
-        display:inline-block !important;
+    .mobile {
+        display: inline-block !important;
     }
-    .dashboard-name-menu{
+    .dashboard-name-menu {
         font-size: 12px;
     }
-    .menu-items-mobile
-    {
+    .menu-items-mobile {
         text-align: right;
         direction: rtl;
         margin-right: -25px;
     }
-    .menu-items-mobile .dashboard-name-menu{
-        display:block !important;
+    .menu-items-mobile .dashboard-name-menu {
+        display: block !important;
     }
-    .menu-items-mobile .dashboard-name-menu a
-    {
+    .menu-items-mobile .dashboard-name-menu a {
         font-size: 18px;
         line-height: 2.2em;
     }
     .title-forex-login {
         margin-top: 0%;
     }
-    .title-forex-login h3{
+    .title-forex-login h3 {
         margin-bottom: 0%;
         font-size: 20px;
         line-height: 2em;
@@ -435,8 +438,12 @@ table thead tr {
         animation: movefromRight .3s ease-in-out .2s forwards;
         margin-right: -50%;
     }
-    #sidebar-overlay{
-        display:none !important;
+    #sidebar-overlay {
+        display: none !important;
+    }
+    table.dataTable td,
+    table.dataTable th {
+        word-break: break-all !important;
     }
     @keyframes movefromRight {
         0% {
@@ -451,12 +458,7 @@ table thead tr {
             margin-right: 0%;
         }
         to {
-                margin-right: -50%;
-              
+            margin-right: -50%;
         }
     }
 }
-            
-                
-                
-       

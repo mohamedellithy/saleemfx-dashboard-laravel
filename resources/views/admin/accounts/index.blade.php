@@ -156,8 +156,8 @@
             let params;
             params = new URLSearchParams(url_dataTable);
             const str = params.toString();
-            console.log("{{ url()->current() }}?"+str);
-            $('#accountsdatatable-table').DataTable().ajax.url("{{ url()->current() }}?"+str).load();
+            console.log("{{ route('accounts') }}?"+str);
+            $('#accountsdatatable-table').DataTable().ajax.url("{{ route('accounts') }}?"+str).load();
         }
     </script>
 @stop
