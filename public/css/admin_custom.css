@@ -378,6 +378,24 @@ table thead tr {
     overflow-y: auto;
 }
 
+table.dataTable td {
+    word-break: break-all !important;
+}
+
+form.form-status {
+    display: inline-block;
+    float: right;
+}
+
+.data-search {
+    display: inline-block;
+    float: left;
+}
+
+.data-search label {
+    padding: 5px;
+}
+
 @media(max-width: 1000px) {
     .navbar-nav .menu-items {
         display: none !important;
@@ -440,21 +458,6 @@ table thead tr {
     }
     #sidebar-overlay {
         display: none !important;
-    }
-    table.dataTable td {
-        word-break: break-all !important;
-    }
-    form.form-status {
-        display: inline-block;
-        float: right;
-    }
-    .data-search  {
-        display: inline-block;
-        float: left;
-    }
-    .data-search label
-    {
-        padding: 5px;
     }
     @keyframes movefromRight {
         0% {
