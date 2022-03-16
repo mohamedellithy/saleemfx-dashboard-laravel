@@ -101,7 +101,7 @@
     <script>
         let url_dataTable = {};
         new DateRangePicker('datetimerange-input1', {
-            autoUpdateInput: false,
+            placeholder:'أبحث بالتاريخ',
             locale: {
                 direction: 'rtl',
                 format: moment.localeData().longDateFormat('L'),
