@@ -63,7 +63,6 @@
                     </select>
 
                     <input id="inputAccounts" type="hidden" name="select-accounts" />
-
                     <button name="cashbacks" class="cashbacks status btn btn- btn-success">تحديث الحالة</button>
                 </form>
                 <div class="form-group data-search">

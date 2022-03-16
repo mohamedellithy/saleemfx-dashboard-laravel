@@ -20,7 +20,7 @@
                     <p class="label-model">اسم شركة التداول</p>
                     <select name="company_id" class="select-companies">
                         @forelse($account_details->user->accounts as $account)
-                            <option value="{{ $account->forex_company->id ?? '' }}">{{ $account->forex_company->name_ar ?? '' }}</option>
+                            <option value="{{ $account->forex_company->id ?? '' }}">{{ $account->forex_company->name_ar ?? '' }} ( {{ $account->account_number ?? '' }} )</option>
                         @empty
                         @endforelse
                     </select>
