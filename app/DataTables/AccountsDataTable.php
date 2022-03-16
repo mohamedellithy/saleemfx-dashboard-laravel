@@ -89,7 +89,7 @@ class AccountsDataTable extends DataTable
                     ->dom('Blfrtip')
                     ->orderBy(6)
                     ->buttons(
-                        Button::make('export'),
+                        Button::make('excel'),
                         Button::make('print'),
                         Button::make('reset')
                     )
@@ -100,7 +100,6 @@ class AccountsDataTable extends DataTable
                             [ 25, 50,100,-1 ],
                             [ '25 rows', '50 rows', '100 rows', 'Show all' ]
                         ],
-                        'buttons'      => ['excel', 'csv'],
                     ]);
     }
 
