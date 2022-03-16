@@ -26,6 +26,5 @@ jobs:
       with:
         hosts: 'saleemfx.com'
         privateKey: ${{ secrets.FTP_PRIVATE_KEY }}
-        username: 'id_rsa'
         command: composer update
         
