@@ -24,6 +24,8 @@ jobs:
     - name: Execute SSH commmands on remote server
       uses: JimCronqvist/action-ssh@master
       with:
-        hosts: 'id_rsa@saleemfx.com'
+        hosts: 'saleemfx.com'
         privateKey: ${{ secrets.FTP_PRIVATE_KEY }}
+        username: 'id_rsa'
         command: composer update
+        
