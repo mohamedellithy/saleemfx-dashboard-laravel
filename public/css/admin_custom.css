@@ -441,8 +441,7 @@ table thead tr {
     #sidebar-overlay {
         display: none !important;
     }
-    table.dataTable td,
-    table.dataTable th {
+    table.dataTable td {
         word-break: break-all !important;
     }
     @keyframes movefromRight {

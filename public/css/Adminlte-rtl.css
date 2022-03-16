@@ -21,6 +21,10 @@
     padding: 20px 0px;
 }
 
+table.dataTable td{
+    word-break: break-all !important;
+}
+
 @media (max-width: 768px) {
     .sidebar-collapse .main-sidebar,
     .sidebar-collaps e .main-sidebar::before {

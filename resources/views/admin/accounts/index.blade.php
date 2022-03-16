@@ -66,10 +66,10 @@
 
                     <button name="cashbacks" class="cashbacks status btn btn- btn-success">تحديث الحالة</button>
                 </form>
-            </div>
-
-            <div class="show-buttons-filter">
-                <input name="DateBetween" class="form-control vipOrders status" type="text" placeholder="البحث بالتاريخ" id="datetimerange-input1" />
+                <div class="form-group data-search">
+                     <label> البحث بالتاريخ </label>
+                     <input name="DateBetween" class="form-control vipOrders status" type="text" placeholder="البحث بالتاريخ" id="datetimerange-input1" />
+                </div>
             </div>
             {!! $dataTable->table() !!}
         </div>
