@@ -4,3 +4,24 @@ FTP & explicit FTPS port:  21
 
 L-ZqTJjL?#}^
 
+
+
+
+Key Name : id_rsa
+Key Password : Hhc6bv)VYyIt
+The key fingerprint is:
+3b:69:83:ed:d4:23:03:77:4b:c8:ab:df:b4:36:87:77 
+key
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAqDIIMGO63DgaOzf0igfLSGlvHKYec+tNppIj3zAgbaZMeAWdLEJa6W0HR+Ul7M/kjWiqLTaKQVGOAI1yO8bUJhwoVZJEjEenxGjjODzCfeKTXSa2H/N7mQ8BBMTjsagXc37JBODYnechGNEer1SnNuPN/O612LrNauanm2EZfP+K+biq7VBOsTiucCt4TstfS9dnBZhnXg6wtNmLugQEDQqgur/EUkdctp3EtJpJlyCbCmVcVMOVVPR6vHJIJIfn9LSNphiAE6aAAQxkWtYGIWFRGiywXlkGkaIJPMLnpPRyX5Q1fkie9EUGAEKj1nM1+Dp1VhiigCLZHASIANncOw==
+
+FTP_PRIVATE_KEY
+
+
+
+
+- name: Execute SSH commmands on remote server
+      uses: JimCronqvist/action-ssh@master
+      with:
+        hosts: 'saleemfx.com'
+        privateKey: ${{ secrets.FTP_PRIVATE_KEY }}
+        command: composer update
