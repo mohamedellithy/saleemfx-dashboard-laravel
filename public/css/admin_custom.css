@@ -444,6 +444,18 @@ table thead tr {
     table.dataTable td {
         word-break: break-all !important;
     }
+    form.form-status {
+        display: inline-block;
+        float: right;
+    }
+    .data-search  {
+        display: inline-block;
+        float: left;
+    }
+    .data-search label
+    {
+        padding: 5px;
+    }
     @keyframes movefromRight {
         0% {
             margin-right: -50%;
