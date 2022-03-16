@@ -379,7 +379,7 @@ table thead tr {
 }
 
 table.dataTable td {
-    word-break: break-all !important;
+    word-break: normal !important;
 }
 
 form.form-status {
