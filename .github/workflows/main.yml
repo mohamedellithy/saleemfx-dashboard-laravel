@@ -21,3 +21,9 @@ jobs:
           protocol: ftps
           port: 21
           dns_fatal_timeout: "never"
+    - name: Execute SSH commmands on remote server
+      uses: JimCronqvist/action-ssh@master
+      with:
+        hosts: 'saleeoup@saleemfx.com'
+        privateKey: ${{ secrets.FTP_PRIVATE_KEY }}
+        command: composer update
