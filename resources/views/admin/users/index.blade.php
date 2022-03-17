@@ -153,13 +153,6 @@
             console.log(start.format("DD-MM-YYYY") + "," + end.format("DD-MM-YYYY"));
         });
 
-        $("#datetimerange-input1").keyup(function(e){
-            console.log("heool");
-            if(e.keyCode ==8 || e.keyCode == 46) {
-                $("#datetimerange-input1").datepicker('update', "");
-            }
-        });
-
         jQuery(document).on('change','.status.forexComapny',function() {
             let forexComapny = jQuery(this).val();
             url_dataTable.company = forexComapny;
