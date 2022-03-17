@@ -21,6 +21,9 @@
         .table td, .table th {
             padding: 1rem 0em 0.8em 0.8em;
         }
+        .data-search.search-users{
+            float:auto !important;
+        }
     </style>
 @stop
 
@@ -44,7 +47,7 @@
             @endif
 
             <div class="show-buttons-filter">
-                <div class="form-group data-search">
+                <div class="form-group data-search search-users">
                      <label> البحث بالتاريخ </label>
                      <input name="DateBetween" class="form-control vipOrders status" type="text" placeholder="البحث بالتاريخ" id="datetimerange-input1" />
                 </div>
