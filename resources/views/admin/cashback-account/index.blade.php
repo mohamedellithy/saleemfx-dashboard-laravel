@@ -5,6 +5,7 @@
     <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/vanilla-datetimerange-picker.css') }}" />
 
    <link rel="stylesheet" href="{{ asset('css/Adminlte-rtl.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin_custom.css') }}">
@@ -14,7 +15,7 @@
 @section('plugins.Select2', true)
 
 @section('content_header')
-   عرض الاكسبرتات
+   عرض الكاش باك
 @stop
 
 
@@ -37,6 +38,12 @@
                     </ul>
                 </div>
             @endif
+            <div class="show-buttons-filter">
+                <div class="form-group data-search">
+                     <label> البحث بالتاريخ </label>
+                     <input name="DateBetween" class="form-control vipOrders status" type="text" placeholder="البحث بالتاريخ" id="datetimerange-input1" />
+                </div>
+            </div>
             {!! $dataTable->table() !!}
         </div>
     </div>
@@ -63,6 +70,8 @@
     <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.colVis.min.js" type="text/javascript"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="{{ asset('js/vanilla-datetimerange-picker.js') }}"></script>
 
     <script src="{{ asset('js/admin_custom.js') }}" ></script>
     <script src="{{ asset('vendor/datatables/buttons.server-side.js') }}"></script>
@@ -75,6 +84,39 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+
+        let url_dataTable = {};
+        new DateRangePicker('datetimerange-input1', {
+            placeholder:'أبحث بالتاريخ',
+            locale: {
+                direction: 'rtl',
+                format: moment.localeData().longDateFormat('L'),
+                separator: '-',
+                applyLabel: 'بحث',
+                cancelLabel: 'الغاء',
+                weekLabel: 'W',
+                customRangeLabel: 'Custom Range',
+                daysOfWeek: moment.weekdaysMin(),
+                monthNames: moment.monthsShort(),
+                firstDay: moment.localeData().firstDayOfWeek()
+            },
+            // options here
+        }, function (start, end) {
+            // callback
+            url_dataTable.from = start.format("YYYY-MM-DD");
+            url_dataTable.to   = end.format("YYYY-MM-DD");
+            http_query_build(url_dataTable);
+            console.log(start.format("DD-MM-YYYY") + "," + end.format("DD-MM-YYYY"));
+        });
+
+        function http_query_build(url_dataTable){
+            let params;
+            params = new URLSearchParams(url_dataTable);
+            const str = params.toString();
+            console.log("{{ route('accounts.index') }}?"+str);
+            $('#accountsdatatable-table').DataTable().ajax.url("{{ route('cashback-accounts.index') }}?"+str).load();
+        }
+
         jQuery(document).on('click','.updateCashback',function(e){
             var Cashback_ID =  jQuery(this).attr('data-id');
             var url_create  =  "{{ url('cashback-accounts/:id:/edit') }}";

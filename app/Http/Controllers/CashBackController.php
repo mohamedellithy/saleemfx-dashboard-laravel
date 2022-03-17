@@ -19,10 +19,21 @@ class CashBackController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(CashBackDataTable $dataTable)
+    public function index(CashBackDataTable $dataTable,Request $request)
     {
         //
-        return $dataTable->render('admin.cashback-account.index');
+        $query_search   = [];
+
+        if($request->query('from')):
+          $query_search['from']  = $request->query('from');
+          $query_search['to']  = $request->query('to');
+        endif;
+
+        if($query_search):
+            return $dataTable->with($query_search)->render('admin.cashback-account.index');
+        else:
+            return $dataTable->render('admin.cashback-account.index');
+        endif;
     }
 
     /**

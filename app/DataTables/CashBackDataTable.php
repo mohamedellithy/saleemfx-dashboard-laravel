@@ -65,8 +65,13 @@ class CashBackDataTable extends DataTable
      */
     public function query(CashBackDataTable $model)
     {
-        $cashback = CashBack::select('*')->orderby('month')->get();
-        return $this->applyScopes($cashback);
+        $cashback_Query = CashBack::select('*');
+        if($this->from){
+            $cashback_Query = $cashback_Query->whereBetween('created_at',[$this->from,$this->to]);
+        }
+        
+        $cashback_Query = $cashback_Query->orderby('month')->get();
+        return $this->applyScopes($cashback_Query);
     }
 
     /**

@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('content_header')
-   اضافة شركة التداول
+   اضافة كاش باك
 @stop
 
 @section('content')
