@@ -114,7 +114,7 @@
             params = new URLSearchParams(url_dataTable);
             const str = params.toString();
             console.log("{{ route('accounts.index') }}?"+str);
-            $('#accountsdatatable-table').DataTable().ajax.url("{{ route('cashback-accounts.index') }}?"+str).load();
+            $('#cashbackdatatables-table').DataTable().ajax.url("{{ route('cashback-accounts.index') }}?"+str).load();
         }
 
         jQuery(document).on('click','.updateCashback',function(e){
