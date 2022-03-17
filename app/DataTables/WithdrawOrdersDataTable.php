@@ -91,7 +91,7 @@ class WithdrawOrdersDataTable extends DataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->dom('Blfrtip')
-                    ->orderBy(7)
+                    ->orderBy(6)
                     ->buttons(
                         Button::make('excel')->columns(':visible'),
                         Button::make('print'),
