@@ -131,6 +131,7 @@
         new DateRangePicker('datetimerange-input1', {
             placeholder:'أبحث بالتاريخ',
             autoUpdateInput: false,
+            clearBtn: true,
             locale: {
                 direction: 'rtl',
                 format: moment.localeData().longDateFormat('L'),
@@ -152,9 +153,12 @@
             console.log(start.format("DD-MM-YYYY") + "," + end.format("DD-MM-YYYY"));
         });
 
-        $('#datetimerange-input1').on('apply.daterangepicker', function(ev, picker) {
-            $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
-        });
+        // $("#datetimerange-input1").keyup(function(e){
+        //     console.log("heool");
+        //     if(e.keyCode ==8 || e.keyCode == 46) {
+        //         $("#datetimerange-input1").datepicker('update', "");
+        //     }
+        // });
 
         jQuery(document).on('change','.status.forexComapny',function() {
             let forexComapny = jQuery(this).val();
