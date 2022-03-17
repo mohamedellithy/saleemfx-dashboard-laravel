@@ -5,7 +5,7 @@
     <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
-   
+    <link rel="stylesheet" href="{{ asset('css/vanilla-datetimerange-picker.css') }}" />
 
     <link rel="stylesheet" href="{{ asset('css/Adminlte-rtl.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin_custom.css') }}">
@@ -44,6 +44,10 @@
             @endif
 
             <div class="show-buttons-filter">
+                <div class="form-group data-search">
+                     <label> البحث بالتاريخ </label>
+                     <input name="DateBetween" class="form-control vipOrders status" type="text" placeholder="البحث بالتاريخ" id="datetimerange-input1" />
+                </div>
                 <select name="forex-comapny" class="forexComapny status">
                     <option value="">شركات التداول</option>
                     @forelse($forexCompanies as $forex)
@@ -88,6 +92,8 @@
     <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.colVis.min.js" type="text/javascript"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="{{ asset('js/vanilla-datetimerange-picker.js') }}"></script>
     <script src="{{ asset('js/admin_custom.js') }}" ></script>
     <script src="{{ asset('vendor/datatables/buttons.server-side.js') }}"></script>
     <script> console.log('Hi!'); </script>
@@ -119,6 +125,29 @@
 
     <script type="text/javascript">
         let url_dataTable = {};
+        new DateRangePicker('datetimerange-input1', {
+            placeholder:'أبحث بالتاريخ',
+            locale: {
+                direction: 'rtl',
+                format: moment.localeData().longDateFormat('L'),
+                separator: '-',
+                applyLabel: 'بحث',
+                cancelLabel: 'الغاء',
+                weekLabel: 'W',
+                customRangeLabel: 'Custom Range',
+                daysOfWeek: moment.weekdaysMin(),
+                monthNames: moment.monthsShort(),
+                firstDay: moment.localeData().firstDayOfWeek()
+            },
+            // options here
+        }, function (start, end) {
+            // callback
+            url_dataTable.from = start.format("YYYY-MM-DD");
+            url_dataTable.to   = end.format("YYYY-MM-DD");
+            http_query_build(url_dataTable);
+            console.log(start.format("DD-MM-YYYY") + "," + end.format("DD-MM-YYYY"));
+        });
+
         jQuery(document).on('change','.status.forexComapny',function() {
             let forexComapny = jQuery(this).val();
             url_dataTable.company = forexComapny;

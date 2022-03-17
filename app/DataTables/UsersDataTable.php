@@ -48,6 +48,10 @@ class UsersDataTable extends DataTable
         # return $model->newQuery();
         $users_Qry = User::select('*')->where('role',0);
 
+        if($this->from){
+            $users_Qry = $users_Qry->whereBetween('created_at',[$this->from,$this->to]);
+        }
+
         if($this->companyID){
             $users_Qry = $users_Qry->whereHas('accounts',function(Builder $query){
                 $query->where('accounts.forex_company_id',$this->companyID);

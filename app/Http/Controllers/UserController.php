@@ -21,6 +21,11 @@ class UserController extends Controller
         $services       = Services::all();
         $query_search   = [];
 
+        if($request->query('from')):
+            $query_search['from']  = $request->query('from');
+            $query_search['to']    = $request->query('to');
+        endif;
+
         if($request->query('company')):
           $query_search['companyID']  = $request->query('company');
         endif;
