@@ -22,7 +22,7 @@
             padding: 1rem 0em 0.8em 0.8em;
         }
         .data-search.search-users{
-            float:auto !important;
+            float:none !important;
         }
     </style>
 @stop
