@@ -130,7 +130,7 @@
         let url_dataTable = {};
         new DateRangePicker('datetimerange-input1', {
             placeholder:'أبحث بالتاريخ',
-            autoUpdateInput: false,
+            autoUpdateInput: true,
             clearBtn: true,
             locale: {
                 direction: 'rtl',
