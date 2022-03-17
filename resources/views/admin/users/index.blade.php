@@ -130,6 +130,7 @@
         let url_dataTable = {};
         new DateRangePicker('datetimerange-input1', {
             placeholder:'أبحث بالتاريخ',
+            autoUpdateInput: false,
             locale: {
                 direction: 'rtl',
                 format: moment.localeData().longDateFormat('L'),
@@ -149,6 +150,10 @@
             url_dataTable.to   = end.format("YYYY-MM-DD");
             http_query_build(url_dataTable);
             console.log(start.format("DD-MM-YYYY") + "," + end.format("DD-MM-YYYY"));
+        });
+
+        $('#datetimerange-input1').on('apply.daterangepicker', function(ev, picker) {
+            $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
         });
 
         jQuery(document).on('change','.status.forexComapny',function() {
