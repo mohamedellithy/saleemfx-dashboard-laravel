@@ -22,7 +22,8 @@ class DirectrixDataTable extends DataTable
         return datatables()
             ->of($query)
             ->addColumn('action', function(Directrix $row){
-               $data = '<form method="post" action="'.url('experts-files/'.$row->id).'" onsubmit="FormSubmitDelete(event)">
+                
+               $data = '<form class="form-delete" method="post" action="'.url('experts-files/'.$row->id).'">
                <input type="hidden" name="_token" value=" '.csrf_token().' ">
                <input type="hidden" name="_method" value="DELETE">
                <button type="submit" class="btn btn-sm btn-danger">حذف</button>
@@ -56,7 +57,7 @@ class DirectrixDataTable extends DataTable
      */
     public function query(DirectrixDataTable $model)
     {
-        $ExpertsFiles = Directrix::select('*')->latest()->get();
+        $ExpertsFiles = Directrix::select('*')->orderBy('created_at','desc');
         return $this->applyScopes($ExpertsFiles);
         # return $model->newQuery();
     }
@@ -102,7 +103,7 @@ class DirectrixDataTable extends DataTable
             Column::make('name')->title('اسم الملف'),
             Column::make('created_at')->title('تاريخ الانشاء'),
             Column::make('status')->title('السماح بالملف'),
-            Column::computed('action')
+            Column::computed('action')->title('')
                   ->exportable(false)
                   ->printable(false)
                   ->width(200)

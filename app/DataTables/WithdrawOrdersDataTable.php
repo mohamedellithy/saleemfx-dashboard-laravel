@@ -74,7 +74,7 @@ class WithdrawOrdersDataTable extends DataTable
         $withdraw_pending_orders  = BalanceWithdraw::select('*')->where([
             'withdrawable_type'=> 'App\User',
             'status'           => $status,
-        ])->get();
+        ])->orderBy('created_at','desc');
 
         return $this->applyScopes($withdraw_pending_orders);
     }

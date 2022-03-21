@@ -28,7 +28,12 @@ class DirectrixOrderDataTable extends DataTable
                 return $row->directrix_file->name ?? '-';
             })
             ->addColumn('action', function(DirectrixOrder $row){
-                $data = '<div class="btn-group">
+                $data = '<form class="form-delete" method="post" action="'.url('directrix-files-orders/'.$row->id).'">
+                <input type="hidden" name="_token" value=" '.csrf_token().' ">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn btn-sm btn-danger btn-sm">حذف</button>
+                </form>';
+                $data .= '<div class="btn-group">
                     <button type="button" class="btn btn-sm '.($row->status == 1 ? 'btn-success' : 'btn-danger').'">'.$row->status_order.'</button>
                     <button type="button" class="btn btn-sm '.($row->status == 1 ? 'btn-success' : 'btn-danger').' dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
                       <span class="sr-only">Toggle Dropdown</span>
@@ -54,7 +59,7 @@ class DirectrixOrderDataTable extends DataTable
      */
     public function query(DirectrixOrderDataTable $model)
     {
-        $directrix_file_order = DirectrixOrder::select('*')->latest()->get();
+        $directrix_file_order = DirectrixOrder::select('*')->orderBy('created_at','desc');
         return $model->applyScopes($directrix_file_order);
     }
 

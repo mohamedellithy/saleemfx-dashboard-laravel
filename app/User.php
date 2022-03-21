@@ -5,10 +5,12 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\CashBack;
 class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
+    use SoftDeletes;
     use \Staudenmeir\EloquentHasManyDeep\HasRelationships;
 
     /**
@@ -41,15 +43,15 @@ class User extends Authenticatable implements MustVerifyEmail
     function isAdmin(){
         return ($this->role == 1 ? true :false);
     }
-    
+
     function isUser(){
         return ($this->role == 0 ? true :false);
     }
-    
+
     function isAffiliater(){
          return ($this->role == 0 || $this->role == 2 ? true :false);
     }
-    
+
     function isEmployee(){
         return $this->affiliates()->where('employee',1)->exists();
     }
@@ -67,21 +69,21 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     public function posts(){
-        return $this->hasOne(ModelWordpress\ForexCompany::class,'ID','post_id');
+        return $this->hasOne(ModelWordpress\ForexCompany::class,'ID','post_id')->withTrashed();
     }
 
     public function accounts(){
-        return $this->hasMany('App\Account','user_id','id');
+        return $this->hasMany('App\Account','user_id','id')->withTrashed();
     }
-    
+
     public function services_orders(){
-        return $this->hasMany('App\ServicesOrder','user_id','id');
+        return $this->hasMany('App\ServicesOrder','user_id','id')->withTrashed();
     }
-    
+
     public function allow_services_order(){
         return $this->services_orders()->where('status','!=',2)->get();
     }
-    
+
     public function getActiveAccountsAttribute(){
         //active_accounts
         return $this->accounts()->where('status',1)->get();
@@ -113,10 +115,8 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     public function cashbacks(){
-        return $this->hasManyThrough(CashBack::class,Account::class,'user_id','account_id','id','id');
+        return $this->hasManyThrough(CashBack::class,Account::class,'user_id','account_id','id','id')->withTrashedParents();
     }
-
-    
 
     public function vip_order(){
         return $this->hasMany('App\VipOrder','user_id','id');
@@ -167,14 +167,14 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->total_recharge() + $this->total_cashback() -  $this->total_withdraws();
     }
 
-    
-    
+
+
     function getAccountBalanceValueAttribute(){
         /* account_balance_value */
         $account = $this->accounts()->where('status',1)->first();
         return $account ? $account->account_balance : 0;
     }
-    
+
     public function getNotHaveAccountsAttribute(){
         // not_have_accounts
         return $this->accounts()->where('status',1)->exists() ? false : true;

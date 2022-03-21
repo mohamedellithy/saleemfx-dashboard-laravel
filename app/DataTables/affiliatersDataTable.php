@@ -36,10 +36,10 @@ class affiliatersDataTable extends DataTable
             ->addColumn('comissions',function(Affiliate $row){
                 return amount_currency($row->value_comissions());
             })
-            
-            ->addColumn('count_inviters',function(Affiliate $row){
-                return $row->affiliaters()->count();
-            })
+
+            // ->addColumn('count_inviters',function(Affiliate $row){
+            //     return $row->affiliaters()->count();
+            // })
             ->addColumn('value_profits',function(Affiliate $row){
                 return amount_currency($row->value_profits());
             })
@@ -47,7 +47,12 @@ class affiliatersDataTable extends DataTable
                 return $row->created_at;
             })
             ->addColumn('action',function(Affiliate $row){
-                $data  ='<a href="'.url('affiliater/'.$row->affiliaters->id).'" class="btn btn-sm btn-info action-datatable-btn">تفاصيل </a>';
+                $data = '<form class="form-delete" method="post" action="'.url('affiliater/'.$row->id).'">
+                    <input type="hidden" name="_token" value=" '.csrf_token().' ">
+                    <input type="hidden" name="_method" value="delete">
+                    <button type="submit" class="btn btn-sm btn-sm btn-danger" value="Delete">حذف</button>
+                    </form>';
+                $data  .='<a href="'.url('affiliater/'.$row->affiliaters->id).'" class="btn btn-sm btn-info action-datatable-btn">تفاصيل </a>';
                 return $data;
             });
     }
@@ -61,7 +66,7 @@ class affiliatersDataTable extends DataTable
     public function query(affiliatersDataTable $model)
     {
         # return $model->newQuery();
-        $users = Affiliate::select('*')->latest()->get();
+        $users = Affiliate::select('*')->orderBy('created_at','desc');
         return $this->applyScopes($users);
     }
 
@@ -77,7 +82,7 @@ class affiliatersDataTable extends DataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->dom('Blfrtip')
-                    ->orderBy(7)
+                    ->orderBy(6)
                     ->buttons(
                         Button::make('excel')->columns(':visible'),
                         Button::make('print')->columns('visible'),
@@ -102,11 +107,9 @@ class affiliatersDataTable extends DataTable
     protected function getColumns()
     {
         return [
-
-            Column::make('id'),
             Column::make('username')->title('اسم المستخدم'),
-            Column::make('email')->title('البريد اللكترونى'),
-            Column::make('count_inviters')->title('عدد المدعويين'),
+            Column::make('email')->title('البريد الالكتروني'),
+            // Column::make('count_inviters')->title('عدد المدعويين'),
             Column::make('salaries')->title('المرتبات'),
             Column::make('comissions')->title('العمولات'),
             Column::make('value_profits')->title('قيمة الارباح'),
@@ -115,7 +118,7 @@ class affiliatersDataTable extends DataTable
             Column::computed('action')
                   ->exportable(false)
                   ->printable(false)
-                  ->width(60)
+                  ->width(260)
                   ->addClass('text-center')
                   ->title(''),
         ];

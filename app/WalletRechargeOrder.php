@@ -3,10 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class WalletRechargeOrder extends Model
 {
     //
+    use SoftDeletes;
     protected $fillable = [
         'payment_id','user_id','value','notice','transaction_no','status',
     ];

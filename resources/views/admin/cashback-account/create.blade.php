@@ -19,13 +19,13 @@
                 <div class="input-group mb-3">
                     <p class="label-model">اسم شركة التداول</p>
                     <select name="company_id" class="select-companies">
-                        @forelse($account_details->user->accounts as $account)
+                        @forelse($account_details->user->accounts()->where('deleted_at',null)->get() as $account)
                             <option value="{{ $account->forex_company->id ?? '' }}">{{ $account->forex_company->name_ar ?? '' }} ( {{ $account->account_number ?? '' }} )</option>
                         @empty
                         @endforelse
                     </select>
                 </div>
-                
+
 
                 <div class="input-group mb-3">
                     <p class="label-model">شهر التداول</p>

@@ -26,7 +26,7 @@ class ForexCompanyDataTable extends DataTable
                 return '<img src="'.$image.'" class="img-table" />';
             })
             ->addColumn('action', function(ForexCompany $row){
-               $data = '<form method="post" action="'.url('forex-companies/'.$row->id).'">
+               $data = '<form class="form-delete" method="post" action="'.url('forex-companies/'.$row->id).'">
                <input type="hidden" name="_token" value=" '.csrf_token().' ">
                <input type="hidden" name="_method" value="DELETE">
                <button type="submit" class="btn btn-sm btn-sm btn-danger">حذف</button>
@@ -51,7 +51,7 @@ class ForexCompanyDataTable extends DataTable
     public function query(ForexCompanyDataTable $model)
     {
         # return $model->newQuery();
-        $forex_company = ForexCompany::select('*')->latest()->get();
+        $forex_company = ForexCompany::select('*')->orderBy('created_at','desc');
         return $this->applyScopes($forex_company);
     }
 

@@ -27,7 +27,7 @@ class ServicesOrdersDataTable extends DataTable
                 return $row->user->username ?? '';
             })
             ->addColumn('services_name',function(ServicesOrder $row){
-                return $row->services->post_title;
+                return $row->services->post_title ?? 'غير موجودة';
             })
             ->addColumn('status_subscription',function(ServicesOrder $row){
                 $status_subscription = ( $row->status == 1 ? ( $row->expire_at < Carbon::now()->toDateTimeString() ) ?'منتهية':'سارية' : 'لم تبدأ');
@@ -76,7 +76,7 @@ class ServicesOrdersDataTable extends DataTable
      */
     public function query(ServicesOrdersDataTable $model)
     {
-        $services_orders = ServicesOrder::select('*')->get();
+        $services_orders = ServicesOrder::select('*')->orderBy('created_at','desc');
         return $this->applyScopes($services_orders);
     }
 

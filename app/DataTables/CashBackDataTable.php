@@ -34,7 +34,7 @@ class CashBackDataTable extends DataTable
                 return amount_currency($row->value);
             })
             ->addColumn('action', function(CashBack $row){
-                $data = '<form method="post" action="'.url('cashback-accounts/'.$row->id).'" onsubmit="FormSubmitDelete(event)">
+                $data = '<form class="form-delete" method="post" action="'.url('cashback-accounts/'.$row->id).'">
                     <input type="hidden" name="_token" value=" '.csrf_token().' ">
                     <input type="hidden" name="_method" value="DELETE">
                     <button type="submit" class="btn btn-sm btn-danger btn-sm">حذف</button>
@@ -70,7 +70,7 @@ class CashBackDataTable extends DataTable
             $cashback_Query = $cashback_Query->whereBetween('created_at',[$this->from,$this->to]);
         }
         
-        $cashback_Query = $cashback_Query->orderby('month')->get();
+        $cashback_Query = $cashback_Query->orderBy('created_at','desc');
         return $this->applyScopes($cashback_Query);
     }
 
@@ -85,7 +85,7 @@ class CashBackDataTable extends DataTable
                     ->setTableId('cashbackdatatables-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
-                    ->dom('Bfrtip')
+                    ->dom('Blfrtip')
                     ->orderBy(6)
                     ->buttons(
                         Button::make('excel')->columns(':visible'),

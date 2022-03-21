@@ -3,10 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class BalanceWithdraw extends Model
 {
     //
+    use SoftDeletes;
       //
     protected $fillable = ['withdrawable_id','withdrawable_type','withdraw_value','status','wallet','wallet_account'];
 

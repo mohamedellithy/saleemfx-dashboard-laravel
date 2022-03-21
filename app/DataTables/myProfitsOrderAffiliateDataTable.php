@@ -47,7 +47,7 @@ class myProfitsOrderAffiliateDataTable extends DataTable
         $withdraw_pending_orders  = auth()->user()->affiliates ? auth()->user()->affiliates->withdraw()->where([
             'withdrawable_type'=> 'App\Affiliate',
             'status'           => $status,
-        ])->get() : collect();
+        ])->orderBy('created_at','desc') : collect();
 
 
         return $this->applyScopes($withdraw_pending_orders);

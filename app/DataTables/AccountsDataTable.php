@@ -22,7 +22,7 @@ class AccountsDataTable extends DataTable
         return datatables()
             ->of($query)
             ->addColumn('user_name', function(Account $row){
-                return $row->user->username ??'غير موجود';
+                return $row->user->username ?? 'غير موجود';
             })
             ->addColumn('company_name', function(Account $row){
                 return $row->forex_company->name_ar ?? '';
@@ -31,7 +31,12 @@ class AccountsDataTable extends DataTable
                 return $row->status_text;
             })
             ->addColumn('action', function(Account $row){
-               $data = '<div class="btn-sm btn-group">
+                $data = '<form class="form-delete" method="post" action="'.url('accounts/'.$row->id).'">
+                    <input type="hidden" name="_token" value=" '.csrf_token().' ">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn btn-sm btn-sm btn-danger">حذف</button>
+                    </form>';
+                $data .= '<div class="btn-sm btn-group">
                     <button type="button" class="btn btn-sm btn-warning">تغير الحالة</button>
                     <button type="button" class="btn btn-sm btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
                       <span class="sr-only">Toggle Dropdown</span>
@@ -62,14 +67,13 @@ class AccountsDataTable extends DataTable
      */
     public function query(AccountsDataTable $model)
     {
-        $accounts_Query = Account::select('*');
-        
+        $accounts_Query = Account::select('id','user_id','forex_company_id','account_number','account_balance','created_at','status');
+
         if($this->from){
             $accounts_Query = $accounts_Query->whereBetween('created_at',[$this->from,$this->to]);
         }
 
-        $accounts_Query = $accounts_Query->get();
-
+        $accounts_Query = $accounts_Query->orderBy('created_at','desc');
 
         return $this->applyScopes($accounts_Query);
         # return $model->newQuery();
@@ -122,7 +126,7 @@ class AccountsDataTable extends DataTable
             Column::computed('action')->title('')
                   ->exportable(false)
                   ->printable(false)
-                  ->width(60)
+                  ->width(260)
                   ->addClass('text-center'),
         ];
     }

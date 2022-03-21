@@ -36,7 +36,7 @@ class affiliateesDataTable extends DataTable
     public function query(affiliateesDataTable $model)
     {
         # return $model->newQuery();
-        $users = auth()->user()->affiliates ? auth()->user()->affiliates->affiliatees()->latest()->get() : collect();
+        $users = auth()->user()->affiliates ? auth()->user()->affiliates->affiliatees()->orderBy('created_at','desc') : collect();
         return $this->applyScopes($users);
     }
 

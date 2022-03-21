@@ -25,7 +25,7 @@ class UsersDataTable extends DataTable
             ->of($query)
             ->addColumn('action', function(User $row){
                $data  ='<a href="'.url('users/'.$row->id).'" class="btn btn-sm btn-info action-datatable-btn">تفاصيل </a>';
-               $data .= '<form method="post" action="'.url('users/'.$row->id).'" onsubmit="FormSubmitDelete(event)">
+               $data .= '<form class="form-delete" method="post" action="'.url('users/'.$row->id).'">
                <input type="hidden" name="_token" value="'.csrf_token().'" />
                <input type="hidden" name="_method" value="DELETE" />
                <button type="submit" class="btn btn-sm btn-danger">حذف</button>
@@ -81,7 +81,7 @@ class UsersDataTable extends DataTable
         }
 
 
-        $users = $users_Qry->get();
+        $users = $users_Qry->orderBy('created_at','desc');
         return $this->applyScopes($users);
     }
 

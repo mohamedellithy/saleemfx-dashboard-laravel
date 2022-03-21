@@ -22,7 +22,12 @@ class AnalyticsCategoryDataTable extends DataTable
         return datatables()
             ->of($query)
             ->addColumn('action', function(AnalyticsCategory $row){
-               $data = '<form method="post" action="'.url('analytics-categories/'.$row->id).'">
+                $data = '<form class="form-delete" method="post" action="'.url('analytics-categories/'.$row->id).'">
+                    <input type="hidden" name="_token" value=" '.csrf_token().' ">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn btn-sm btn-sm btn-danger">حذف</button>
+                    </form>';
+                $data .= '<form method="post" action="'.url('analytics-categories/'.$row->id).'">
                <input type="hidden" name="_token" value=" '.csrf_token().' ">
                <input type="hidden" name="_method" value="DELETE">
                <button type="submit" class="btn btn-sm btn-danger">حذف</button>
@@ -43,7 +48,7 @@ class AnalyticsCategoryDataTable extends DataTable
      */
     public function query(AnalyticsCategoryDatatable $model)
     {
-        $analytics_category = AnalyticsCategory::latest()->get();
+        $analytics_category = AnalyticsCategory::orderBy('created_at','desc');
         return $this->applyScopes($analytics_category);
     }
 
@@ -91,7 +96,7 @@ class AnalyticsCategoryDataTable extends DataTable
             Column::computed('action')
                   ->exportable(false)
                   ->printable(false)
-                  ->width(60)
+                  ->width(160)
                   ->addClass('text-center'),
         ];
     }

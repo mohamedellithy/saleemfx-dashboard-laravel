@@ -3,19 +3,19 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class Affiliate extends Model
 {
     //
-
+    use SoftDeletes;
     protected $fillable = ['inviter_id','code_affiliate','employee','status','commission_value'];
 
     public function affiliatees(){
-        return $this->hasMany('App\User','reference_affiliate_id','id');
+        return $this->hasMany('App\User','reference_affiliate_id','id')->withTrashed();
     }
 
     public function affiliaters(){
-        return $this->belongsTo('App\User','inviter_id','id');
+        return $this->belongsTo('App\User','inviter_id','id')->withTrashed();
     }
 
     public function profits(){
@@ -35,7 +35,7 @@ class Affiliate extends Model
     }
 
     public function withdraw(){
-        return $this->morphMany(BalanceWithdraw::class, 'withdrawable');
+        return $this->morphMany(BalanceWithdraw::class, 'withdrawable')->withTrashed();
     }
     
     public function getEmployeeSalariesAttribute(){

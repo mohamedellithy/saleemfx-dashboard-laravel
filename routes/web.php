@@ -68,8 +68,9 @@ Route::middleware(['auth','IfAdmin'])->group(function(){
     Route::get('withdraw-orders/pending','WithdrawOrdersController@pending_order')->name('withdraw-orders-pending');
     Route::get('withdraw-orders/others','WithdrawOrdersController@others_order');
     Route::get('change-withdraw-order-status/{order_id}/{status}','WithdrawOrdersController@change_status');
-    
+
     Route::get('courses-orders', 'OrderCourseController@index');
+    Route::delete('course-order/{id}', 'OrderCourseController@destroy');
 
 
     Route::get('affiliaters','affiliatersController@show_affiliaters');
@@ -77,6 +78,7 @@ Route::middleware(['auth','IfAdmin'])->group(function(){
     Route::get('affiliates-profites','affiliatersController@profites_affiliaters');
     Route::get('affiliates-withdraw-profites','affiliatersController@affiliaters_withdraw_profits');
     Route::get('affiliater/{user}','affiliatersController@show_affiliater_details');
+    Route::delete('affiliater/{user}','affiliatersController@delete_affiliater');
     Route::get('change-withdraw-affiliate-order-status/{order_id}/{status}','affiliatersController@change_status');
     Route::post('change-affiliter-position/{affiliate}','affiliatersController@change_affiliter_position');
     Route::post('affiliater-commission/{affiliate}','affiliatersController@change_affiliater_commission');
@@ -90,11 +92,11 @@ Route::middleware(['auth','IfAdmin'])->group(function(){
     Route::get('change-status-vip-order/{order_id}/{status}','VipServicesOrdersController@change_status');
     Route::get('change-status-experts-files-order/{order_id}/{status}','FileOrderController@change_status');
     Route::get('change-status-directrix-files-order/{order_id}/{status}','DirectrixOrderController@change_status');
-    
-    
+
+
     Route::post('add-salary-employee/{affiliate}','affiliatersController@add_salary_employee');
     Route::get('delete-employee-salary/{id}','affiliatersController@delete_salary_employee');
-    
+
 });
 
 Route::middleware(['auth','verified','IfUser'])->group(function(){
@@ -131,11 +133,11 @@ Route::middleware(['auth','verified','IfUser'])->group(function(){
 });
 
 Route::middleware(['auth','verified','IfAffiliater'])->group(function(){
-    
+
     Route::get('me','MyInformationsController@index');
     Route::post('update-info','MyInformationsController@update');
-    
-    
+
+
     Route::get('affiliates/create','AffiliateController@create_affiliate');
     Route::post('affiliates/store','AffiliateController@store_affiliate');
     Route::get('affiliatees/show','AffiliateController@show_affiliatees');
@@ -144,7 +146,7 @@ Route::middleware(['auth','verified','IfAffiliater'])->group(function(){
     Route::get('affiliatees/withdraws','AffiliateController@affiliater_withdraws');
     Route::get('affiliatees/show-employee-salaries','AffiliateController@show_employee_salaries');
     Route::post('affiliatees/send-invitation','AffiliateController@send_invitation_email');
-    
+
 });
 
 

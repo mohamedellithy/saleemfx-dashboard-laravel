@@ -105,8 +105,8 @@ class CashBackController extends Controller
             'value'      => 'required|min:0',
             'month'      => 'required'
         ]);
-        
-        $accounts_data['status']           =  1;
+
+        $accounts_data['status'] =  1;
 
         if($request->has('user_id')):
             $accounts_data['user_id']      =  $request->user_id;
@@ -120,7 +120,7 @@ class CashBackController extends Controller
 
         $this->validate($request,[
             'month' => Rule::unique('cash_backs')->where(function($query) use ($accounts){
-                return $query->whereIn('account_id',$accounts->pluck('id')->toArray());
+                return $query->whereIn('account_id',$accounts->pluck('id')->toArray())->where('deleted_at',null);
             })
         ]);
 
@@ -193,7 +193,7 @@ class CashBackController extends Controller
             'month' =>[
                 'required',
                 Rule::unique('cash_backs')->where(function($query) use ($cashback){
-                    return $query->where('account_id',$cashback->account_id);
+                    return $query->where('account_id',$cashback->account_id)->where('deleted_at',null);
                 })->ignore($id)
             ]
         ]);
@@ -207,8 +207,8 @@ class CashBackController extends Controller
         if($cashback->account->user->is_invited_by_affiliate()):
             $cashback->account->user->affiliatee->profits()->where([
                 'value'     => self::affiliate_profit($cashback->value,$cashback->account->user->affiliatee->id),
-                'invitee_id'=>$cashback->account->user->id,
-                'created_at'=>$cashback->created_at
+                'invitee_id'=> $cashback->account->user->id,
+                'created_at'=> $cashback->created_at
             ])->update([
                 'value'=>  self::affiliate_profit($request->value,$cashback->account->user->affiliatee->id),
             ]);
@@ -228,6 +228,19 @@ class CashBackController extends Controller
     public function destroy($id)
     {
         //
+        $cashback = Cashback::find($id);
+        # here delete value affiliates to account that have it
+        if($cashback->account->user->is_invited_by_affiliate()):
+            $cashback->account->user->affiliatee->profits()->where([
+                'value'     => self::affiliate_profit($cashback->value,$cashback->account->user->affiliatee->id),
+                'invitee_id'=> $cashback->account->user->id,
+                'created_at'=> $cashback->created_at
+            ])->delete();
+        endif;
+
+        if($cashback->delete()){
+            return redirect()->back()->with('message','تم حذف العنصر بنجاح');
+        }
     }
 
     public static function affiliate_profit($value,$affiliate_id){

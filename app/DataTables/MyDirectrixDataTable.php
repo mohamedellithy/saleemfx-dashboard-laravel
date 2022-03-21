@@ -53,7 +53,7 @@ class MyDirectrixDataTable extends DataTable
      */
     public function query(MyDirectrixDataTable $model)
     {
-        $files = Directrix::select('*')->latest()->get();
+        $files = Directrix::select('*')->orderBy('created_at','desc');
         return $this->applyScopes($files);
         # return $model->newQuery();
     }

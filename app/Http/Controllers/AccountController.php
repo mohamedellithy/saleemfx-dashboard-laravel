@@ -97,6 +97,10 @@ class AccountController extends Controller
     public function destroy($id)
     {
         //
+        $account = Account::destroy($id);
+        if($account){
+            return redirect()->back()->with('message','تم حذف العنصر بنجاح');
+        }
     }
 
     public function update_accounts_status_bulk(Request $request){

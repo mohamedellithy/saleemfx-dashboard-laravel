@@ -28,7 +28,7 @@ class AccountsCashBackDataTable extends DataTable
                 return $row->user ? $row->user->username: 'غير موجود' ;
             })
             ->addColumn('date_of_last_cashback', function(Account $row){
-                $last = $row->cashback()->first();
+                $last = $row->cashback()->where(['deleted_at'=>null])->first();
                 return $last ? date('Y-m',strtotime($last->month)) : '-';
             })
             ->addColumn('action', function(Account $row){
@@ -43,12 +43,13 @@ class AccountsCashBackDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\App\AccountsCashBackDataTable $model
+     * @param \App\AccountsCashBackDataTable $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(AccountsCashBackDataTable $model)
-    {
-        $accounts = Account::select('*')->where('status',1)->latest()->get();
+    public function query(AccountsCashBackDataTable $model){
+        $accounts = Account::select('*')->where([
+            'status'    =>1
+        ])->orderBy('created_at','desc');
         return $this->applyScopes($accounts);
     }
 

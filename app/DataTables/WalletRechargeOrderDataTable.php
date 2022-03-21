@@ -66,9 +66,9 @@ class WalletRechargeOrderDataTable extends DataTable
     {
         if($this->status != null):
             $this->status--;
-            $orders = WalletRechargeOrder::select('*')->where('status',$this->status)->latest()->get();
+            $orders = WalletRechargeOrder::select('*')->where('status',$this->status)->orderBy('created_at','desc');
         else:
-            $orders = WalletRechargeOrder::select('*')->latest()->get();
+            $orders = WalletRechargeOrder::select('*')->orderBy('created_at','desc');
         endif;
         return $this->applyScopes($orders);
         # return $model->newQuery();

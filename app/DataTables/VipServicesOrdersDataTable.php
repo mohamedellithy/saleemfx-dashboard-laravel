@@ -54,7 +54,7 @@ class VipServicesOrdersDataTable extends DataTable
      */
     public function query(VipServicesOrdersDataTable $model)
     {
-        $vip_services_orders = VipOrder::select('*')->get();
+        $vip_services_orders = VipOrder::select('*')->orderBy('created_at','desc');
         return $this->applyScopes($vip_services_orders);
     }
 

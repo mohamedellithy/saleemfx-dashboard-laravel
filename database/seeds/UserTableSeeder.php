@@ -15,7 +15,7 @@ class UserTableSeeder extends Seeder
         for($i = 0;$i<50;$i++){
             factory(App\User::class)->create();
         }
-        
+
         App\User::create([
           'firstname'=>'admin',
           'lastname'=>'admin',

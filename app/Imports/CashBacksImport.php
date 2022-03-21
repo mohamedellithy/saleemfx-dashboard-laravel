@@ -43,9 +43,7 @@ class CashBacksImport implements ToModel
                             ]);
                         }
                     }
-                } catch(\Exception $exception){
-                    
-                }
+                } catch(\Exception $exception){ }
             }
         
         

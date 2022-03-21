@@ -7,6 +7,8 @@ use App\DataTables\myAccountsDataTable;
 use Illuminate\Validation\Rule;
 use App\Account;
 use App\ForexCompany;
+use Mail;
+use App\Mail\NotifyNewAccountMail;
 class myAccountsController extends Controller
 {
     /**
@@ -46,9 +48,13 @@ class myAccountsController extends Controller
                 'required',
                 'exists:forex_companies,id'
             ],
-            'account_number'   => 'required|unique:accounts,account_number'
+            'account_number'   => [
+                'required',
+                 Rule::unique('accounts','account_number')->where(function($query){
+                    return $query->where('deleted_at', null);
+                })
+            ]
         ]);
-
 
         $insert_account = auth()->user()->accounts()->create([
            'forex_company_id' => $request->input('select-companies'),
@@ -57,7 +63,13 @@ class myAccountsController extends Controller
         ]);
 
         if($insert_account){
-           return redirect()->route('my-accounts.index')->with('message','تم اضافة حساب الشركة بنجاح');
+            try{
+                Mail::to(\Config::get('app.Notify_Email'))
+                ->send(new NotifyNewAccountMail());
+                return redirect()->route('my-accounts.index')->with('message','تم اضافة حساب الشركة بنجاح');
+            }catch(\Exception $e){
+                return redirect()->back()->withErrors($e->getMessage());
+            }
         }
     }
 
@@ -95,7 +107,7 @@ class myAccountsController extends Controller
     public function update(Request $request, $id)
     {
         //
-        
+
          $this->validate($request,[
             'account_balance'   => 'required'
         ]);

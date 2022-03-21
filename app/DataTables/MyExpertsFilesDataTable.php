@@ -53,7 +53,7 @@ class MyExpertsFilesDataTable extends DataTable
      */
     public function query(MyExpertsFilesDataTable $model)
     {
-        $files = ExpertsFiles::select('*')->latest()->get();
+        $files = ExpertsFiles::select('*')->orderBy('created_at','desc');
         return $this->applyScopes($files);
         # return $model->newQuery();
     }

@@ -54,7 +54,7 @@ class ExpertsFilesOrderDataTable extends DataTable
      */
     public function query(ExpertsFilesOrderDataTable $model)
     {
-        $experts_file_order = FileOrder::select('*')->latest()->get();
+        $experts_file_order = FileOrder::select('*')->orderBy('created_at','desc');
         return $model->applyScopes($experts_file_order);
     }
 

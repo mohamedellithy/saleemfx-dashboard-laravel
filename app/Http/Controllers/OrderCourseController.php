@@ -17,7 +17,7 @@ class OrderCourseController extends Controller
     public function index(OrderCoursesDataTable $dataTable)
     {
         //
-        
+
         return $dataTable->render('admin.courses.index');
     }
 
@@ -29,7 +29,7 @@ class OrderCourseController extends Controller
     public function create(Courses $course)
     {
         //
-        
+
         return view('courses.form-register-course')->with('course',$course);
     }
 
@@ -57,13 +57,13 @@ class OrderCourseController extends Controller
            'phone'=>'required',
            'telegram_number'=>'required'
         ]);
-        
-        
+
+
         if(auth()->user()):
             $request->merge([
                'user_id'=>auth()->user()->id
             ]);
-            
+
             $this->validate($request,[
                'user_id'=>[
                     Rule::unique('order_courses')->where(function ($query) use ($course) {
@@ -73,11 +73,11 @@ class OrderCourseController extends Controller
                     })
                 ]
             ]);
-            
+
         endif;
-        
+
         $course->course_order()->create($request->all());
-        
+
         return redirect()->back()->with('message','تم التسجيل فى الدورة بنجاح');
     }
 
@@ -124,5 +124,9 @@ class OrderCourseController extends Controller
     public function destroy($id)
     {
         //
+        $course = OrderCourse::destroy($id);
+        if($course){
+            return redirect()->back()->with('message','لقد تم حذف الطلب بنجاح');
+        }
     }
 }

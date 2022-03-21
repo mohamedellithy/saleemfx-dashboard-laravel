@@ -48,7 +48,7 @@ class ProfitAffiliateDataTable extends DataTable
     public function query(affiliatersDataTable $model)
     {
         # return $model->newQuery();
-        $users = ProfitAffiliate::select('*')->where('salary',0)->get();
+        $users = ProfitAffiliate::select('*')->where('salary',0)->orderBy('created_at','desc');
         return $this->applyScopes($users);
     }
 

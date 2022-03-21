@@ -3,10 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class ProfitAffiliate extends Model
 {
     //
+    use SoftDeletes;
     protected $fillable = ['value','invitee_id','salary'];
     public function affiliater(){
         return $this->belongsTo('App\Affiliate','affiliate_id','id');

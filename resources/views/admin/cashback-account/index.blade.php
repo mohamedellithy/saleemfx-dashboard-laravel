@@ -6,6 +6,7 @@
     <link href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/vanilla-datetimerange-picker.css') }}" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
 
    <link rel="stylesheet" href="{{ asset('css/Adminlte-rtl.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin_custom.css') }}">
@@ -72,6 +73,7 @@
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script src="{{ asset('js/vanilla-datetimerange-picker.js') }}"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 
     <script src="{{ asset('js/admin_custom.js') }}" ></script>
     <script src="{{ asset('vendor/datatables/buttons.server-side.js') }}"></script>
@@ -146,6 +148,35 @@
                 }
             });
         });
+    </script>
+
+    <script> 
+    $('table').on('submit','form.form-delete',function(e){
+        e.preventDefault();
+        $.confirm({
+            title: 'هل تريد حذف العنصر ؟',
+            content: 'قم بالتأكد من العنصر قبل اجراء عملية الحذف',
+            type: 'red',
+            buttons: {   
+                ok: {
+                    text: "موافق ",
+                    btnClass: 'btn-primary',
+                    keys: ['enter'],
+                    action: function(){
+                        e.target.submit();
+                    }
+                },
+                cancel: {
+                    text: "الغاء ",
+                    btnClass: 'btn-danger',
+                    keys: ['esc'],
+                    action :function(){
+                       
+                    }
+                }
+            }
+        });
+    });
     </script>
 
 @stop

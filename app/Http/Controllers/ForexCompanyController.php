@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\DataTables\ForexCompanyDataTable;
 use App\User;
 use App\ForexCompany;
+use Illuminate\Validation\Rule;
 use Storage;
 class ForexCompanyController extends Controller
 {
@@ -53,8 +54,18 @@ class ForexCompanyController extends Controller
     {
         //
         $this->validate($request,[
-            'name_ar' =>'required|unique:forex_companies,name_ar',
-            'name_en' =>'required|unique:forex_companies,name_en',
+            'name_ar' =>[
+                'required',
+                Rule::unique('forex_companies','name_ar')->where(function($query) {
+                    return $query->where('deleted_at',null);
+                })
+            ],
+            'name_en' =>[
+                'required',
+                Rule::unique('forex_companies','name_en')->where(function($query) {
+                    return $query->where('deleted_at',null);
+                })
+            ],
             'link_company' => 'sometimes|URL',
             'image' =>'required|image|mimes:png,jpg,jpeg,gif'
         ]);

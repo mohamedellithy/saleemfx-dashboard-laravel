@@ -31,6 +31,14 @@ class OrderCoursesDataTable extends DataTable
             })
             ->addColumn('created_at',function(OrderCourse $row){
                 return $row->created_at;
+            })
+            ->addColumn('action',function(OrderCourse $row){
+                $data = '<form class="form-delete" method="post" action="'.url('course-order/'.$row->id).'">
+                <input type="hidden" name="_token" value=" '.csrf_token().' ">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn btn-sm btn-sm btn-danger">حذف</button>
+                </form>';
+                return $data;
             });
     }
 
@@ -42,7 +50,7 @@ class OrderCoursesDataTable extends DataTable
      */
     public function query(OrderCoursesDataTable $model)
     {
-        $courses_orders = OrderCourse::select('*')->get();
+        $courses_orders = OrderCourse::select('*')->orderBy('created_at','desc');
         return $this->applyScopes($courses_orders);
     }
 
@@ -92,8 +100,13 @@ class OrderCoursesDataTable extends DataTable
             Column::make('telegram_number')->title('رقم التيليجرام')->visible(false),
             Column::make('course_name')->title('اسم الدورة'),
             Column::make('course_start_at')->title('موعد بدأ الدورة'),
-            Column::make('created_at')->title('تاريخ التسجيل')
-                 
+            Column::make('created_at')->title('تاريخ التسجيل'),
+            Column::computed('action')->title('')
+                  ->exportable(false)
+                  ->printable(false)
+                  ->width(260)
+                  ->addClass('text-center'),
+
         ];
     }
 

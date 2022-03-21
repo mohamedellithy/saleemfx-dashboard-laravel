@@ -3,11 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class Account extends Model
 {
     //
-
+    use SoftDeletes;
      /**
      * The attributes that are mass assignable.
      *
@@ -18,15 +18,15 @@ class Account extends Model
     ];
 
     public function forex_company(){
-        return $this->belongsTo('App\ForexCompany','forex_company_id','id');
+        return $this->belongsTo('App\ForexCompany','forex_company_id','id')->withTrashed();;
     }
 
     public function user(){
-        return $this->belongsTo('App\User','user_id','id');
+        return $this->belongsTo('App\User','user_id','id')->withTrashed();;
     }
 
     public function cashback(){
-        return $this->hasMany('App\CashBack','account_id','id');
+        return $this->hasMany('App\CashBack','account_id','id')->withTrashed();;
     }
 
     public function getAccountBalanceAttribute($value){

@@ -3,10 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class FileOrder extends Model
 {
     //
+    use SoftDeletes;
     protected $fillable = [
         'user_id','expert_file_id'
     ];

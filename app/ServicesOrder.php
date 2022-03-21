@@ -3,10 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class ServicesOrder extends Model
 {
     //
+    use SoftDeletes;
     protected $table    = 'services_orders';
     protected $connection = 'mysql';
 

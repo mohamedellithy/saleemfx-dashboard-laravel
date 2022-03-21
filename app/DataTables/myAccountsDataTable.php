@@ -38,8 +38,8 @@ class myAccountsDataTable extends DataTable
                 else:
                     $data .= '';
                 endif;
-                
-                
+
+
 
                 return $data;
             })
@@ -57,7 +57,7 @@ class myAccountsDataTable extends DataTable
     public function query(myAccountsDataTable $model)
     {
         # return $model->newQuery();
-        $accounts = auth()->user()->accounts;
+        $accounts = auth()->user()->accounts()->where('deleted_at',null);
         return $this->applyScopes($accounts);
     }
 
