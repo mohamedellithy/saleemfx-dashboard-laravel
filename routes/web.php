@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('comman-arisan', function () {
     // \Artisan::call('make:migration add_affiliate_code_users --table=users');
     //\Artisan::call('migrate:refresh');
-      \Artisan::call('storage:link');
-    // \Artisan::call('migrate');
+    //  \Artisan::call('storage:link');
+     \Artisan::call('migrate');
 });
 
 
