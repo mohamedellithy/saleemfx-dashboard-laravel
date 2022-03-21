@@ -7,7 +7,7 @@
 @component('mail::button', ['url' => url('accounts')])
 قم بمراجعة الحساب الان
 @endcomponent
-
+<br><br>
 @component('mail::button', ['url' => url('users/'.auth()->user()->id)])
 مراجعة الحساب الخاص بالمشترك
 @endcomponent
