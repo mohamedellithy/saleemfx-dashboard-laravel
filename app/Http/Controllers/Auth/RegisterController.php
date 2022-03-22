@@ -96,17 +96,19 @@ class RegisterController extends Controller
             $data['role'] = 2;
         }
         
-        try {
-            Mail::to(\Config::get('app.Notify_Email'))
-            ->send(new NotifyNewUserMail());
-        }catch(\Exception $e){}
-
         return User::create($data);
 
        
     }
     
     protected function redirectTo(){
+        // here send notify
+        try {
+            Mail::to(\Config::get('app.Notify_Email'))
+            ->send(new NotifyNewUserMail());
+        }catch(\Exception $e){}
+        
+        // here handle redirect
         if (auth()->user()->role == 1) {
             return '/users';
         }
