@@ -396,6 +396,15 @@ form.form-status {
     padding: 5px;
 }
 
+.navbar-expand .navbar-nav .dropdown-menu {
+    padding: 24px !important;
+}
+
+.navbar-nav>.user-menu>.dropdown-menu>.user-body {
+    border-top: 0px solid #dee2e6;
+    border-radius: 0px;
+}
+
 @media(max-width: 1000px) {
     .navbar-nav .menu-items {
         display: none !important;
