@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Session;
 use App\Affiliate;
+use Mail;
+use App\Mail\NotifyNewUserMail;
 class RegisterController extends Controller
 {
     /*
@@ -94,9 +96,14 @@ class RegisterController extends Controller
             $data['role'] = 2;
         }
         
-       
+        try {
+            Mail::to(\Config::get('app.Notify_Email'))
+            ->send(new NotifyNewUserMail());
+        }catch(\Exception $e){}
 
         return User::create($data);
+
+       
     }
     
     protected function redirectTo(){
