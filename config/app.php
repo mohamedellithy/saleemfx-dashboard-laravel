@@ -22,7 +22,7 @@ return [
     |
     */
 
-    'Notify_Email' => env('Notify_Email', 'mohamedellithyfreelanc@gmail.com'),
+    'Notify_Email' => env('Notify_Email', 'saleemfx15@gmail.com'),
 
 
     /*
@@ -247,7 +247,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
-        
+
     ],
 
 ];
