@@ -39,7 +39,7 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    protected function redirectTo(){
+    protected function redirectPath(){
         if (auth()->user()->isAdmin()) {
             return '/users';
         }
