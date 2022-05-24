@@ -21,7 +21,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/my-accounts';
+    public const HOME = '/login';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -45,7 +45,7 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
-        
+
          $this->removeIndexPhpFromUrl();
 
         //
@@ -79,7 +79,7 @@ class RouteServiceProvider extends ServiceProvider
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
     }
-    
+
      protected function removeIndexPhpFromUrl()
     {
         if (Str::contains(request()->getRequestUri(), '/index.php/')) {
