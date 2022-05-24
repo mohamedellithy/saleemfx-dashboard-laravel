@@ -24,16 +24,6 @@ class RouteServiceProvider extends ServiceProvider
      */
     public const HOME = '/my-accounts';
 
-    protected function authenticated(Request $request, $user){
-        if (auth()->user()->isAdmin()) {
-            return '/users';
-        }
-        if (auth()->user()->isUser()) {
-            return '/my-accounts';
-        }
-        return '/affiliates/create';
-    }
-
     /**
      * Define your route model bindings, pattern filters, etc.
      *
