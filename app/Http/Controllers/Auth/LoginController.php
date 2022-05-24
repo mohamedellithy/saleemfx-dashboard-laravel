@@ -40,6 +40,7 @@ class LoginController extends Controller
     }
 
     protected function redirectTo(){
+        return auth()->user()->role;
         if (auth()->user()->isAdmin()) {
             return '/users';
         }
