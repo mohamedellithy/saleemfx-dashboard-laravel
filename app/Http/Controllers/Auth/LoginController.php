@@ -36,12 +36,6 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        if (auth()->user()->isAdmin()):
-            $this->redirectTo  = '/users';
-        elseif (auth()->user()->isUser()):
-            $this->redirectTo  = '/my-accounts';
-        endif;
-
         $this->middleware('guest')->except('logout');
     }
 
