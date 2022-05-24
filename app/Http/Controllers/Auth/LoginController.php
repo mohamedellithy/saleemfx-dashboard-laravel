@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -37,7 +38,7 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-    
+
     protected function redirectTo(){
         if (auth()->user()->isAdmin()) {
             return '/users';
@@ -47,7 +48,17 @@ class LoginController extends Controller
         }
         return '/affiliates/create';
     }
-    
+
+    protected function authenticated(Request $request, $user){
+        if (auth()->user()->isAdmin()) {
+            return '/users';
+        }
+        if (auth()->user()->isUser()) {
+            return '/my-accounts';
+        }
+        return '/affiliates/create';
+    }
+
     public function username(){
         // if(filter_var(request()->input('email'),FILTER_VALIDATE_EMAIL)){
         //     return 'email';
