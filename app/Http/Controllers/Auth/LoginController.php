@@ -49,16 +49,6 @@ class LoginController extends Controller
         return '/affiliates/create';
     }
 
-    protected function authenticated(Request $request, $user){
-        if (auth()->user()->isAdmin()) {
-            return '/users';
-        }
-        if (auth()->user()->isUser()) {
-            return '/my-accounts';
-        }
-        return '/affiliates/create';
-    }
-
     public function username(){
         // if(filter_var(request()->input('email'),FILTER_VALIDATE_EMAIL)){
         //     return 'email';

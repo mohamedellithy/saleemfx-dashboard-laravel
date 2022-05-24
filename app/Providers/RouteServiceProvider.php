@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 class RouteServiceProvider extends ServiceProvider
 {
     /**
@@ -22,6 +23,16 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     public const HOME = '/my-accounts';
+
+    protected function authenticated(Request $request, $user){
+        if (auth()->user()->isAdmin()) {
+            return '/users';
+        }
+        if (auth()->user()->isUser()) {
+            return '/my-accounts';
+        }
+        return '/affiliates/create';
+    }
 
     /**
      * Define your route model bindings, pattern filters, etc.
