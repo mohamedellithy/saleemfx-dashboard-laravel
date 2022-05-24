@@ -22,7 +22,7 @@ class MyExpertsFilesDataTable extends DataTable
         return datatables()
             ->of($query)
             ->addColumn('action', function(ExpertsFiles $row){
-                $data ='<a href="'.url('storage/'.$row->attachments()->first()->attachment_url ?? '').'" class="btn btn-success btn-sm" download>تحميل</a>';
+                $data ='<a href="'.url('storage/'.$row->attachments()->first()->attachment_url ?? '').'" class="btn btn-success btn-sm" download rel="noopener noreferrer">تحميل</a>';
                 if($row->allow == 0):
                     $order = auth()->user()->file_orders()->where('expert_file_id',$row->id)->first();
                     if(empty($order)):
