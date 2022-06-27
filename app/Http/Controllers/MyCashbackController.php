@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ForexCompany;
+use Illuminate\Support\Facades\Validator;
 class MyCashbackController extends Controller
 {
     /**
@@ -37,11 +38,15 @@ class MyCashbackController extends Controller
     public function store(Request $request)
     {
         //
-        $this->validate($request,[
+        $valid = Validator::make($request,[
             'value' => 'required|gte:'.(Options()->setting['min_cashback_withdraw'] ?? 25 ).'|lte:'.(auth()->user()->total_cashback_can_withdraw() - auth()->user()->withdraw_cashbacks_pendings_total() ),
             'wallet'=>'required',
             'wallet_account'=>'required'
         ]);
+
+        if((strtotime(date('Y-m-1')) > strtotime(date('Y-m-d')) ) || ( strtotime(date('Y-m-d')) > strtotime(date('Y-m-5')) ) ){
+            return back()->withErrors('عذرا يمكنك فقط طلب سحب ارصدتك خلال 1 - 5 من كل شهر');
+        }
 
         auth()->user()->withdraw_form_cashbacks()->create([
             'withdraw_value' => $request->value,
