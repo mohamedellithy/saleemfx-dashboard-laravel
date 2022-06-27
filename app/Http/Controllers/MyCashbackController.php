@@ -38,7 +38,7 @@ class MyCashbackController extends Controller
     public function store(Request $request)
     {
         //
-        $valid = Validator::make($request,[
+        $valid = $this->validate($request,[
             'value' => 'required|gte:'.(Options()->setting['min_cashback_withdraw'] ?? 25 ).'|lte:'.(auth()->user()->total_cashback_can_withdraw() - auth()->user()->withdraw_cashbacks_pendings_total() ),
             'wallet'=>'required',
             'wallet_account'=>'required'
