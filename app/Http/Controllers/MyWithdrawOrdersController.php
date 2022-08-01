@@ -15,6 +15,7 @@ class MyWithdrawOrdersController extends Controller
     {
         //
         $payments        = PaymentMethod::published()->get();
+        dd($payments);
         return view('user.my-cashback-withdraw-orders.index')->with('payments', $payments);
     }
 
