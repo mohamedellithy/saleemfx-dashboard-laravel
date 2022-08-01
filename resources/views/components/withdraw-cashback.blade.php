@@ -19,7 +19,7 @@
                                         <input name="value" type="number" class="form-control" max="{{ auth()->user()->total_cashback_can_withdraw() }}" required>
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-md-12">
                                     <div class="input-group mb-3">
                                         <p class="label-model">اختار المحفظة لاستقبال الأرباح</p>
@@ -29,9 +29,17 @@
                                             <option value="Neteller">Neteller</option>
                                             <option value="Perfect-Money">Perfect Money</option>
                                         </select>
+                                        <select name='wallet' class="select-companies" required>
+                                            <option>اختار وسيلة الدفع </option>
+                                            @forelse($payments as $payment)
+                                                <option value="{{ $payment->ID }}"> {{ $payment->ar_payment_name }} </option>
+                                            @empty
+                                                <option> لا يوجد اى وسائل دفع متاحه</option>
+                                            @endforelse
+                                        </select>
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-md-12">
                                     <div class="input-group mb-3">
                                         <p class="label-model">رقم الحساب أو البريد الخاص بالحساب</p>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\ModelWordpress\PaymentMethod;
 class MyWithdrawOrdersController extends Controller
 {
     /**
@@ -14,7 +14,9 @@ class MyWithdrawOrdersController extends Controller
     public function index()
     {
         //
-        return view('user.my-cashback-withdraw-orders.index');
+        $payments        = PaymentMethod::published()->get();
+        $Context['payments'] = $payments;
+        return view('user.my-cashback-withdraw-orders.index',compact('Context'));
     }
 
     /**
