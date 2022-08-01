@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\ForexCompany;
 use Illuminate\Support\Facades\Validator;
+use App\ModelWordpress\PaymentMethod;
 class MyCashbackController extends Controller
 {
     /**
@@ -16,7 +17,8 @@ class MyCashbackController extends Controller
     {
         //
         $companies = ForexCompany::select('id','name_ar','name_en')->get();
-        return view('user.cashbacks.index',compact('companies'));
+        $payments  = PaymentMethod::published()->get();
+        return view('user.cashbacks.index',compact('companies','payments'));
     }
 
     /**
