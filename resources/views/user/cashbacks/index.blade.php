@@ -149,7 +149,7 @@
         </div>
     @endif
 
-    <x-withdraw-cashback></x-withdraw-cashback>
+    <x-withdraw-cashback :payments="$payments"></x-withdraw-cashback>
 @stop
 
 @push('js')
