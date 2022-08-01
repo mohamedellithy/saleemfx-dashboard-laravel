@@ -29,7 +29,7 @@
                                             <option value="Neteller">Neteller</option>
                                             <option value="Perfect-Money">Perfect Money</option>
                                         </select>
-                                        {{ $attributes }}
+                                        {{ $attributes['payments'] }}
 
                                     </div>
                                 </div>
