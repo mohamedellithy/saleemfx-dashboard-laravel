@@ -142,25 +142,25 @@
                             <td colspan="4"> لايوجد كاش باك فى حسابك </td>
                         </tr>
                     @endforelse
-                    
+
                     @forelse(auth()->user()->withdraw_for_services()->latest()->get() as $withdraw_services_order)
                         <tr>
                             <td>{{ amount_currency($withdraw_services_order->withdraw_value) }}</td>
                             <td colspan="2"> الاشتراك فى الخدمة ( {{ $withdraw_services_order->Withdrawable->services->post_title ?? '' }} )</td>
                             <td>{{ $withdraw_services_order->created_at }}</td>
                             <td>{!! $withdraw_services_order->status_order  !!}</td>
-                            
+
                         </tr>
                     @empty
                     @endforelse
-                    
+
                 </tbody>
             </table>
 
         </div>
     </div>
 
-    <x-withdraw-cashback></x-withdraw-cashback>
+    <x-withdraw-cashback :payments="{{ $payments }}"></x-withdraw-cashback>
 @stop
 
 @push('js')
