@@ -15,8 +15,7 @@ class MyWithdrawOrdersController extends Controller
     {
         //
         $payments        = PaymentMethod::published()->get();
-        $Context['payments'] = $payments;
-        return view('user.my-cashback-withdraw-orders.index',compact('Context'));
+        return view('user.my-cashback-withdraw-orders.index')->with('payments', $payments);
     }
 
     /**
