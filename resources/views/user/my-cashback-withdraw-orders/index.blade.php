@@ -159,7 +159,7 @@
 
         </div>
     </div>
-
+    <?php var_dump($payments); ?>
     <x-withdraw-cashback :payments="$payments"></x-withdraw-cashback>
 
 @stop
