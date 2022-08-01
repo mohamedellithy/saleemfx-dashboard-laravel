@@ -24,13 +24,7 @@
                                     <div class="input-group mb-3">
                                         <p class="label-model">اختار المحفظة لاستقبال الأرباح</p>
                                         <select name='wallet' class="select-companies" required>
-                                            <option value>اختار المحفظة </option>
-                                            <option value="Skrill">Skrill</option>
-                                            <option value="Neteller">Neteller</option>
-                                            <option value="Perfect-Money">Perfect Money</option>
-                                        </select>
-                                        <select name='wallet' class="select-companies" required>
-                                            <option>اختار وسيلة الدفع </option>
+                                            <option value>اختار المحفظة  </option>
                                             @forelse($payments as $payment)
                                                 <option value="{{ $payment->ID }}"> {{ $payment->ar_payment_name }} </option>
                                             @empty
