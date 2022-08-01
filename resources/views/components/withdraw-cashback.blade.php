@@ -26,7 +26,7 @@
                                         <select name='wallet' class="select-companies" required>
                                             <option value>اختار المحفظة  </option>
                                             @forelse($payments as $payment)
-                                                <option value="{{ $payment->ID }}"> {{ $payment->ar_payment_name }} </option>
+                                                <option value="{{ $payment->ar_payment_name }}"> {{ $payment->ar_payment_name }} </option>
                                             @empty
                                                 <option> لا يوجد اى وسائل دفع متاحه</option>
                                             @endforelse
