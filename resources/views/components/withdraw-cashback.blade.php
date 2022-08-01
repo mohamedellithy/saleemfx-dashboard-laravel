@@ -30,14 +30,7 @@
                                             <option value="Perfect-Money">Perfect Money</option>
                                         </select>
                                         {{ $attributes }}
-                                        <!-- <select name='wallet' class="select-companies" required>
-                                            <option>اختار وسيلة الدفع </option>
-                                            @forelse($payments as $payment)
-                                                <option value="{{ $payment->ID }}"> {{ $payment->ar_payment_name }} </option>
-                                            @empty
-                                                <option> لا يوجد اى وسائل دفع متاحه</option>
-                                            @endforelse
-                                        </select> -->
+
                                     </div>
                                 </div>
 
