@@ -187,18 +187,22 @@
 
         jQuery(document).on('click','.addCashback',function(e){
             var Cashback_ID =  jQuery(this).attr('data-id');
-            $.ajax({
-                type:'GET',
-                url:"{{ route('cashback-accounts.create') }}",
-                data:{
-                    ID:Cashback_ID
-                },
-                success:function(data){
-                    console.log(data);
-                    jQuery('.modal-content').html(data.html)
-                    $("#modal-lg").modal('show');
-                }
-            });
+            let confirm_delete = confirm('هل انت متأكد انك تريد حذف المحدد من الكاش باك ');
+            if(confirm_delete){
+                $.ajax({
+                    type:'GET',
+                    url:"{{ route('cashback-accounts.create') }}",
+                    data:{
+                        ID:Cashback_ID
+                    },
+                    success:function(data){
+                        console.log(data);
+                        jQuery('.modal-content').html(data.html)
+                        $("#modal-lg").modal('show');
+                    }
+                });
+            }
+           
         });
     </script>
 
