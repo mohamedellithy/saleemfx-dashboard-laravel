@@ -33,6 +33,15 @@ class CashBackDataTable extends DataTable
             ->addColumn('value', function(CashBack $row){
                 return amount_currency($row->value);
             })
+            ->addColumn('cashback_active', function(CashBack $row){
+                if($row->cashback_allow_to_withdraw()):
+                    $data = '<i class="fa-solid fa-circle" style="color:green"></i>';
+                else:
+                    $data = '<i class="fa-solid fa-circle" style="color:red"></i>';
+                endif;
+
+                return $data;
+            })
             ->addColumn('action', function(CashBack $row){
                 $data = '<form class="form-delete" method="post" action="'.url('cashback-accounts/'.$row->id).'">
                     <input type="hidden" name="_token" value=" '.csrf_token().' ">
@@ -69,7 +78,7 @@ class CashBackDataTable extends DataTable
         if($this->from){
             $cashback_Query = $cashback_Query->whereBetween('created_at',[$this->from,$this->to]);
         }
-        
+
         $cashback_Query = $cashback_Query->orderBy('created_at','desc');
         return $this->applyScopes($cashback_Query);
     }
@@ -116,6 +125,7 @@ class CashBackDataTable extends DataTable
             Column::make('user_name')->title('اسم المستخدم'),
             Column::make('account_number')->title('رقم الحساب'),
             Column::make('value')->title('قيمة المبلغ'),
+            Column::make('cashback_active')->title('قابل للسحب'),
             Column::make('created_at')->title('تاريخ الانشاء'),
             Column::computed('action')->title('')
                   ->exportable(false)
