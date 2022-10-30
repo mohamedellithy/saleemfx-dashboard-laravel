@@ -178,6 +178,7 @@
                 },
                 success:function(data){
                     console.log(data);
+                    http_query_build(url_dataTable);
                 }
             });
 

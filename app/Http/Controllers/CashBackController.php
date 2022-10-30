@@ -253,8 +253,9 @@ class CashBackController extends Controller
     }
 
     public function delete_cashbacks_selected(Request $request){
+        $delete_selected_cashbacks = Cashback::whereIn('id',$request->input('cashback_ids'))->delete();
         return response()->json([
-            'test' => $request->input('cashback_ids'),
+            'test' => $delete_selected_cashbacks,
         ]);
     }
 }
