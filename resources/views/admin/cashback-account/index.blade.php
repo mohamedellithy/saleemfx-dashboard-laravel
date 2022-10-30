@@ -15,6 +15,8 @@
 
 @section('plugins.Select2', true)
 
+@section('plugins.niceSelect',true)
+
 @section('content_header')
    عرض الكاش باك
 @stop
