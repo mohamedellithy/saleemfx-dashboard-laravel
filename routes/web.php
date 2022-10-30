@@ -63,7 +63,7 @@ Route::middleware(['auth','IfAdmin'])->group(function(){
     Route::get('cashback/import-cashback','CashBackController@create_import_cashback');
     Route::post('cashback/import-cashback','CashBackController@store_import_cashback');
     Route::resource('cashback-accounts','CashBackController');
-
+    Route::post('delete-cashbacks','CashBackController@delete_cashbacks_selected')->name('delete-cashbacks');
 
     Route::get('withdraw-orders/pending','WithdrawOrdersController@pending_order')->name('withdraw-orders-pending');
     Route::get('withdraw-orders/others','WithdrawOrdersController@others_order');

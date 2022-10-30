@@ -251,4 +251,10 @@ class CashBackController extends Controller
         $affiliate = Affiliate::find($affiliate_id);
         return ($value * ($affiliate->commission_value ? $affiliate->commission_value : Options()->setting['affiliate_value']) ) / 100;
     }
+
+    public function delete_cashbacks_selected(Request $request){
+        return response()->json([
+            'test' => $request->input('cashback_ids'),
+        ]);
+    }
 }

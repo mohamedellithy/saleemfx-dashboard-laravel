@@ -169,6 +169,18 @@
             jQuery(".select-items-db:checked").each(function(el,item){
                 cashback_ids.push(jQuery(item).val());
             });
+
+            $.ajax({
+                type:'POST',
+                url:"{{ route('delete-cashbacks') }}",
+                data:{
+                    cashback_ids:cashback_ids
+                },
+                success:function(data){
+                    console.log(data);
+                }
+            });
+
             console.log(cashback_ids);
         });
 
