@@ -8,8 +8,15 @@
     <link rel="stylesheet" href="{{ asset('css/vanilla-datetimerange-picker.css') }}" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
 
-   <link rel="stylesheet" href="{{ asset('css/Adminlte-rtl.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/Adminlte-rtl.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin_custom.css') }}">
+
+    <style>
+        .services.status {
+           display: block !important;
+           width: 100%;
+        }
+    </style>
 
 @stop
 
@@ -53,6 +60,10 @@
                         <option value="">الكاش باك المنتهي</option>
                         <option value="">الكاش باك الغير منتهى</option>
                     </select>
+                </div>
+                <div class="form-group data-search">
+                    <label></label>
+                    <button type="button" class="btn btn-danger btn-sm btn_delete_selected">حذف</button>
                 </div>
             </div>
             {!! $dataTable->table() !!}
