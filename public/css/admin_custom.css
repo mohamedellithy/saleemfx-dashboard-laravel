@@ -390,6 +390,7 @@ form.form-status {
 .data-search {
     display: inline-block;
     float: left;
+    margin: 7px;
 }
 
 .data-search label {

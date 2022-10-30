@@ -62,7 +62,7 @@
                     </select>
                 </div>
                 <div class="form-group data-search">
-                    <label></label>
+                    <br/>
                     <button type="button" class="btn btn-danger btn-sm btn_delete_selected">حذف</button>
                 </div>
             </div>
