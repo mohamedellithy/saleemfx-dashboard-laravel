@@ -45,6 +45,13 @@
                      <input name="DateBetween" class="form-control vipOrders status" type="text" placeholder="البحث بالتاريخ" id="datetimerange-input1" />
                 </div>
             </div>
+            <div class="show-buttons-filter">
+                <select name="services" class="services status">
+                    <option value="">كل الكاشات</option>
+                    <option value="">الكاش باك المنتهي</option>
+                    <option value="">الكاش باك الغير منتهى</option>
+                </select>
+            </div>
             {!! $dataTable->table() !!}
         </div>
     </div>
@@ -150,14 +157,14 @@
         });
     </script>
 
-    <script> 
+    <script>
     $('table').on('submit','form.form-delete',function(e){
         e.preventDefault();
         $.confirm({
             title: 'هل تريد حذف العنصر ؟',
             content: 'قم بالتأكد من العنصر قبل اجراء عملية الحذف',
             type: 'red',
-            buttons: {   
+            buttons: {
                 ok: {
                     text: "موافق ",
                     btnClass: 'btn-primary',
@@ -171,7 +178,7 @@
                     btnClass: 'btn-danger',
                     keys: ['esc'],
                     action :function(){
-                       
+
                     }
                 }
             }
