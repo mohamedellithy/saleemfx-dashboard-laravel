@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ asset('css/admin_custom.css') }}">
 
     <style>
-        .services.status {
+        .nice-select.status {
            display: block !important;
            width: 100%;
         }
