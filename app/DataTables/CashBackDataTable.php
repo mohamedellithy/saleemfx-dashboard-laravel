@@ -35,9 +35,9 @@ class CashBackDataTable extends DataTable
             })
             ->addColumn('cashback_active', function(CashBack $row){
                 if($row->cashback_allow_to_withdraw()):
-                    $data = '<i class="fa-regular fa-circle" style="color:green"></i>';
+                    $data = '<i class="fas fa-circle" style="color:green"></i>';
                 else:
-                    $data = '<i class="fa-regular fa-circle" style="color:red"></i>';
+                    $data = '<i class="fas fa-circle" style="color:red"></i>';
                 endif;
 
                 return $data;
