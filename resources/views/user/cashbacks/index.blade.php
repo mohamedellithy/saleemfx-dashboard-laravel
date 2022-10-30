@@ -137,11 +137,11 @@
                                 <td>{{ $cashback->month ? date('Y-m',strtotime($cashback->month)) : '' }}</td>
                                 <td>{{ $cashback->created_at }}</td>
                                 <td>
-                                    @if($cashback->cashback_allow_to_withdraw()):
-                                        <i class="fas fa-circle" style="color:#51d851"></i>
-                                    @else:
-                                        <i class="fas fa-circle" style="color:red"></i>
-                                    @endif;
+                                    @if($cashback->cashback_allow_to_withdraw())
+                                        <i class="fas fa-circle" style="color:#51d851"></i> كاش باك قابل للسحب
+                                    @else
+                                        <i class="fas fa-circle" style="color:red"></i> كاش باك منتهى
+                                    @endif
                                 </td>
                             </tr>
                         @empty
