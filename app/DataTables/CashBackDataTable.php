@@ -83,6 +83,15 @@ class CashBackDataTable extends DataTable
             $cashback_Query = $cashback_Query->whereBetween('created_at',[$this->from,$this->to]);
         }
 
+        if($this->filter_cashbacks){
+            $date_max_ended = strtotime("+".Options()->setting['max_date_cashback_withdraw']." months");
+            if($this->filter_cashbacks == 1):
+                $cashback_Query = $cashback_Query->where('created_at','<',date('Y-m-d H:i:s',$date_max_ended));
+            elseif($this->filter_cashbacks == 2):
+                $cashback_Query = $cashback_Query->where('created_at','>=',date('Y-m-d H:i:s',$date_max_ended));
+            endif;
+        }
+
         $cashback_Query = $cashback_Query->orderBy('created_at','desc');
         return $this->applyScopes($cashback_Query);
     }

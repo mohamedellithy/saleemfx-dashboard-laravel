@@ -56,9 +56,9 @@
                 <div class="form-group data-search">
                     <label> الكاش باك</label>
                     <select name="services" class="services status">
-                        <option value="">كل الكاشات</option>
-                        <option value="">الكاش باك المنتهي</option>
-                        <option value="">الكاش باك الغير منتهى</option>
+                        <option>كل الكاشات</option>
+                        <option value="1">الكاش باك المنتهي</option>
+                        <option value="2">الكاش باك الغير منتهى</option>
                     </select>
                 </div>
                 <div class="form-group data-search">
@@ -134,6 +134,12 @@
             url_dataTable.to   = end.format("YYYY-MM-DD");
             http_query_build(url_dataTable);
             console.log(start.format("DD-MM-YYYY") + "," + end.format("DD-MM-YYYY"));
+        });
+
+        jQuery(document).on('change','.status.services',function() {
+            let services = jQuery(this).val();
+            url_dataTable.filter_cashbacks = services;
+            http_query_build(url_dataTable);
         });
 
         function http_query_build(url_dataTable){

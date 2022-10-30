@@ -29,6 +29,10 @@ class CashBackController extends Controller
           $query_search['to']  = $request->query('to');
         endif;
 
+        if($request->query('filter_cashbacks')):
+            $query_search['filter_cashbacks'] = $request->query('filter_cashbacks');
+        endif;
+
         if($query_search):
             return $dataTable->with($query_search)->render('admin.cashback-account.index');
         else:
