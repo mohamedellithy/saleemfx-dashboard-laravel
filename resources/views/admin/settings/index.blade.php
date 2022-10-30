@@ -58,6 +58,16 @@
                                             </tr>
                                         @endif
 
+                                        @if($setting->name == 'date_cashback_withdraw')
+                                            <tr>
+                                                <td>1.</td>
+                                                <td>المدة المسموحة لسحب الكاش ( الاشهر )</td>
+                                                <td>
+                                                    <input name="settings[{{ $setting->name }}]" type="text" class="form-control" value="{{ $setting->value }}">
+                                                </td>
+                                            </tr>
+                                        @endif
+
                                         @if($setting->name == 'currency')
                                             <tr>
                                                 <td>1.</td>
@@ -87,8 +97,8 @@
                                                 </td>
                                             </tr>
                                         @endif
-                                        
-                                        
+
+
                                         @if($setting->name == 'link_home')
                                             <tr>
                                                 <td>1.</td>
@@ -98,7 +108,7 @@
                                                 </td>
                                             </tr>
                                         @endif
-                                        
+
                                         @if($setting->name == 'link_services')
                                             <tr>
                                                 <td>1.</td>
@@ -108,7 +118,7 @@
                                                 </td>
                                             </tr>
                                         @endif
-                                        
+
                                         @if($setting->name == 'link_about_us')
                                             <tr>
                                                 <td>1.</td>
@@ -118,7 +128,7 @@
                                                 </td>
                                             </tr>
                                         @endif
-                                        
+
                                         @if($setting->name == 'link_videos')
                                             <tr>
                                                 <td>1.</td>
@@ -128,7 +138,7 @@
                                                 </td>
                                             </tr>
                                         @endif
-                                        
+
                                         @if($setting->name == 'link_technichal_analysis')
                                             <tr>
                                                 <td>1.</td>
@@ -138,7 +148,7 @@
                                                 </td>
                                             </tr>
                                         @endif
-                                        
+
                                         @if($setting->name == 'link_blogs')
                                             <tr>
                                                 <td>1.</td>
@@ -148,7 +158,7 @@
                                                 </td>
                                             </tr>
                                         @endif
-                                        
+
                                         @if($setting->name == 'link_courses')
                                             <tr>
                                                 <td>1.</td>
@@ -158,7 +168,7 @@
                                                 </td>
                                             </tr>
                                         @endif
-                                        
+
                                         @if($setting->name == 'link_economic_news')
                                             <tr>
                                                 <td>1.</td>
@@ -168,7 +178,7 @@
                                                 </td>
                                             </tr>
                                         @endif
-                                        
+
                                         @if($setting->name == 'link_contact_us')
                                             <tr>
                                                 <td>1.</td>
@@ -178,7 +188,7 @@
                                                 </td>
                                             </tr>
                                         @endif
-                                        
+
                                          @if($setting->name == 'link_be_partner')
                                             <tr>
                                                 <td>1.</td>
@@ -214,7 +224,7 @@
 
     <script src="{{ asset('js/admin_custom.js') }}" ></script>
     <script> console.log('Hi!'); </script>
-    
+
 @stop
 
 
