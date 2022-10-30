@@ -63,7 +63,7 @@
                 </div>
                 <div class="form-group data-search">
                     <br/>
-                    <button type="button" class="btn btn-danger btn-sm btn_delete_selected">حذف</button>
+                    <button type="button" class="btn btn-danger btn-sm btn_delete_selected" style="margin: 18px -11px 0px 93px;width: 100%;padding: 8px;">حذف المحدد</button>
                 </div>
             </div>
             {!! $dataTable->table() !!}
