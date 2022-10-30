@@ -22,6 +22,10 @@ class SettingTableSeeder extends Seeder
                 'value' => 2500
             ],
             [
+                'name' =>'max_date_cashback_withdraw',
+                'value' => 3
+            ],
+            [
                 'name' =>'currency',
                 'value' => 'USD'
             ],

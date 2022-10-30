@@ -58,7 +58,7 @@
                                             </tr>
                                         @endif
 
-                                        @if($setting->name == 'date_cashback_withdraw')
+                                        @if($setting->name == 'max_date_cashback_withdraw')
                                             <tr>
                                                 <td>1.</td>
                                                 <td>المدة المسموحة لسحب الكاش ( الاشهر )</td>
