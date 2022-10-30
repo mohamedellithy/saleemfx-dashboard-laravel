@@ -166,7 +166,7 @@
 
         jQuery(document).on('click','.btn_delete_selected',function(){
             let cashback_ids = [];
-            jQuery(".select-items-db").every(function(el){
+            jQuery(".select-items-db").each(function(el){
                 cashback_ids.push(el);
             });
             console.log(cashback_ids);
