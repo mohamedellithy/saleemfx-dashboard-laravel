@@ -165,12 +165,11 @@
         });
 
         jQuery(document).on('click','.btn_delete_selected',function(){
-            // let cashback_ids = [];
-            // jQuery(".select-items-db").every(function(el,key){
-            //     cashback_ids.push(el);
-            // });
-            // console.log(cashback_ids);
-            alert("hi");
+            let cashback_ids = [];
+            jQuery(".select-items-db").every(function(el){
+                cashback_ids.push(el);
+            });
+            console.log(cashback_ids);
         });
 
         jQuery(document).on('click','.addCashback',function(e){
