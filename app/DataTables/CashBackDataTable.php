@@ -21,6 +21,10 @@ class CashBackDataTable extends DataTable
     {
         return datatables()
             ->of($query)
+            ->addColumn('checkbox_select',function(CashBack $row){
+                $data = "<input class='select-items-db' type='checkbox' name='checkbox' value='".$row->id."' />";
+                return $data;
+            })
             ->addColumn('company_name',function(CashBack $row){
                 return $row->account ? $row->account->forex_company->name_ar : '';
             })
@@ -119,6 +123,7 @@ class CashBackDataTable extends DataTable
     protected function getColumns()
     {
         return [
+            Column::make('checkbox_select')->title(''),
             Column::make('id')->title('رقم'),
             Column::make('month')->title('الشهر'),
             Column::make('company_name')->title('اسم الشركة'),
