@@ -125,6 +125,7 @@
                             <th> رقم الحساب التداول  </th>
                             <th> شهر حساب الكاش باك  </th>
                             <th> تاريخ اضافة الكاش باك  </th>
+                            <th> </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -135,6 +136,13 @@
                                 <td>{{ $cashback->account ? $cashback->account->account_number : '-'  }}</td>
                                 <td>{{ $cashback->month ? date('Y-m',strtotime($cashback->month)) : '' }}</td>
                                 <td>{{ $cashback->created_at }}</td>
+                                <td>
+                                    @if($cashback->cashback_allow_to_withdraw()):
+                                        <i class="fas fa-circle" style="color:#51d851"></i>
+                                    @else:
+                                        <i class="fas fa-circle" style="color:red"></i>
+                                    @endif;
+                                </td>
                             </tr>
                         @empty
                             <tr>
