@@ -166,8 +166,8 @@
 
         jQuery(document).on('click','.btn_delete_selected',function(){
             let cashback_ids = [];
-            jQuery(".select-items-db").each(function(el){
-                cashback_ids.push(el.attr('checked',true));
+            jQuery(".select-items-db:checked").each(function(el,item){
+                cashback_ids.push(jQuery(item).val());
             });
             console.log(cashback_ids);
         });
