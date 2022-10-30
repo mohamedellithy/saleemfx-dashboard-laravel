@@ -87,6 +87,10 @@
     {!! $dataTable->scripts() !!}
 
     <script>
+        $(document).ready(function() {
+            $('select.status').niceSelect();
+        });
+
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
