@@ -164,6 +164,14 @@
             });
         });
 
+        jQuery(document).on('click','.btn_delete_selected',function(){
+            let cashback_ids = [];
+            jQuery(".select-items-db").every(function(el,key){
+                cashback_ids.push(el);
+            });
+            console.log(cashback_ids);
+        });
+
         jQuery(document).on('click','.addCashback',function(e){
             var Cashback_ID =  jQuery(this).attr('data-id');
             $.ajax({
