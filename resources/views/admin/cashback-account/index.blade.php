@@ -54,7 +54,7 @@
                      <input name="DateBetween" class="form-control vipOrders status" type="text" placeholder="البحث بالتاريخ" id="datetimerange-input1" />
                 </div>
                 <div class="form-group data-search">
-                    <label> البحث بالتاريخ </label>
+                    <label> الكاش باك</label>
                     <select name="services" class="services status">
                         <option value="">كل الكاشات</option>
                         <option value="">الكاش باك المنتهي</option>
