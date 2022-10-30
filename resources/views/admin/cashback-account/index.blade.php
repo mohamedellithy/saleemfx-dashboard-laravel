@@ -46,12 +46,14 @@
                      <label> البحث بالتاريخ </label>
                      <input name="DateBetween" class="form-control vipOrders status" type="text" placeholder="البحث بالتاريخ" id="datetimerange-input1" />
                 </div>
-
-                <select name="services" class="services status">
-                    <option value="">كل الكاشات</option>
-                    <option value="">الكاش باك المنتهي</option>
-                    <option value="">الكاش باك الغير منتهى</option>
-                </select>
+                <div class="form-group data-search">
+                    <label> البحث بالتاريخ </label>
+                    <select name="services" class="services status">
+                        <option value="">كل الكاشات</option>
+                        <option value="">الكاش باك المنتهي</option>
+                        <option value="">الكاش باك الغير منتهى</option>
+                    </select>
+                </div>
             </div>
             {!! $dataTable->table() !!}
         </div>
