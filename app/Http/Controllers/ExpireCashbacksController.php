@@ -14,7 +14,7 @@ class ExpireCashbacksController extends Controller
         $users = User::where('role','!=',1)->get();
         $items = [];
         foreach($users as $user):
-            $items[$user->id]= $user->total_cashback_can_withdraw() - $user->cashbacks()->where('created_at','>=',date('Y-m-d H:i:s',$date_max_ended))->sum('value');
+            $items[$user->id]= $user->total_cashback_can_withdraw() - $user->cashbacks()->where('cash_backs.created_at','>=',date('Y-m-d H:i:s',$date_max_ended))->sum('value');
         endforeach;
         dd($items);
     }
