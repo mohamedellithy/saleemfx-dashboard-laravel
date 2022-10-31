@@ -21,7 +21,6 @@ class CashBackDataTable extends DataTable
     {
         return datatables()
             ->of($query)
-            ->smart(true)
             ->addColumn('checkbox_select',function(CashBack $row){
                 $data = "<input class='select-items-db' type='checkbox' name='checkbox' value='".$row->id."' />";
                 return $data;
@@ -114,7 +113,7 @@ class CashBackDataTable extends DataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->dom('Blfrtip')
-                    ->orderBy(6)
+                    ->orderBy(7)
                     ->buttons(
                         Button::make('excel')->columns(':visible'),
                         Button::make('print'),
@@ -143,7 +142,7 @@ class CashBackDataTable extends DataTable
             Column::make('month')->title('الشهر'),
             Column::make('company_name')->title('اسم الشركة'),
             Column::make('user_name')->title('اسم المستخدم'),
-            Column::make('account_number')->title('رقم الحساب')->searchable(),
+            Column::make('account_number')->title('رقم الحساب')->searchable(true),
             Column::make('value')->title('قيمة المبلغ'),
             Column::make('cashback_active')->title('قابل للسحب'),
             Column::make('created_at')->title('تاريخ الانشاء'),
