@@ -15,7 +15,7 @@ class CreateExpireCashbacksTable extends Migration
     {
         Schema::create('expire_cashbacks', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->decimal('value', 10, 2)->required();
             $table->timestamps();
