@@ -143,7 +143,7 @@ class CashBackDataTable extends DataTable
             Column::make('month')->title('الشهر'),
             Column::make('company_name')->title('اسم الشركة'),
             Column::make('user_name')->title('اسم المستخدم'),
-            Column::make('account_number')->title('رقم الحساب'),
+            Column::make('account_number')->title('رقم الحساب')->searchable(),
             Column::make('value')->title('قيمة المبلغ'),
             Column::make('cashback_active')->title('قابل للسحب'),
             Column::make('created_at')->title('تاريخ الانشاء'),
