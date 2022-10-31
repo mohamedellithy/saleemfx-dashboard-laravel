@@ -15,7 +15,7 @@ class AddAffiliateCodeUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->integer('reference_affiliate_id')->unsigned()->nullable();
+            $table->unsignedBigInteger('reference_affiliate_id')->nullable();
             $table->foreign('reference_affiliate_id')->references('id')->on('affiliates')->onDelete('set null');
         });
     }

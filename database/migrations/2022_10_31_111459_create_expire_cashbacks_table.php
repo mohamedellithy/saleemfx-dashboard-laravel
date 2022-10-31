@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCashBacksTable extends Migration
+class CreateExpireCashbacksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateCashBacksTable extends Migration
      */
     public function up()
     {
-        Schema::create('cash_backs', function (Blueprint $table) {
+        Schema::create('expire_cashbacks', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('account_id');
-            $table->foreign('account_id')->references('id')->on('accounts')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->decimal('value', 10, 2)->required();
-            $table->string('month')->required();
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateCashBacksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cash_backs');
+        Schema::dropIfExists('expire_cashbacks');
     }
 }

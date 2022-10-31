@@ -15,7 +15,7 @@ class CreateDirectrixOrdersTable extends Migration
     {
         Schema::create('directrix_orders', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->unsigned();
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('directrix_file_id')->unsigned();
             $table->foreign('directrix_file_id')->references('id')->on('directrixes')->onDelete('cascade');

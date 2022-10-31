@@ -15,9 +15,9 @@ class CreateFileOrdersTable extends Migration
     {
         Schema::create('file_orders', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->unsigned();
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->integer('expert_file_id')->unsigned();
+            $table->unsignedBigInteger('expert_file_id');
             $table->foreign('expert_file_id')->references('id')->on('experts_files')->onDelete('cascade');
             $table->integer('status')->default(0)->comment('0 -> pending , 1 -> accepted , 2 -> refused ');
             $table->timestamps();

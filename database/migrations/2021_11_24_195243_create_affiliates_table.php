@@ -15,7 +15,7 @@ class CreateAffiliatesTable extends Migration
     {
         Schema::create('affiliates', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('inviter_id')->unsigned();
+            $table->unsignedBigInteger('inviter_id');
             $table->foreign('inviter_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('code_affiliate')->required();
             $table->integer('employee')->default(0)->comment('0 -> not-employee , 1 -> employee');

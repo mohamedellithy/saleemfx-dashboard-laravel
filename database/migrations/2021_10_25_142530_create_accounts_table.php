@@ -17,7 +17,7 @@ class CreateAccountsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->integer('forex_company_id')->unsigned();
+            $table->unsignedBigInteger('forex_company_id');
             $table->foreign('forex_company_id')->references('id')->on('forex_companies')->onDelete('cascade');
             $table->string('account_number')->required();
             $table->decimal('account_balance',10,2)->required();

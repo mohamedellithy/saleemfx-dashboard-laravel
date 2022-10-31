@@ -17,9 +17,9 @@ class CreateWalletRechargeOrdersTable extends Migration
         Schema::create('wallet_recharge_orders', function (Blueprint $table) {
             $wordpress = DB::connection('wordpress')->getDatabaseName();
             $table->id();
-            $table->integer('payment_id')->unsigned();
+            $table->unsignedBigInteger('payment_id');
             $table->foreign('payment_id')->references('id')->on(new Expression($wordpress . '.wp_posts'))->onDelete('set null');
-            $table->integer('user_id')->unsigned();
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('value')->required();
             $table->string('transaction_no')->nullable();

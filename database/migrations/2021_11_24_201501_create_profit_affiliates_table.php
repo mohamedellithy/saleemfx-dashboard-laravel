@@ -15,7 +15,7 @@ class CreateProfitAffiliatesTable extends Migration
     {
         Schema::create('profit_affiliates', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('invitee_id')->nullable()->unsigned();
+            $table->unsignedBigInteger('invitee_id')->nullable();
             $table->foreign('invitee_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('affiliate_id')->unsigned();
             $table->foreign('affiliate_id')->references('id')->on('affiliates')->onDelete('cascade');

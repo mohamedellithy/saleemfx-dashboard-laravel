@@ -16,7 +16,7 @@ class CreateOrderCoursesTable extends Migration
         Schema::create('order_courses', function (Blueprint $table) {
             $wordpress = DB::connection('wordpress')->getDatabaseName();
             $table->id();
-            $table->integer('course_id')->unsigned()->nullable();
+            $table->unsignedBigInteger('course_id')->nullable();
             $table->foreign('course_id')->references('id')->on(new Expression($wordpress . '.wp_posts'))->onDelete('SET NULL');
             $table->string('firstname')->required();
             $table->string('lastname')->required();
