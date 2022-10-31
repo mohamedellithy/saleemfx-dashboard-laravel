@@ -125,42 +125,7 @@ class CashBackDataTable extends DataTable
                         'lengthMenu' => [
                             [ 25, 50,100,-1 ],
                             [ '25 rows', '50 rows', '100 rows', 'Show all' ]
-                        ],
-                        'initComplete' => "function () {
-                            this.api().columns([1,2,3,6]).every(function () {
-                                var column = this;
-                                var input = document.createElement(\"input\");
-                                $(input).attr( 'style', 'text-align: center;width: 100%');
-                                $(input).appendTo($(column.footer()).empty())
-                                .on('keyup', function () {
-                                    column.search($(this).val(), false, false, true).draw();
-                                });
-                            });
-
-
-                            this.api().columns([4,5]).every( function () {
-                                var column = this;
-                                var select = $('<select><option value=\"\"></option></select>')
-                                    .appendTo( $(column.footer()).empty() )
-                                    .on( 'change', function () {
-                                        var val = $.fn.dataTable.util.escapeRegex(
-                                            $(this).val()
-                                        );
-
-                                        column
-                                            .search( val )
-                                            .draw();
-
-
-                                    } );
-                                    column.data().unique().sort().each( function ( d, j ) {
-                                    select.append( '<option value=\"'+d+'\">'+d+'</option>' )
-                                } );
-                            });
-
-
-
-                        }",
+                        ]
                     ]);
     }
 

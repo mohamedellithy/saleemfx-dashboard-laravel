@@ -4,7 +4,8 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-
+use App\User;
+use App\ExpireCashback;
 class Kernel extends ConsoleKernel
 {
     /**
@@ -25,6 +26,22 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
+        $schedule->call(function(){
+            $date_max_ended = strtotime("-".Options()->setting['max_date_cashback_withdraw']." months");
+            $users = User::where('role','!=',1)->get();
+            foreach($users as $user):
+                $rest_value = $user->total_cashback_can_withdraw() - $user->cashbacks()->where('cash_backs.created_at','>=',date('Y-m-d H:i:s',$date_max_ended))->sum('value');
+                if($rest_value > 0):
+                    $user->expire_cashbacks()->updateOrCreate([
+                        "user_id" => $user->id
+                        ],[
+                        'value'   => $rest_value
+                    ]);
+                endif;
+            endforeach;
+        })->name('run_expire_cashbacks')->withoutOverlapping()->dailyAt('13:00')->timezone('Africa/Cairo')->onOneServer();
+
+        //->monthly();
     }
 
     /**
