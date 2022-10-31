@@ -21,6 +21,7 @@ class CashBackDataTable extends DataTable
     {
         return datatables()
             ->of($query)
+            ->smart(true)
             ->addColumn('checkbox_select',function(CashBack $row){
                 $data = "<input class='select-items-db' type='checkbox' name='checkbox' value='".$row->id."' />";
                 return $data;
