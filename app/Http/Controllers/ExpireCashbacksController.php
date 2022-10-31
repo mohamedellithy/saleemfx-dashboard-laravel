@@ -15,6 +15,6 @@ class ExpireCashbacksController extends Controller
         foreach($users as $user):
             $items []= $user->total_cashback_can_withdraw();
         endforeach;
-        return $items;
+        dd($items);
     }
 }
