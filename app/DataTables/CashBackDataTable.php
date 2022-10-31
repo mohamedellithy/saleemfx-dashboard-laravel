@@ -66,9 +66,7 @@ class CashBackDataTable extends DataTable
                return $data;
             })->addColumn('created_at',function(CashBack $row){
                 return $row->created_at;
-            })->rawColumns([
-                'account_number'
-            ]);
+            });
     }
 
     /**
