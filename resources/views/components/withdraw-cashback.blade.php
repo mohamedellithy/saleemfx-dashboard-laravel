@@ -8,8 +8,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p class="badge badge-info" style="font-size:100%"> الكاش باك الخاص بك   : {{ amount_currency(auth()->user()->total_cashback_can_withdraw()) }}</p>
-                    @if(auth()->user()->total_cashback_can_withdraw() > 0)
+                    <p class="badge badge-info" style="font-size:100%"> الكاش باك الخاص بك   : {{ amount_currency(auth()->user()->total_cashback_can_withdraw() - auth()->user()->total_expire_cashbacks() ) }}</p>
+                    @if((auth()->user()->total_cashback_can_withdraw() - auth()->user()->total_expire_cashbacks()) > 0)
                         <form method="post" action="{{ route('my-cashbacks.store') }}">
                             @csrf
                             <div class="row">

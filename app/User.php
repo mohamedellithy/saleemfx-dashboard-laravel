@@ -80,6 +80,10 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany('App\ExpireCashback','user_id','id');
     }
 
+    public function total_expire_cashbacks(){
+        return $this->expire_cashbacks()->sum('value');
+    }
+
     public function services_orders(){
         return $this->hasMany('App\ServicesOrder','user_id','id')->withTrashed();
     }
