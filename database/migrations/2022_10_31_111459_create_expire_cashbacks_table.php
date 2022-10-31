@@ -21,6 +21,11 @@ class CreateExpireCashbacksTable extends Migration
             $table->decimal('value', 10, 2)->required();
             $table->timestamps();
         });
+
+        Schema::table('expire_cashbacks', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        });
     }
 
     /**
