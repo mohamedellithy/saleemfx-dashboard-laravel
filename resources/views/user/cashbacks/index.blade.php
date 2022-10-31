@@ -102,8 +102,21 @@
                             <span class="info-box-icon bg-warning"><i class="fas fa-check-circle"></i></span>
 
                             <div class="info-box-content">
+                                <span class="info-box-text"> الكاش باك المنتهى</span>
+                                <span class="info-box-number">{{ amount_currency(auth()->user()->total_expire_cashbacks()) }}</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="info-box shadow">
+                            <span class="info-box-icon bg-warning"><i class="fas fa-check-circle"></i></span>
+
+                            <div class="info-box-content">
                                 <span class="info-box-text"> المتبقي من الكاش باك</span>
-                                <span class="info-box-number">{{ amount_currency(auth()->user()->total_cashback_can_withdraw()) }}</span>
+                                <span class="info-box-number">{{ amount_currency(auth()->user()->total_cashback_can_withdraw() - auth()->user()->total_expire_cashbacks()) }}</span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>

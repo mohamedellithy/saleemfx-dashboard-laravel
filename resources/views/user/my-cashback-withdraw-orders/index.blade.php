@@ -93,7 +93,7 @@
 
                         <div class="info-box-content">
                             <span class="info-box-text"> المتبقي من الكاش باك</span>
-                            <span class="info-box-number">{{ amount_currency(auth()->user()->total_cashback_can_withdraw()) }}</span>
+                            <span class="info-box-number">{{ amount_currency(auth()->user()->total_cashback_can_withdraw() - auth()->user()->total_expire_cashbacks()) }}</span>
                         </div>
                         <!-- /.info-box-content -->
                     </div>
