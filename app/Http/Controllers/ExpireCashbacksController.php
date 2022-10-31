@@ -11,8 +11,10 @@ class ExpireCashbacksController extends Controller
 
     public function index(){
         $users = User::where('role','!=',1)->get();
+        $items = [];
         foreach($users as $user):
-            dd($user->total_cashback_can_withdraw());
+            $items []= $user->total_cashback_can_withdraw();
         endforeach;
+        return $items;
     }
 }
