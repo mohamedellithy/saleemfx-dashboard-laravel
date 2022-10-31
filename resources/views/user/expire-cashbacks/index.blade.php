@@ -128,13 +128,15 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
+                            <th> </th>
                             <th> قيمة الكاش باك  </th>
                             <th> </th>
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse(auth()->user()->expire_cashbacks()->get() as $cashback)
+                        @forelse(auth()->user()->expire_cashbacks()->get() as $key => $cashback)
                             <tr>
+                                <td>{{ $key+1 }}</td>
                                 <td>{{ amount_currency($cashback->value) }}</td>
                                 <td>{{ $cashback->created_at }}</td>
                             </tr>
