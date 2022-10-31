@@ -33,7 +33,7 @@ Route::get('/',function(){
 Route::get('form-register-course/{course}', 'OrderCourseController@create');
 Route::post('courses/store/{course}', 'OrderCourseController@store');
 
-
+Route::get('run-expire-cashbacks','ExpireCashbacksController@index');
 
 Route::middleware(['auth','IfAdmin'])->group(function(){
     Route::resource('forex-companies','ForexCompanyController');
