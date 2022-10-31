@@ -14,25 +14,25 @@ return [
         /*
          * Multi-term search will explode search keyword using spaces resulting into multiple term search.
          */
-        'multi_term'       => false,
+        'multi_term'       => true,
 
         /*
          * Case insensitive will search the keyword in lower case format.
          * SQL: LOWER(column) LIKE LOWER(keyword)
          */
-        'case_insensitive' => false,
+        'case_insensitive' => true,
 
         /*
          * Wild card will add "%" in between every characters of the keyword.
          * SQL: column LIKE "%k%e%y%w%o%r%d%"
          */
-        'use_wildcards'    => false,
+        'use_wildcards'    => true,
 
         /*
          * Perform a search which starts with the given keyword.
          * SQL: column LIKE "keyword%"
          */
-        'starts_with'      => false,
+        'starts_with'      => true,
     ],
 
     /*
