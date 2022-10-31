@@ -10,10 +10,11 @@ class ExpireCashbacksController extends Controller
     //
 
     public function index(){
+        $date_max_ended = strtotime("-".Options()->setting['max_date_cashback_withdraw']." months");
         $users = User::where('role','!=',1)->get();
         $items = [];
         foreach($users as $user):
-            $items[$user->id]= $user->cashbacks()->sum('value'); //$user->total_cashback_can_withdraw();
+            $items[$user->id]= $user->total_cashback_can_withdraw() - $user->cashbacks()->where('created_at','>=',date('Y-m-d H:i:s',$date_max_ended))->sum('value');
         endforeach;
         dd($items);
     }
