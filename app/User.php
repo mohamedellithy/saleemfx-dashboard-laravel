@@ -172,7 +172,7 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     function total_balance(){
-        return $this->total_recharge() + $this->total_cashback() -  $this->total_withdraws();
+        return $this->total_recharge() + $this->total_cashback() -  $this->total_withdraws() - $this->total_expire_cashbacks();
     }
 
 
