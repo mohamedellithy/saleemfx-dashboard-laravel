@@ -17,6 +17,13 @@
 
 
 @section('content')
+    <div class="row">
+         <div class="container">
+              <div class="alert alert-danger">
+                تنويه : جميع ارصدة الكاش باك التي لم يتم سحبها خلال 3 شهور من تاريخ ترصيدها، يتم حذفها نهائيا حسب القوانين المتبعة في مجموعة سليم
+              </div>
+         </div>
+    </div>
     @if(!auth()->user()->accounts()->where('status',1)->exists())
         <div class="row">
             <div class="container-image-chashback col-md-6 col-xs-12">
