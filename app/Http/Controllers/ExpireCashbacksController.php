@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Account;
 use App\User;
+use App\ExpireCashback;
 class ExpireCashbacksController extends Controller
 {
     //
@@ -14,9 +15,12 @@ class ExpireCashbacksController extends Controller
         $users = User::where('role','!=',1)->get();
         $items = [];
         foreach($users as $user):
-            $items[$user->id]= $user->total_cashback_can_withdraw() - $user->cashbacks()->where('cash_backs.created_at','>=',date('Y-m-d H:i:s',$date_max_ended))->sum('value');
+            $rest_value = $user->total_cashback_can_withdraw() - $user->cashbacks()->where('cash_backs.created_at','>=',date('Y-m-d H:i:s',$date_max_ended))->sum('value');
+            if($rest_value > 0):
+                $user->expire_cashbacks()->create([
+                    'value' => $rest_value
+                ]);
+            endif;
         endforeach;
-        //$user->total_cashback_can_withdraw() -
-        dd($items);
     }
 }
