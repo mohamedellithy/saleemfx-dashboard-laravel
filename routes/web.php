@@ -107,6 +107,7 @@ Route::middleware(['auth','verified','IfUser'])->group(function(){
 
     Route::resource('my-services','MyServicesController');
     Route::resource('my-cashbacks','MyCashbackController');
+    Route::resource('my-expire-cashbacks','MyExpireCashbackController');
     Route::resource('cashback-withdraw-orders','MyWithdrawOrdersController');
 
     Route::resource('my-experts-files','MyExpertsFilesController');

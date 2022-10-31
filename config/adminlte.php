@@ -394,6 +394,11 @@ return [
                     'text' => 'كاش باك حساباتى',
                      'icon_color' => 'green',
                     'url'  => 'my-cashbacks',
+                ],
+                [
+                    'text' => 'كاش باك المنتهي',
+                     'icon_color' => 'orange',
+                    'url'  => 'my-expire-cashbacks',
                 ]
             ]
         ],
@@ -540,7 +545,7 @@ return [
                 ]
             ]
         ]
-        
+
     ],
 
     /*
