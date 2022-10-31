@@ -123,43 +123,24 @@
                         <!-- /.info-box -->
                     </div>
                 </div>
-                <div class="text-left container-button-create-account">
-                    <button class="btn btn-success create-new-account" data-toggle="modal" data-target="#modal-lg">
-                        <i class="fas fa-plus"></i>
-                        طلب سحب ارباح
-                    </button>
-                </div>
-                <h5 class="card-title m-0" style="padding: 11px 1px;">الكاش باك</h5>
+
+                <h5 class="card-title m-0" style="padding: 11px 1px;"> الكاش باك المنتهي</h5>
                 <table class="table table-striped">
                     <thead>
                         <tr>
                             <th> قيمة الكاش باك  </th>
-                            <th> شركة التابع لها الحساب  </th>
-                            <th> رقم الحساب التداول  </th>
-                            <th> شهر حساب الكاش باك  </th>
-                            <th> تاريخ اضافة الكاش باك  </th>
                             <th> </th>
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse(auth()->user()->cashbacks()->orderBy('month','desc')->get() as $cashback)
+                        @forelse(auth()->user()->expire_cashbacks()->get() as $cashback)
                             <tr>
                                 <td>{{ amount_currency($cashback->value) }}</td>
-                                <td>{{ $cashback->account->forex_company->name_ar ?? $cashback->account->forex_company->name_en  }}</td>
-                                <td>{{ $cashback->account ? $cashback->account->account_number : '-'  }}</td>
-                                <td>{{ $cashback->month ? date('Y-m',strtotime($cashback->month)) : '' }}</td>
                                 <td>{{ $cashback->created_at }}</td>
-                                <td>
-                                    @if($cashback->cashback_allow_to_withdraw())
-                                        <i class="fas fa-circle" style="color:#51d851"></i> كاش باك قابل للسحب
-                                    @else
-                                        <i class="fas fa-circle" style="color:red"></i> كاش باك منتهى
-                                    @endif
-                                </td>
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="4"> لايوجد كاش باك فى حسابك </td>
+                                <td colspan="4"> لايوجد كاش باك منتهي فى حسابك </td>
                             </tr>
                         @endforelse
 
