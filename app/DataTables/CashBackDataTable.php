@@ -21,7 +21,6 @@ class CashBackDataTable extends DataTable
     {
         return datatables()
             ->of($query)
-            ->startsWithSearch()
             ->addColumn('checkbox_select',function(CashBack $row){
                 $data = "<input class='select-items-db' type='checkbox' name='checkbox' value='".$row->id."' />";
                 return $data;
@@ -113,7 +112,6 @@ class CashBackDataTable extends DataTable
                     ->setTableId('cashbackdatatables-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
-                    ->startsWithSearch()
                     ->dom('Blfrtip')
                     ->orderBy(7)
                     ->buttons(
