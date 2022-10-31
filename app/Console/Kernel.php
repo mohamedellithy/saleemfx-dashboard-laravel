@@ -39,7 +39,7 @@ class Kernel extends ConsoleKernel
                     ]);
                 endif;
             endforeach;
-        })->name('run_expire_cashbacks')->withoutOverlapping()->dailyAt('00:50')->timezone('Africa/Cairo')->onOneServer();
+        })->name('run_expire_cashbacks')->withoutOverlapping()->at('01:00')->timezone('Africa/Cairo')->onOneServer();
 
         //->monthly();
     }
