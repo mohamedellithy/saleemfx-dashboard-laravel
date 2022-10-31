@@ -10,7 +10,7 @@ class ExpireCashbacksController extends Controller
     //
 
     public function index(){
-        $users = User::where('role',1)->get();
+        $users = User::where('role','!=',1)->get();
         dd($users);
     }
 }
