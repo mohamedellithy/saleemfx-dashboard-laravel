@@ -516,3 +516,8 @@ form.form-status {
 .card-title {
     float: left;
 }
+
+div.dataTables_wrapper div.dataTables_filter {
+    direction: ltr;
+    text-align: left;
+}
