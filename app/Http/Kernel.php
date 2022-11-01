@@ -21,7 +21,6 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \App\Http\Middleware\CheckIfHaveReferenceAffiliate::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
-        \App\Http\Middleware\LanguageSwitcher::class,
     ];
 
     /**
@@ -39,6 +38,7 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             # \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class
+            \App\Http\Middleware\LanguageSwitcher::class,
         ],
 
         'api' => [
