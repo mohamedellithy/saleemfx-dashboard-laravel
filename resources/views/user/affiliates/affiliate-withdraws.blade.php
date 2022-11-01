@@ -32,7 +32,7 @@
                         </ul>
                     </div>
             @endif
-            <select name="status" class="status">
+            <select name="status" class="status affiliate-status-select">
                  <option value="">حالة الطلب</option>
                  <option value="1">موافق عليه</option>
                  <option value="2">مرفوض</option>

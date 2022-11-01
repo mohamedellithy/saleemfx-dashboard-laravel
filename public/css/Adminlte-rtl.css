@@ -49,9 +49,3 @@
         top: 0.7rem;
     }
 }
-
-@media(min-width:1000px) {
-    .mobile-menu {
-        display: none !important;
-    }
-}
