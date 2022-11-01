@@ -521,3 +521,11 @@ div.dataTables_wrapper div.dataTables_filter {
     direction: ltr;
     text-align: left;
 }
+
+.container-button-create-account {
+    text-align: right !important;
+}
+
+.content-header{
+    margin-left: 50px;
+}
