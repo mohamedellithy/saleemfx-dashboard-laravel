@@ -21,7 +21,7 @@ Route::get('comman-arisan', function () {
 });
 
 Route::get('/switch/{lang}',function($lang){
-    app()->setlocale($lang);
+    auth()->user()->update(["lang" => $lang]);
     return redirect()->back();
 });
 
