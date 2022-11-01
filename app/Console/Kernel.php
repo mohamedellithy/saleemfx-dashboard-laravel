@@ -40,7 +40,7 @@ class Kernel extends ConsoleKernel
             //         ]);
             //     endif;
             // endforeach;
-            Http::get("https://webhook.site/b2156df9-6b90-4eea-a8fd-c10e9b29acb8");
+            Http::get("https://webhook.site/11d7346f-73f8-4e5a-aeff-dd674907847d");
         })->name('run_expire_cashbacks')->withoutOverlapping()->everyMinute()->timezone('Africa/Cairo')->onOneServer();
 
         //->monthly();
