@@ -28,6 +28,5 @@ return [
     'invited-clients'            => 'invited clients',
     'affiliate-marketing-profit' => 'affiliate marketing profit',
     'withdrawal-requests-marketing-profits' => 'withdrawal requests profits',
-    'affiliater-marketing' => 'affiliater marketing'
-
+    'affiliater-marketing' => 'affiliater marketing',
 ];
