@@ -497,3 +497,13 @@ form.form-status {
         }
     }
 }
+
+@media(min-width:1000px) {
+    .mobile-menu {
+        display: none !important;
+    }
+}
+
+.card-title {
+    float: left;
+}
