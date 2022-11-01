@@ -51,14 +51,26 @@
     @endif
     <div class="dropdown language-dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            اللغة العربية
-            <img src="https://cdn.britannica.com/79/5779-004-DC479508/Flag-Saudi-Arabia.jpg" style="width:20px;height:20px">
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">
+            @if(app()->getlocale() == 'ar')
+               اللغة العربية
+               <img src="https://cdn.britannica.com/79/5779-004-DC479508/Flag-Saudi-Arabia.jpg" style="width:20px;height:20px">
+            @else
                 English
                 <img src="https://miro.medium.com/max/1400/0*o0-6o1W1DKmI5LbX.png" style="width:20px;height:20px">
-            </a>
+            @endif
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            @if(app()->getlocale() == 'ar')
+                <a class="dropdown-item" href="{{ url('switch/en') }}">
+                    English
+                    <img src="https://miro.medium.com/max/1400/0*o0-6o1W1DKmI5LbX.png" style="width:20px;height:20px">
+                </a>
+            @else
+                <a class="dropdown-item" href="{{ url('switch/ar') }}">
+                    اللغة العربية
+                    <img src="https://cdn.britannica.com/79/5779-004-DC479508/Flag-Saudi-Arabia.jpg" style="width:20px;height:20px">
+                </a>
+            @endif
         </div>
     </div>
     @if(!auth()->user())

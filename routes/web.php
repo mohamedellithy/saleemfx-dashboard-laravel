@@ -20,6 +20,10 @@ Route::get('comman-arisan', function () {
     // \Artisan::call('migrate');
 });
 
+Route::get('/switch/{lang}',function($lang){
+    app()->setlocale($lang);
+    return redirect()->back();
+});
 
 
 Auth::routes(['verify' => true]);
