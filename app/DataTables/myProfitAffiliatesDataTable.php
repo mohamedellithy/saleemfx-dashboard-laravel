@@ -59,7 +59,7 @@ class myProfitAffiliatesDataTable extends DataTable
                     ->setTableId('affiliatersdatatable-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
-                    ->dom('Blfrtip')
+                    ->dom('Lfrtip')
                     ->orderBy(4)
                     ->buttons(
                         Button::make('export')->columns(':visible'),
