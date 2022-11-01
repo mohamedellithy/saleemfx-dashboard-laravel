@@ -316,12 +316,12 @@ return [
             ]
         ],
         [
-            'text'    => __('master.my-account'),
+            'text'    => trans('master.my-account'),
             'icon'    => 'fas fa-user-circle',
             'can'     => "manage-item-as-user",
             'submenu' => [
                 [
-                    'text' => __('master.my-account'),
+                    'text' => trans('master.my-account'),
                     'icon_color' => 'red',
                     'url'  => 'my-accounts',
                 ]
@@ -362,41 +362,41 @@ return [
             ]
         ],
         [
-            'text'    => __('master.order-charge-my-wallet'),
+            'text'    => trans('master.order-charge-my-wallet'),
             'icon'    => 'fas fa-wallet',
             'can'     => "manage-item-as-user",
             'submenu' => [
                 [
-                    'text' =>  __('master.my-orders'),
+                    'text' =>  trans('master.my-orders'),
                      'icon_color' => 'green',
                     'url'  => 'my-wallet',
                 ]
             ]
         ],
         [
-            'text'    => __('master.order-withdraw-my-balnc'),
+            'text'    => trans('master.order-withdraw-my-balnc'),
             'icon'    => 'fas fa-coins',
             'can'     => "manage-item-as-user",
             'submenu' => [
                 [
-                    'text' => __('master.my-orders'),
+                    'text' => trans('master.my-orders'),
                      'icon_color' => 'green',
                     'url'  => 'my-withdraw-orders',
                 ]
             ]
         ],
         [
-            'text'    => __('master.cashback-my-accounts'),
+            'text'    => trans('master.cashback-my-accounts'),
             'icon'    => 'fas fa-wallet',
             'can'     => "manage-item-as-user",
             'submenu' => [
                 [
-                    'text' => __('master.cashback-my-accounts'),
+                    'text' => trans('master.cashback-my-accounts'),
                      'icon_color' => 'green',
                     'url'  => 'my-cashbacks',
                 ],
                 [
-                    'text' => __('master.cashback-expire'),
+                    'text' => trans('master.cashback-expire'),
                      'icon_color' => 'orange',
                     'url'  => 'my-expire-cashbacks',
                 ]
@@ -425,60 +425,60 @@ return [
             ]
         ],
         [
-            'text'    => __('master.my-services'),
+            'text'    => trans('master.my-services'),
             'icon'    => 'fas fa-box',
             'can'     => "manage-item-as-user",
             'submenu' => [
                 [
-                    'text' => __('master.my-services'),
+                    'text' => trans('master.my-services'),
                     'icon_color' => 'red',
                     'url'  => 'my-services',
                 ]
             ]
         ],
         [
-            'text'    => __('master.expert-files'),
+            'text'    => trans('master.expert-files'),
             'icon'    => 'fas fa-file-excel',
             'can'     => "manage-item-as-user",
             'submenu' => [
                 [
-                    'text' => __('master.expert-files'),
+                    'text' => trans('master.expert-files'),
                     'icon_color' => 'red',
                     'url'  => 'my-experts-files',
                 ]
             ]
         ],
         [
-            'text'    => __('master.recommended-services'),
+            'text'    => trans('master.recommended-services'),
             'icon'    => 'fas fa-file-excel',
             'can'     => "manage-item-as-user",
             'submenu' => [
                 [
-                    'text' => __('master.recommended-services'),
+                    'text' => trans('master.recommended-services'),
                     'icon_color' => 'red',
                     'url'  => 'recommended-services/create',
                 ]
             ]
         ],
         [
-            'text'    => __('master.directrix-services'),
+            'text'    => trans('master.directrix-services'),
             'icon'    => 'fas fa-file-excel',
             'can'     => "manage-item-as-user",
             'submenu' => [
                 [
-                    'text' => __('master.directrix-services'),
+                    'text' => trans('master.directrix-services'),
                     'icon_color' => 'red',
                     'url'  => 'directrix-services',
                 ]
             ]
         ],
         [
-            'text'    => __('master.affiliate-marketing'),
+            'text'    => trans('master.affiliate-marketing'),
             'icon'    => 'fas fa-wallet',
             'can'     => "manage-item",
             'submenu' => [
                 [
-                    'text' => __('master.affiliater-marketing'),
+                    'text' => trans('master.affiliater-marketing'),
                     'icon_color' => 'red',
                     'url'  => 'affiliaters',
                 ],
@@ -488,12 +488,12 @@ return [
                     'url'  => 'affiliate-employmee',
                 ],
                 [
-                    'text' => __('master.affiliate-marketing-profit'),
+                    'text' => trans('master.affiliate-marketing-profit'),
                      'icon_color' => 'yellow',
                     'url'  => 'affiliates-profites',
                 ],
                 [
-                    'text' => __('master.withdrawal-requests-marketing-profits'),
+                    'text' => trans('master.withdrawal-requests-marketing-profits'),
                      'icon_color' => 'yellow',
                     'url'  => 'affiliates-withdraw-profites',
                 ]
