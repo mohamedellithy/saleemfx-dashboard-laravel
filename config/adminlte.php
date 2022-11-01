@@ -316,12 +316,12 @@ return [
             ]
         ],
         [
-            'text'    => 'حساباتى',
+            'text'    => __('master.my-account'),
             'icon'    => 'fas fa-user-circle',
             'can'     => "manage-item-as-user",
             'submenu' => [
                 [
-                    'text' => 'حساباتى',
+                    'text' => __('master.my-account'),
                     'icon_color' => 'red',
                     'url'  => 'my-accounts',
                 ]
@@ -362,41 +362,41 @@ return [
             ]
         ],
         [
-            'text'    => 'طلبات شحن محفظتى ',
+            'text'    => __('master.order-charge-my-wallet'),
             'icon'    => 'fas fa-wallet',
             'can'     => "manage-item-as-user",
             'submenu' => [
                 [
-                    'text' => 'طلباتى',
+                    'text' =>  __('master.my-orders'),
                      'icon_color' => 'green',
                     'url'  => 'my-wallet',
                 ]
             ]
         ],
         [
-            'text'    => 'طلبات سحب من رصيدي ',
+            'text'    => __('master.order-withdraw-my-balnc'),
             'icon'    => 'fas fa-coins',
             'can'     => "manage-item-as-user",
             'submenu' => [
                 [
-                    'text' => 'طلباتى',
+                    'text' => __('master.my-orders'),
                      'icon_color' => 'green',
                     'url'  => 'my-withdraw-orders',
                 ]
             ]
         ],
         [
-            'text'    => 'كاش باك حساباتى ',
+            'text'    => __('master.cashback-my-accounts'),
             'icon'    => 'fas fa-wallet',
             'can'     => "manage-item-as-user",
             'submenu' => [
                 [
-                    'text' => 'كاش باك حساباتى',
+                    'text' => __('master.cashback-my-accounts'),
                      'icon_color' => 'green',
                     'url'  => 'my-cashbacks',
                 ],
                 [
-                    'text' => 'كاش باك المنتهي',
+                    'text' => __('master.cashback-expire'),
                      'icon_color' => 'orange',
                     'url'  => 'my-expire-cashbacks',
                 ]
@@ -425,60 +425,60 @@ return [
             ]
         ],
         [
-            'text'    => 'خدماتى',
+            'text'    => __('master.my-services'),
             'icon'    => 'fas fa-box',
             'can'     => "manage-item-as-user",
             'submenu' => [
                 [
-                    'text' => 'عرض خدماتى ',
+                    'text' => __('master.my-services'),
                     'icon_color' => 'red',
                     'url'  => 'my-services',
                 ]
             ]
         ],
         [
-            'text'    => 'ملفات الاكسبرتات',
+            'text'    => __('master.expert-files'),
             'icon'    => 'fas fa-file-excel',
             'can'     => "manage-item-as-user",
             'submenu' => [
                 [
-                    'text' => 'ملفات الاكسبرتات ',
+                    'text' => __('master.expert-files'),
                     'icon_color' => 'red',
                     'url'  => 'my-experts-files',
                 ]
             ]
         ],
         [
-            'text'    => 'خدمة التوصيات',
+            'text'    => __('master.recommended-services'),
             'icon'    => 'fas fa-file-excel',
             'can'     => "manage-item-as-user",
             'submenu' => [
                 [
-                    'text' => 'خدمة التوصيات',
+                    'text' => __('master.recommended-services'),
                     'icon_color' => 'red',
                     'url'  => 'recommended-services/create',
                 ]
             ]
         ],
         [
-            'text'    => 'خدمة مؤشرات سليم',
+            'text'    => __('master.directrix-services'),
             'icon'    => 'fas fa-file-excel',
             'can'     => "manage-item-as-user",
             'submenu' => [
                 [
-                    'text' => 'خدمة مؤشرات سليم',
+                    'text' => __('master.directrix-services'),
                     'icon_color' => 'red',
                     'url'  => 'directrix-services',
                 ]
             ]
         ],
         [
-            'text'    => 'التسويق بالعمولة',
+            'text'    => __('master.affiliate-marketing'),
             'icon'    => 'fas fa-wallet',
             'can'     => "manage-item",
             'submenu' => [
                 [
-                    'text' => 'مسوقي العمولة',
+                    'text' => __('master.affiliater-marketing'),
                     'icon_color' => 'red',
                     'url'  => 'affiliaters',
                 ],
@@ -488,12 +488,12 @@ return [
                     'url'  => 'affiliate-employmee',
                 ],
                 [
-                    'text' => 'أرباح مسوقي العمولة',
+                    'text' => __('master.affiliate-marketing-profit'),
                      'icon_color' => 'yellow',
                     'url'  => 'affiliates-profites',
                 ],
                 [
-                    'text' => 'طلبات سحب أرباح',
+                    'text' => __('master.withdrawal-requests-marketing-profits'),
                      'icon_color' => 'yellow',
                     'url'  => 'affiliates-withdraw-profites',
                 ]
