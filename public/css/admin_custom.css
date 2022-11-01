@@ -404,6 +404,7 @@ form.form-status {
 .language-dropdown .dropdown-menu .dropdown-item {
     direction: rtl !important;
     text-align: left !important;
+    padding: 0px;
 }
 
 .navbar-nav>.user-menu>.dropdown-menu>.user-body {
