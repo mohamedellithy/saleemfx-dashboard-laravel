@@ -523,6 +523,9 @@ form.form-status {
         left: auto;
         top: 0.7rem;
     } */
+    body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-header {
+        margin-left: 0px;
+    }
 }
 
 .card-title {
