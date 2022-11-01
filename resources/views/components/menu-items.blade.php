@@ -51,7 +51,6 @@
     @endif
     <div class="dropdown language-dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <?php echo app()->getLocale(); ?>
             @if(app()->getlocale() == 'ar')
                اللغة العربية
                <img src="https://cdn.britannica.com/79/5779-004-DC479508/Flag-Saudi-Arabia.jpg" style="width:20px;height:20px">
