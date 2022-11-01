@@ -508,7 +508,7 @@ form.form-status {
     body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .content-wrapper,
     body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-footer,
     body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-header {
-        margin-left: 0px;
+        margin-left: 250px;
         margin-right: auto !important;
     }
     .sidebar-mini.sidebar-collapse .content-wrapper,
