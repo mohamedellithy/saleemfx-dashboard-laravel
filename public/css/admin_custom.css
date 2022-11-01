@@ -526,6 +526,9 @@ form.form-status {
     body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-header {
         margin-left: 0px;
     }
+    body:not(.layout-fixed) .main-sidebar {
+        top: 30px;
+    }
 }
 
 .card-title {
