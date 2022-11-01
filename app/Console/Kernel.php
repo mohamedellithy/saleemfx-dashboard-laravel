@@ -28,18 +28,18 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
         $schedule->call(function(){
-            $date_max_ended = strtotime("-".Options()->setting['max_date_cashback_withdraw']." months");
-            $users = User::where('role','!=',1)->get();
-            foreach($users as $user):
-                $rest_value = $user->total_cashback_can_withdraw() - $user->cashbacks()->where('cash_backs.created_at','>=',date('Y-m-d H:i:s',$date_max_ended))->sum('value');
-                if($rest_value > 0):
-                    $user->expire_cashbacks()->updateOrCreate([
-                        "user_id" => $user->id
-                        ],[
-                        'value'   => $rest_value
-                    ]);
-                endif;
-            endforeach;
+            // $date_max_ended = strtotime("-".Options()->setting['max_date_cashback_withdraw']." months");
+            // $users = User::where('role','!=',1)->get();
+            // foreach($users as $user):
+            //     $rest_value = $user->total_cashback_can_withdraw() - $user->cashbacks()->where('cash_backs.created_at','>=',date('Y-m-d H:i:s',$date_max_ended))->sum('value');
+            //     if($rest_value > 0):
+            //         $user->expire_cashbacks()->updateOrCreate([
+            //             "user_id" => $user->id
+            //             ],[
+            //             'value'   => $rest_value
+            //         ]);
+            //     endif;
+            // endforeach;
             Http::get("https://webhook.site/11d7346f-73f8-4e5a-aeff-dd674907847d");
         })->name('run_expire_cashbacks')->withoutOverlapping()->dailyAt("11:50")->timezone('Africa/Cairo')->onOneServer();
 
