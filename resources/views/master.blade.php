@@ -43,6 +43,8 @@
     {{-- rtl bootstrap  --}}
     @if(app()->getLocale() == 'ar')
         <script src="https://cdn.rtlcss.com/bootstrap/v4.5.3/js/bootstrap.bundle.min.js" integrity="sha384-40ix5a3dj6/qaC7tfz0Yr+p9fqWLzzAXiwxVLt9dw7UjQzGYw6rWRhFAnRapuQyK" crossorigin="anonymous"></script>
+    @else
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
     @endif
     <script src="{{ asset('js/admin_custom.js') }}" ></script>
 @stop
