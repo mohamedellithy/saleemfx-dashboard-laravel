@@ -11,10 +11,6 @@
     no content
 @stop
 
-@section('dir')
-  {{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}
-@endsection
-
 @section('usermenu_body')
     @if(auth()->user())
         <a href="{{ auth()->user()->adminlte_profile_url() }}" class="btn btn-default btn-flat">
