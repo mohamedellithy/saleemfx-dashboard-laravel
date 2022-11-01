@@ -505,7 +505,7 @@ form.form-status {
 }
 
 @media (min-width: 768px) {
-    body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .content-wrapper,
+    /* body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .content-wrapper,
     body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-footer,
     body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-header {
         margin-left: 250px;
@@ -522,7 +522,7 @@ form.form-status {
         right: 1rem;
         left: auto;
         top: 0.7rem;
-    }
+    } */
 }
 
 .card-title {
