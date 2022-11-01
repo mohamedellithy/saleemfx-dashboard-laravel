@@ -401,9 +401,9 @@ form.form-status {
     padding: 8px !important;
 }
 
-.language-dropdown {
+.language-dropdown .dropdown-menu .dropdown-item {
     direction: rtl !important;
-    text-align:left !important;
+    text-align: left !important;
 }
 
 .navbar-nav>.user-menu>.dropdown-menu>.user-body {
@@ -496,4 +496,3 @@ form.form-status {
         }
     }
 }
-
