@@ -505,29 +505,11 @@ form.form-status {
 }
 
 @media (min-width: 768px) {
-    /* body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .content-wrapper,
-    body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-footer,
-    body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-header {
-        margin-left: 250px;
-        margin-right: auto !important;
-    }
-    .sidebar-mini.sidebar-collapse .content-wrapper,
-    .sidebar-mini.sidebar-collapse .main-footer,
-    .sidebar-mini.sidebar-collapse .main-header {
-        margin-left: 4.6rem !important;
-        margin-right: auto !important;
-    }
-    .nav-sidebar .nav-link>.right,
-    .nav-sidebar .nav-link>p>.right {
-        right: 1rem;
-        left: auto;
-        top: 0.7rem;
-    } */
     body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-header {
         margin-left: 0px;
     }
     body:not(.layout-fixed) .main-sidebar {
-        top: 30px;
+        top: 15px;
     }
 }
 
