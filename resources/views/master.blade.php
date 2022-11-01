@@ -11,6 +11,10 @@
     no content
 @stop
 
+@section('dir')
+  {{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}
+@endsection
+
 @section('usermenu_body')
     @if(auth()->user())
         <a href="{{ auth()->user()->adminlte_profile_url() }}" class="btn btn-default btn-flat">
@@ -21,7 +25,7 @@
     @if(auth()->user() && (!auth()->user()->ifAdmin))
         <script src="//code.tidio.co/8gymtjkfn2j8zfkjnelcojeyywgdathr.js" async></script>
     @endif
-    
+
 @stop
 
 @section('css')
@@ -53,8 +57,8 @@
                 e.target.submit();
             }
         }
-        
-       
+
+
     </script>
 @endpush
 
@@ -75,8 +79,8 @@
 
    <x-menu-items></x-menu-items>
    <x-mobile-menu></x-mobile-menu>
-   
-  
+
+
     @if(!auth()->user())
         <!-- mobile -->
         <li class="dashboard-name-menu login-register-item mobile">
@@ -85,9 +89,9 @@
         <li class="dashboard-name-menu login-register-item mobile">
             <a href="{{ route('register') }}">  انشاء حساب </a>
         </li>
-        
+
     @endif
-    
+
 @endsection
 
 @section('content_top_nav_right')
@@ -96,10 +100,10 @@
             <span class="fas fa-th-large"></span>
         </li>
     @endauth
-    
+
     <button class="navbar-toggler toggle-icon-menu-items" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
          <!--<span class="navbar-toggler-icon"></span>-->
          <i class="fas fa-bars"></i>
     </button>
-    
+
 @endsection
