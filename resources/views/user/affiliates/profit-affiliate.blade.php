@@ -32,57 +32,61 @@
 
 @section('content')
         <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="info-box shadow">
-                    <span class="info-box-icon bg-warning"><i class="fas fa-money-bill"></i></span>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="info-box shadow">
+                            <span class="info-box-icon bg-warning"><i class="fas fa-money-bill"></i></span>
 
-                    <div class="info-box-content">
-                        <span class="info-box-text">اجمالى أرباح التسويق</span>
-                        <span class="info-box-number">{{ auth()->user()->affiliates ? amount_currency(auth()->user()->affiliates->value_comissions() ) : 0 }}</span>
-                    </div>
-                    <!-- /.info-box-content -->
-                </div>
-                <!-- /.info-box -->
-            </div>
-            @if( auth()->user()->affiliates && (auth()->user()->affiliates->employee == 1))
-                <div class="col-md-3 col-sm-6">
-                    <div class="info-box shadow">
-                        <span class="info-box-icon bg-warning"><i class="fas fa-money-bill"></i></span>
-
-                        <div class="info-box-content">
-                            <span class="info-box-text">اجمالى أرباح التسويق</span>
-                            <span class="info-box-number">{{ auth()->user()->affiliates ? amount_currency(auth()->user()->affiliates->value_salaries() ) : 0 }}</span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">اجمالى أرباح التسويق</span>
+                                <span class="info-box-number">{{ auth()->user()->affiliates ? amount_currency(auth()->user()->affiliates->value_comissions() ) : 0 }}</span>
+                            </div>
+                            <!-- /.info-box-content -->
                         </div>
-                        <!-- /.info-box-content -->
+                        <!-- /.info-box -->
                     </div>
-                    <!-- /.info-box -->
-                </div>
-            @endif
+                    @if( auth()->user()->affiliates && (auth()->user()->affiliates->employee == 1))
+                        <div class="col-md-3 col-sm-6">
+                            <div class="info-box shadow">
+                                <span class="info-box-icon bg-warning"><i class="fas fa-money-bill"></i></span>
 
-            <div class="col-md-3 col-sm-6">
-                <div class="info-box shadow">
-                    <span class="info-box-icon bg-warning"><i class="fas fa-check-circle"></i></span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text">اجمالى أرباح التسويق</span>
+                                    <span class="info-box-number">{{ auth()->user()->affiliates ? amount_currency(auth()->user()->affiliates->value_salaries() ) : 0 }}</span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+                    @endif
 
-                    <div class="info-box-content">
-                        <span class="info-box-text"> اجمالى المسحوب</span>
-                        <span class="info-box-number">{{ amount_currency(auth()->user()->total_cashbacks_withdraws()) }}</span>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="info-box shadow">
+                            <span class="info-box-icon bg-warning"><i class="fas fa-check-circle"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text"> اجمالى المسحوب</span>
+                                <span class="info-box-number">{{ amount_currency(auth()->user()->total_cashbacks_withdraws()) }}</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
                     </div>
-                    <!-- /.info-box-content -->
-                </div>
-                <!-- /.info-box -->
-            </div>
 
-            <div class="col-md-3 col-sm-6">
-                <div class="info-box shadow">
-                    <span class="info-box-icon bg-warning"><i class="fas fa-fist-raised"></i></span>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="info-box shadow">
+                            <span class="info-box-icon bg-warning"><i class="fas fa-fist-raised"></i></span>
 
-                    <div class="info-box-content">
-                        <span class="info-box-text"> طلبات السحب المعلقة</span>
-                        <span class="info-box-number">{{ amount_currency(auth()->user()->withdraw_cashbacks_pendings_total()) }}</span>
+                            <div class="info-box-content">
+                                <span class="info-box-text"> طلبات السحب المعلقة</span>
+                                <span class="info-box-number">{{ amount_currency(auth()->user()->withdraw_cashbacks_pendings_total()) }}</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
                     </div>
-                    <!-- /.info-box-content -->
                 </div>
-                <!-- /.info-box -->
             </div>
         </div>
         <div class="text-left container-button-create-account">
