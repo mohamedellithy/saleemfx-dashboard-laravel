@@ -7,8 +7,9 @@
     <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="{{ asset('css/Adminlte-rtl.css') }}">
+    @if(app()->getLocale() == 'ar')
+        <link rel="stylesheet" href="{{ asset('css/Adminlte-rtl.css') }}">
+    @endif
     <link rel="stylesheet" href="{{ asset('css/admin_custom.css') }}">
 
 @stop
