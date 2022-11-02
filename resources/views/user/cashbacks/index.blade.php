@@ -14,7 +14,7 @@
 @section('plugins.Select2', true)
 
 @section('content_header')
-  كاش باك حساباتى
+  {{ __('master.cashback-my-accounts') }}
 @stop
 
 
@@ -22,7 +22,7 @@
     <div class="row">
          <div class="container">
               <div class="alert alert-danger">
-                تنويه : جميع ارصدة الكاش باك التي لم يتم سحبها خلال 3 شهور من تاريخ ترصيدها، يتم حذفها نهائيا حسب القوانين المتبعة في مجموعة سليم
+                 {{ __('master.alert-cashback') }}
               </div>
          </div>
     </div>
@@ -30,18 +30,15 @@
         <div class="row">
             <div class="container-image-chashback col-md-6 col-xs-12">
                 <img src="{{ asset('images/cashback.jpg') }}"/>
-                <h2 class="title-image-chashback"> الاسترداد النقدي </h2>
-                <p  class="description-image-cachback">
-                طريقة لكتابة النصوص في النشر والتصميم الجرافيكي تستخدم بشكل شائع لتوضيح الشكل المرئي للمستند أو الخط دون الاعتماد على محتوى ذي
-                </p>
+                <h2 class="title-image-chashback"> {{ __('master.cashbacks') }}</h2>
                 @if(!auth()->user()->accounts()->where('status','!=',1)->exists())
                     <button class="btn btn-success create-new-account" data-toggle="modal" data-target="#modal-lg">
                         <i class="fas fa-plus"></i>
-                        تفعيل الحساب
+                        {{ __('master.active-account') }}
                     </button>
                 @else
                     <p class="alert alert-info">
-                        بانتظار قبول الطلب من المسؤل فى الموقع
+                        {{ __('master.accept_request_form_admin') }}
                     </p>
                 @endif
             </div>
@@ -72,7 +69,7 @@
                             <span class="info-box-icon bg-warning"><i class="fas fa-wallet"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">اجمالى الرصيد</span>
+                                <span class="info-box-text">{{ __('master.totale_balance') }}</span>
                                 <span class="info-box-number">{{ amount_currency(auth()->user()->total_balance()) }}</span>
                             </div>
                             <!-- /.info-box-content -->
@@ -85,7 +82,7 @@
                             <span class="info-box-icon bg-warning"><i class="fas fa-money-bill"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">اجمالى الكاش باك</span>
+                                <span class="info-box-text">{{ __('master.totale_cashback') }}</span>
                                 <span class="info-box-number">{{ amount_currency(auth()->user()->total_cashback()) }}</span>
                             </div>
                             <!-- /.info-box-content -->
@@ -98,7 +95,7 @@
                             <span class="info-box-icon bg-warning"><i class="fas fa-check-circle"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text"> اجمالى المسحوب</span>
+                                <span class="info-box-text"> {{ __('master.total_withdraw') }}</span>
                                 <span class="info-box-number">{{ amount_currency(auth()->user()->total_withdraws()) }}</span>
                             </div>
                             <!-- /.info-box-content -->
@@ -111,7 +108,7 @@
                             <span class="info-box-icon bg-warning"><i class="fas fa-check-circle"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text"> الكاش باك المنتهى</span>
+                                <span class="info-box-text"> {{ __('master.totale_expire_cashback') }}</span>
                                 <span class="info-box-number">{{ amount_currency(auth()->user()->total_expire_cashbacks()) }}</span>
                             </div>
                             <!-- /.info-box-content -->
@@ -124,7 +121,7 @@
                             <span class="info-box-icon bg-warning"><i class="fas fa-check-circle"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text"> المتبقي من الكاش باك</span>
+                                <span class="info-box-text"> {{ __('master.totale_available_cashback') }}</span>
                                 <span class="info-box-number">{{ amount_currency(auth()->user()->total_cashback_can_withdraw() - auth()->user()->total_expire_cashbacks()) }}</span>
                             </div>
                             <!-- /.info-box-content -->
@@ -135,18 +132,18 @@
                 <div class="text-left container-button-create-account">
                     <button class="btn btn-success create-new-account" data-toggle="modal" data-target="#modal-lg">
                         <i class="fas fa-plus"></i>
-                        طلب سحب ارباح
+                        {{ __('master.withdrawal-requests-marketing-profits') }}
                     </button>
                 </div>
-                <h5 class="card-title m-0" style="padding: 11px 1px;">الكاش باك</h5>
+                <h5 class="card-title m-0" style="padding: 11px 1px;">{{ __('master.cashbacks') }}</h5>
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th> قيمة الكاش باك  </th>
-                            <th> شركة التابع لها الحساب  </th>
-                            <th> رقم الحساب التداول  </th>
-                            <th> شهر حساب الكاش باك  </th>
-                            <th> تاريخ اضافة الكاش باك  </th>
+                            <th> {{ __('master.cashback_value')}}  </th>
+                            <th> {{ __('master.company_name') }} </th>
+                            <th> {{ __('master.forex_number_account') }}  </th>
+                            <th> {{ __('master.cash-back-account-month') }}} </th>
+                            <th> {{ __('master.created_at') }} </th>
                             <th> </th>
                         </tr>
                     </thead>
