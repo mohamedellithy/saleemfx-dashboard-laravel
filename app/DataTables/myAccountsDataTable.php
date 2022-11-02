@@ -28,12 +28,12 @@ class myAccountsDataTable extends DataTable
                 return $row->status_text;
             })
             ->addColumn('action', function(Account $row){
-                $data = "<a class='btn btn-info btn-sm' href='".url('my-accounts/'.$row->id.'/edit')."' style='margin:0px 2px'>تعديل الحساب</a>";
+                $data = "<a class='btn btn-info btn-sm' href='".url('my-accounts/'.$row->id.'/edit')."' style='margin:0px 2px'>".__('master.edit_account')."</a>";
                 if($row->status == 0):
                     $data .= '<form method="post" action="'.url('my-accounts/'.$row->id).'" onsubmit="FormSubmitDelete(event)">
                     <input type="hidden" name="_token" value=" '.csrf_token().' ">
                     <input type="hidden" name="_method" value="DELETE">
-                    <button type="submit" class="btn btn-sm btn-danger btn-sm">حذف</button>
+                    <button type="submit" class="btn btn-sm btn-danger btn-sm">'.__('master.delete').'</button>
                     </form>';
                 else:
                     $data .= '';

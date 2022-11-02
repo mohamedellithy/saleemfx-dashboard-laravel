@@ -41,7 +41,10 @@ return [
     'forex_company_cost_d'       => 'Forex Company Cost',
     'order_status'               => 'Order Status',
     'created_at'                 => 'Created at',
-    'edit_account'               => 'Edit Account'
+    'edit_account'               => 'Edit Account',
+    'delete'                     => 'Delete',
+    'pending'                    => 'Pending',
+    'ended_order'                => 'Order Ended'
 
 
 ];

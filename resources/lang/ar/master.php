@@ -41,7 +41,14 @@ return [
     'forex_company_cost_d'       => 'قيمة التداول فى الشركة',
     'order_status'               => 'حالة الطلب',
     'created_at'                 => 'تاريخ الانشاء',
-    'edit_account'               => 'تعديل الحساب'
+    'edit_account'               => 'تعديل الحساب',
+    'delete'                     => 'حذف',
+    'pending'                    => 'قيد التنفيذ',
+    'accepted'                   => 'تم الموافقة',
+    'refused'                    => 'تم الرفض',
+    'ended_order'                => 'انهاء الطلب',
+
+
 
 
 ];

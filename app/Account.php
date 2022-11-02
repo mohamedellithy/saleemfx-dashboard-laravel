@@ -32,20 +32,20 @@ class Account extends Model
     public function getAccountBalanceAttribute($value){
         return $value;
     }
-    
-    
+
+
     public function services_orders(){
         return $this->hasMany('App\ServicesOrder','account_id','id');
     }
-    
+
     function getServiceIsOrderedAttribute($service_id){
         /* service_is_ordered */
         return $this->services_orders()->where('service_id',$service_id)->exists();
     }
 
-    
 
-    
+
+
 
     function getServiceIsPendedAttribute($service_id){
         /* service_is_pended */
@@ -83,16 +83,16 @@ class Account extends Model
         # status_text
         # 0 -> pending , 1 -> accepted , 2 -> refused , 3 -> ended
         if($this->status == 0)
-            $status =  'قيد التنفيذ';
+            $status =  __('master.pending');
 
         if($this->status == 1)
-            $status = 'تم الموافقة';
+            $status = __('master.accepted');
 
         if($this->status == 2)
-           $status = 'تم الرفض';
+           $status = __('master.refused');
 
         if($this->status == 3)
-           $status = 'انهاء الطلب';
+           $status = __('master.ended_order');
 
         return '<label style="width:100px;font-size: 12px;text-align: center;" class="status-label status-'.$this->status.'">'.$status.'</label>';
     }
