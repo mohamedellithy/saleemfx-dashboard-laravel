@@ -29,4 +29,19 @@ return [
     'affiliate-marketing-profit' => 'أرباح التسويق بالعمولة',
     'withdrawal-requests-marketing-profits' => 'طلبات سحب الارباح',
     'affiliater-marketing'       => 'مسوقي بالعمولة',
+    'show_my_account'            => 'عرض حسباتى',
+    'create_new_account'         => 'انشاء حساب جديد',
+    'edit_forex_account'         => 'تعديل حساب التداول',
+    'forex_arabic_name'          => 'اسم شركة التداول بالعربي',
+    'forex_english_name'         => 'اسم شركة التداول بالانجليزي',
+    'forex_number_account'       => 'رقم حساب شركة التداول',
+    'forex_company_cost'         => 'مبلغ التداول فى شركة الفوركس',
+    'company_name'               => 'اسم الشركة',
+    'company_account_number'     => 'رقم حساب الشركة',
+    'forex_company_cost_d'       => 'قيمة التداول فى الشركة',
+    'order_status'               => 'حالة الطلب',
+    'created_at'                 => 'تاريخ الانشاء',
+    'edit_account'               => 'تعديل الحساب'
+
+
 ];

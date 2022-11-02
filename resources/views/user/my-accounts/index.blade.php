@@ -19,7 +19,7 @@
 @section('plugins.Select2', true)
 
 @section('content_header')
-  عرض حساباتى
+  {{ __('master.show_my_account') }}
 @stop
 
 
@@ -45,7 +45,7 @@
             <div class="text-left container-button-create-account">
                 <button class="btn btn-success create-new-account" data-toggle="modal" data-target="#modal-lg">
                     <i class="fas fa-plus"></i>
-                    انشاء حساب جديد
+                    {{ __('master.create_new_account') }}
                 </button>
             </div>
             {!! $dataTable->table() !!}

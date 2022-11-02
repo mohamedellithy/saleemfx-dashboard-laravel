@@ -28,5 +28,14 @@ return [
     'invited-clients'            => 'invited clients',
     'affiliate-marketing-profit' => 'affiliate marketing profit',
     'withdrawal-requests-marketing-profits' => 'withdrawal requests profits',
-    'affiliater-marketing' => 'affiliater marketing',
+    'affiliater-marketing'       => 'affiliater marketing',
+    'show_my_account'            => 'Show My Account',
+    'create_new_account'         => 'Create New Account',
+    'edit_forex_account'         => 'Edit Forex Account',
+    'forex_arabic_name'          => 'Forex Arabic Name',
+    'forex_english_name'         => 'Forex English Name',
+    'forex_number_account'       => 'Forex Account Number',
+    'forex_company_cost'         => 'Forex Cost',
+
+
 ];
