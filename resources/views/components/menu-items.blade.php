@@ -63,12 +63,12 @@
             @if(app()->getlocale() == 'ar')
                 <a class="dropdown-item" href="{{ url('switch/en') }}">
                     English
-                    <img src="https://miro.medium.com/max/1400/0*o0-6o1W1DKmI5LbX.png" style="width:20px;height:20px">
+                    <img src="https://miro.medium.com/max/1400/0*o0-6o1W1DKmI5LbX.png" style="width:20px;height:13px">
                 </a>
             @else
                 <a class="dropdown-item" href="{{ url('switch/ar') }}">
                     اللغة العربية
-                    <img src="https://cdn.britannica.com/79/5779-004-DC479508/Flag-Saudi-Arabia.jpg" style="width:20px;height:20px">
+                    <img src="https://cdn.britannica.com/79/5779-004-DC479508/Flag-Saudi-Arabia.jpg" style="width:20px;height:13px">
                 </a>
             @endif
         </div>
