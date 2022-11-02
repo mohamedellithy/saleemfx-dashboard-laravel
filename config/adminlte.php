@@ -500,17 +500,17 @@ return [
             ]
         ],
         [
-            'text'    => 'التسويق بالعمولة',
+            'text'    => ['affiliater-marketing'],
             'icon'    => 'fas fa-bullhorn',
             'can'     => "manage-item-as-affiliater",
             'submenu' => [
                 [
-                    'text' => 'التسويق بالعمولة',
+                    'text' => ['affiliater-marketing'],
                     'icon_color' => 'red',
                     'url'  => 'affiliates/create',
                 ],
                  [
-                    'text' => 'المدعويين ',
+                    'text' => ['invited-clients'],
                     'icon_color' => 'red',
                     'url'  => 'affiliatees/show',
                 ],
@@ -521,12 +521,12 @@ return [
                     'url'  => 'affiliatees/show-employee-salaries',
                 ],
                 [
-                    'text' => 'أرباح التسويق بالعمولة ',
+                    'text' => ['affiliate-marketing-profit'],
                     'icon_color' => 'red',
                     'url'  => 'affiliatees/my-profits',
                 ],
                 [
-                    'text' => 'طلبات سحب الارباح',
+                    'text' => ['withdrawal-requests-marketing-profits'],
                     'icon_color' => 'red',
                     'url'  => 'affiliatees/withdraws',
                 ]
