@@ -533,3 +533,7 @@ div.dataTables_wrapper div.dataTables_filter {
 .affiliate-status-select {
     float: right;
 }
+
+.nav-sidebar .nav-link p {
+    margin: 10px;
+}
