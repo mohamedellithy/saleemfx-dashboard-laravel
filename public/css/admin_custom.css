@@ -39,7 +39,7 @@ body:not(.layout-fixed) .main-sidebar {
 
 .dashboard-name-menu {
     padding: 2px 15px;
-    font-size: 17px;
+    font-size: 15px;
     color: white !important;
     list-style: none;
 }
@@ -543,6 +543,7 @@ div.dataTables_wrapper div.dataTables_filter {
 }
 
 .language-dropdown .dropdown-toggle {
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
+    border: 0px;
 }
