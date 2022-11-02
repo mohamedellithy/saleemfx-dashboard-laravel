@@ -36,6 +36,12 @@ return [
     'forex_english_name'         => 'Forex English Name',
     'forex_number_account'       => 'Forex Account Number',
     'forex_company_cost'         => 'Forex Cost',
+    'company_name'               => 'Company Name',
+    'company_account_number'     => 'Company Account Number',
+    'forex_company_cost_d'       => 'Forex Company Cost',
+    'order_status'               => 'Order Status',
+    'created_at'                 => 'Created at',
+    'edit_account'               => 'Edit Account'
 
 
 ];
