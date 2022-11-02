@@ -14,7 +14,7 @@
 @section('plugins.Select2', true)
 
 @section('content_header')
-  {{ __('master.my_cashback_withdraw_orders') }}}
+  {{ __('master.my_cashback_withdraw_orders') }}
 @stop
 
 
