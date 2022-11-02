@@ -94,11 +94,11 @@ class myAccountsDataTable extends DataTable
         return [
 
             Column::make('id'),
-            Column::make('company_name')->title('اسم الشركة'),
-            Column::make('account_number')->title('رقم حساب الشركة'),
-            Column::make('account_balance')->title('قيمة التداول فى الشركة'),
-            Column::make('status')->title('حالة الطلب'),
-            Column::make('created_at')->title('تاريخ الانشاء'),
+            Column::make('company_name')->title(__('master.company_name')),
+            Column::make('account_number')->title(__('master.company_account_number')),
+            Column::make('account_balance')->title(__('master.forex_company_cost_d')),
+            Column::make('status')->title(__('master.order_status')),
+            Column::make('created_at')->title(__('master.created_at')),
             Column::computed('action')->title('')
                   ->exportable(false)
                   ->printable(false)
