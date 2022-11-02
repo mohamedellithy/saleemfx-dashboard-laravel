@@ -47,8 +47,9 @@ return [
     'accepted'                   => 'تم الموافقة',
     'refused'                    => 'تم الرفض',
     'ended_order'                => 'انهاء الطلب',
-
-
-
+    'show_my_wallet'             => 'عرض محفظتى',
+    'charge_my_wallet'           => 'شحن محفظتى',
+    'money_value'                => 'قيمة المبلغ',
+    'payment_method'             => 'وسيلة الدفع',
 
 ];

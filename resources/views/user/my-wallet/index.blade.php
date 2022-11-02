@@ -14,7 +14,7 @@
 @section('plugins.Select2', true)
 
 @section('content_header')
-  عرض حساباتى
+  {{ __('master.show_my_wallet') }}
 @stop
 
 
@@ -40,17 +40,17 @@
             <div class="text-left container-button-create-account">
                 <button class="btn btn-success create-new-account" data-toggle="modal" data-target="#modal-lg">
                     <i class="fas fa-plus"></i>
-                    شحن محفظتى
+                    {{ __('master.charge_my_wallet') }}
                 </button>
             </div>
             <table class="table table-striped">
                 <thead class="">
                     <tr style="background-color: white;">
                         <th scope="col">#</th>
-                        <th scope="col">قيمة المبلغ</th>
-                        <th scope="col">وسيلة الدفع</th>
-                        <th scope="col">حالة الطلب</th>
-                        <th scope="col">تاريخ انشاء الطلب</th>
+                        <th scope="col">{{ __('master.money_value') }}</th>
+                        <th scope="col">{{ __('master.payment_method') }}</th>
+                        <th scope="col">{{ __('master.order_status') }}</th>
+                        <th scope="col">{{ __('master.created_at') }}</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>

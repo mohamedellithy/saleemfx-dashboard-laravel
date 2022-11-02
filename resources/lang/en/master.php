@@ -46,7 +46,14 @@ return [
     'pending'                    => 'Pending',
     'accepted'                   => 'Accepted',
     'refused'                    => 'Refused',
-    'ended_order'                => 'Order Ended'
+    'ended_order'                => 'Order Ended',
+    'show_my_wallet'             => 'Show My Wallet',
+    'charge_my_wallet'           => 'Charge My Wallet',
+    'money_value'                => 'Money Value',
+    'payment_method'             => 'Payment Method',
+
+
+
 
 
 ];
