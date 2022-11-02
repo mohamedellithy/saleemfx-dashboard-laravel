@@ -55,7 +55,7 @@ return [
     'totale_balance'             => 'Totale Balance',
     'totale_cashback'            => 'Totale Cashbacks',
     'total_withdraw'             => 'Totale Withdraw',
-    'totale_withdraw_orders_pending' => 'Totale Withdraw Pending',
+    'totale_withdraw_orders_pending' => 'Totale Pending Withdraw',
     'totale_expire_cashback'     => 'Totale Expire Cashbacks',
     'totale_available_cashback'  => 'Totale Available Cashbacks',
     'money_needed'               => 'Money value',

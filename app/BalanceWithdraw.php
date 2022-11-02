@@ -23,13 +23,13 @@ class BalanceWithdraw extends Model
         # status_order
         # 0 -> pending , 1 -> accepted , 2 -> refused , 3 -> ended
         if($this->status == 0)
-            $status =  'بانتظار تأكيد الدفع';
+            $status =  __('master.pending');
 
         if($this->status == 1)
-            $status = 'تم الدفع';
+            $status = __('master.accepted');
 
         if($this->status == 2)
-           $status = 'تم الرفض';
+           $status = __('master.refused');
 
         return '<label style="font-size: 12px;" class="status-label status-'.$this->status.'">'.$status.'</label>';
     }
