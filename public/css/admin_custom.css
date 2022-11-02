@@ -537,3 +537,8 @@ div.dataTables_wrapper div.dataTables_filter {
 .nav-sidebar .nav-link p {
     margin: 10px;
 }
+
+.language-dropdown .dropdown-toggle {
+    background-color: white;
+    color: black;
+}
