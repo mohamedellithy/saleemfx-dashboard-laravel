@@ -44,6 +44,8 @@ return [
     'edit_account'               => 'Edit Account',
     'delete'                     => 'Delete',
     'pending'                    => 'Pending',
+    'accepted'                   => 'Accepted',
+    'refused'                    => 'Refused',
     'ended_order'                => 'Order Ended'
 
 
