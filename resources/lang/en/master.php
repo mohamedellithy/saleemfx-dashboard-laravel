@@ -51,9 +51,18 @@ return [
     'charge_my_wallet'           => 'Charge My Wallet',
     'money_value'                => 'Money Value',
     'payment_method'             => 'Payment Method',
-
-
-
-
+    'my_cashback_withdraw_orders'=> 'Order Withdraw My Balance',
+    'totale_balance'             => 'Totale Balance',
+    'totale_cashback'            => 'Totale Cashbacks',
+    'total_withdraw'             => 'Totale Withdraw',
+    'totale_withdraw_orders_pending' => 'Totale Withdraw Orders Pending',
+    'totale_expire_cashback'     => 'Totale Expire Cashbacks',
+    'totale_available_cashback'  => 'Totale Available Cashbacks',
+    'money_needed'               => 'Money value',
+    'wallet'                     => 'Wallet',
+    'wallet_account_number'      => 'Wallet Account Number',
+    'cancel_order'               => 'Cancel Order',
+    'not_found_cashback'         => 'cashback not found',
+    'subscrib_services'          => 'Subscrib in services',
 
 ];

@@ -51,5 +51,21 @@ return [
     'charge_my_wallet'           => 'شحن محفظتى',
     'money_value'                => 'قيمة المبلغ',
     'payment_method'             => 'وسيلة الدفع',
+    'my_cashback_withdraw_orders'=> 'طلبات سحب الرصيد',
+    'totale_balance'             => 'اجمالى الرصيد',
+    'totale_cashback'            => 'اجمالى الكاش باك',
+    'total_withdraw'             => 'اجمالى المسحوب',
+    'totale_withdraw_orders_pending' => 'طلبات السحب المعلقة',
+    'totale_expire_cashback'     => 'الكاش باك المنتهى',
+    'totale_available_cashback'  => 'المتبقي من الكاش باك',
+    'money_needed'               => 'المبلغ المطلوب سحبه',
+    'wallet'                     => 'المحفظة',
+    'wallet_account_number'      => 'رقم حساب المحفظة',
+    'cancel_order'               => 'الغاء الطلب',
+    'not_found_cashback'         => 'لايوجد كاش باك',
+    'subscrib_services'          => 'الاشتراك فى الخدمة',
+
+
+
 
 ];

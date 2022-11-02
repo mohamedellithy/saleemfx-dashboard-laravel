@@ -14,7 +14,7 @@
 @section('plugins.Select2', true)
 
 @section('content_header')
-  كاش باك حساباتى
+  {{ __('master.my_cashback_withdraw_orders') }}}
 @stop
 
 
@@ -43,7 +43,7 @@
                         <span class="info-box-icon bg-warning"><i class="fas fa-wallet"></i></span>
 
                         <div class="info-box-content">
-                            <span class="info-box-text">اجمالى الرصيد</span>
+                            <span class="info-box-text">{{ __('master.totale_balance') }}</span>
                             <span class="info-box-number">{{ amount_currency(auth()->user()->total_balance()) }}</span>
                         </div>
                         <!-- /.info-box-content -->
@@ -56,7 +56,7 @@
                         <span class="info-box-icon bg-warning"><i class="fas fa-money-bill"></i></span>
 
                         <div class="info-box-content">
-                            <span class="info-box-text">اجمالى الكاش باك</span>
+                            <span class="info-box-text">{{ __('master.totale_cashback') }}</span>
                             <span class="info-box-number">{{ amount_currency(auth()->user()->total_cashback()) }}</span>
                         </div>
                         <!-- /.info-box-content -->
@@ -69,7 +69,7 @@
                         <span class="info-box-icon bg-warning"><i class="fas fa-check-circle"></i></span>
 
                         <div class="info-box-content">
-                            <span class="info-box-text"> اجمالى المسحوب</span>
+                            <span class="info-box-text"> {{ __('master.total_withdraw') }} </span>
                             <span class="info-box-number">{{ amount_currency(auth()->user()->total_withdraws()) }}</span>
                         </div>
                         <!-- /.info-box-content -->
@@ -82,7 +82,7 @@
                         <span class="info-box-icon bg-warning"><i class="fas fa-fist-raised"></i></span>
 
                         <div class="info-box-content">
-                            <span class="info-box-text"> طلبات السحب المعلقة</span>
+                            <span class="info-box-text"> {{ __('master.totale_withdraw_orders_pending') }} </span>
                             <span class="info-box-number">{{ amount_currency(auth()->user()->withdraw_cashbacks_pendings_total()) }}</span>
                         </div>
                         <!-- /.info-box-content -->
@@ -95,7 +95,7 @@
                         <span class="info-box-icon bg-warning"><i class="fas fa-check-circle"></i></span>
 
                         <div class="info-box-content">
-                            <span class="info-box-text"> الكاش باك المنتهى</span>
+                            <span class="info-box-text"> {{ __('master.totale_expire_cashback') }} </span>
                             <span class="info-box-number">{{ amount_currency(auth()->user()->total_expire_cashbacks()) }}</span>
                         </div>
                         <!-- /.info-box-content -->
@@ -108,7 +108,7 @@
                         <span class="info-box-icon bg-warning"><i class="fas fa-check-circle"></i></span>
 
                         <div class="info-box-content">
-                            <span class="info-box-text"> المتبقي من الكاش باك</span>
+                            <span class="info-box-text"> {{ __('master.totale_available_cashback') }}</span>
                             <span class="info-box-number">{{ amount_currency(auth()->user()->total_cashback_can_withdraw() - auth()->user()->total_expire_cashbacks()) }}</span>
                         </div>
                         <!-- /.info-box-content -->
@@ -119,18 +119,20 @@
             <div class="text-left container-button-create-account">
                 <button class="btn btn-success create-new-account" data-toggle="modal" data-target="#modal-lg">
                     <i class="fas fa-plus"></i>
-                      طلبات سحب الرباح
+                      {{ __('master.withdrawal-requests-marketing-profits') }}
                 </button>
             </div>
-            <h5 class="card-title m-0" style="padding: 11px 1px;">طلبات سحب الرباح</h5>
+            <h5 class="card-title m-0" style="padding: 11px 1px;">
+                {{ __('master.withdrawal-requests-marketing-profits') }}
+            </h5>
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th> المبلغ المطلوب سحبه  </th>
-                        <th> المحفظة  </th>
-                        <th> رقم حساب المحفظة  </th>
-                        <th> تاريخ الطلب  </th>
-                        <th> حالة الطلب   </th>
+                        <th> {{ __('master.money_needed') }} </th>
+                        <th> {{ __('master.wallet') }}  </th>
+                        <th> {{ __('master.wallet_account_number') }} </th>
+                        <th> {{ __('master.created_at') }} </th>
+                        <th> {{ __('master.order_status') }}  </th>
                         <th></th>
                     </tr>
                 </thead>
@@ -148,21 +150,21 @@
                                     <form method="POST"  action="{{ route('my-withdraw-orders.destroy',$withdraw_cashback_order->id) }}">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger" > الغاء الطلب</button>
+                                        <button type="submit" class="btn btn-danger" >{{ __('master.cancel_order') }}</button>
                                     </form>
                                 @endif
                             </td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="4"> لايوجد كاش باك فى حسابك </td>
+                            <td colspan="4"> {{ __('master.not_found_cashback') }}</td>
                         </tr>
                     @endforelse
 
                     @forelse(auth()->user()->withdraw_for_services()->latest()->get() as $withdraw_services_order)
                         <tr>
                             <td>{{ amount_currency($withdraw_services_order->withdraw_value) }}</td>
-                            <td colspan="2"> الاشتراك فى الخدمة ( {{ $withdraw_services_order->Withdrawable->services->post_title ?? '' }} )</td>
+                            <td colspan="2"> {{ __('master.subscrib_services') }} ( {{ $withdraw_services_order->Withdrawable->services->post_title ?? '' }} )</td>
                             <td>{{ $withdraw_services_order->created_at }}</td>
                             <td>{!! $withdraw_services_order->status_order  !!}</td>
 
