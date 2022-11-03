@@ -67,5 +67,6 @@ return [
     'cashbacks'                  => 'cashbacks',
     'accept_request_form_admin'  => 'Waiting for the request to be accepted by the site administrator',
     'alert-cashback'             => 'Note: All cashback balances that have not been withdrawn within 3 months from the date of their balance, will be permanently deleted according to the laws followed in Saleem Group',
+    'cashback_available'         => 'available cashback'
 
 ];

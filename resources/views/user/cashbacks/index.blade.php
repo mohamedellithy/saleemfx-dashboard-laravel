@@ -157,15 +157,16 @@
                                 <td>{{ $cashback->created_at }}</td>
                                 <td>
                                     @if($cashback->cashback_allow_to_withdraw())
-                                        <i class="fas fa-circle" style="color:#51d851"></i> كاش باك قابل للسحب
+                                        <i class="fas fa-circle" style="color:#51d851"></i>
+                                        {{ __('master.cashback_available') }}
                                     @else
-                                        <i class="fas fa-circle" style="color:red"></i> كاش باك منتهى
+                                        <i class="fas fa-circle" style="color:red"></i> {{ __('master.cashback-expire') }}
                                     @endif
                                 </td>
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="4"> لايوجد كاش باك فى حسابك </td>
+                                <td colspan="4"> {{ __('master.not_found_cashback') }}</td>
                             </tr>
                         @endforelse
 
