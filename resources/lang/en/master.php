@@ -69,6 +69,24 @@ return [
     'accept_request_form_admin'  => 'Waiting for the request to be accepted by the site administrator',
     'alert-cashback'             => 'Note: All cashback balances that have not been withdrawn within 3 months from the date of their balance, will be permanently deleted according to the laws followed in Saleem Group',
     'cashback_available'         => 'available cashback',
-    'cashback_expire_not_found'  => 'There is no expired cashback in your account'
+    'cashback_expire_not_found'  => 'There is no expired cashback in your account',
+     'my-services-subscribe'      => 'subscribed services',
+     'no-services-available' => 'There are no services available',
+     'waiting-for-request-review' => 'Waiting for request review',
+     'subscription-expiration-date' => 'Subscription expiration date',
+     'renew-your-subscription-to-the-service' => 'Renew your subscription to the service',
+     'forex_account' => 'Forex Account',
+     'service-subscription-price'  => 'service subscription price',
+     'subscription-to-the-service' => 'subscription to the service',
+     'months_account' => 'months account',
+     'month' => 'month',
+     'totale_cost' => 'Totale Cost',
+     'minimum-subscription-for-the-service' => 'Minimum subscription for the service',
+     'descrip_forex_value' => 'The value of the trading amounts is less than the minimum subscription for the service',
+     '' => '',
+     '' => '',
+     '' => '',
+     '' => '',
+     '' => ''
 
 ];

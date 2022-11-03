@@ -14,7 +14,7 @@
 @section('plugins.Select2', true)
 
 @section('content_header')
-  خدماتى
+  {{ __('master.my-services') }}
 @stop
 
 
@@ -37,7 +37,7 @@
                     </ul>
                 </div>
             @endif
-            <h5 class="heading-ad-services"> الخدمات المشترك بها </h5>
+            <h5 class="heading-ad-services"> {{ __('master.my-services-subscribe') }}</h5>
 
             <!-- <div class="services-vip">
                 if(auth()->user()->vip_order->first())
@@ -67,27 +67,27 @@
 
                                     <div class="footer-ad-services" >
                                         @if(($order->expire_at != null) && ($order->status != 0))
-                                            <button type="button" type-form="edit" order-id="{{ $order->id }}" SERVICES-ID="{{ $order->service_id }}" class="btn btn-success activateServices"> تجديد الاشتراك فى الخدمة </button>
+                                            <button type="button" type-form="edit" order-id="{{ $order->id }}" SERVICES-ID="{{ $order->service_id }}" class="btn btn-success activateServices"> {{ __('master.renew-your-subscription-to-the-service') }}</button>
                                         @elseif(($order->expire_at != null) && ($order->status == 0))
-                                            <button type="button" class="btn btn-info"> بانتظار مراجعة الطلب  </button>
+                                            <button type="button" class="btn btn-info"> {{ __('master.waiting-for-request-review') }} </button>
                                         @endif
                                     </div>
 
                                     @if($order->expire_at != null)
-                                        <p class="subscription-date"> تاريخ انتهاء الاشتراك {{ $order->expire_at }} </p>
+                                        <p class="subscription-date"> {{ __('master.subscription-expiration-date') }} {{ $order->expire_at }} </p>
                                     @endif
                                 </div>
                             </div>
 
                     @empty
-                        <p class="no-adds text-center" style="margin-top:10px"> لا يوجد اى خدمات متاحة  </p>
+                        <p class="no-adds text-center" style="margin-top:10px">  {{ __('master.no-services-available') }}  </p>
                     @endforelse
 
             </div>
 
 
             <br/>
-            <h5 class="heading-ad-services"> الخدمات اخري </h5>
+            <h5 class="heading-ad-services">{{ __('master.other-services') }}</h5>
             <div class="row" >
                 @forelse($services as $service)
                     <div class="col-md-4 ad-services my-services ">
@@ -95,12 +95,12 @@
                             <h6> {{ $service->post_title }} </h6>
                             <br/><br/><br/>
                             <div class="footer-ad-services">
-                                <button type="button" type-form="create" class="btn btn-warning activateServices" order-id="" SERVICES-ID="{{ $service->ID }}">تفعيل </button>
+                                <button type="button" type-form="create" class="btn btn-warning activateServices" order-id="" SERVICES-ID="{{ $service->ID }}">{{ __('master.activate') }} </button>
                             </div>
                         </div>
                     </div>
                 @empty
-                    <p class="no-adds text-center"> لا يوجد اى خدمات متاحة  </p>
+                    <p class="no-adds text-center"> {{ __('master.no-services-available') }} </p>
                 @endforelse
             </div>
 
