@@ -71,4 +71,5 @@ return [
     'cashback_value'             => 'قيمة الكاش باك',
     'cash-back-account-month'    => 'شهر حساب الكاش باك ',
     'cashback_available'         => 'كاش باك مسموح',
+    'cashback_expire_not_found'  => 'لايوجد كاش باك منتهي فى حسابك ',
 ];
