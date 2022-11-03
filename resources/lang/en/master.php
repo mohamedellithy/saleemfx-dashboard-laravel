@@ -80,6 +80,8 @@ return [
      'subscription-to-the-service' => 'subscription to the service',
      'months_account' => 'months account',
      'month' => 'month',
+     'activate' => 'Active',
+     'other-services' => 'Other Services',
      'totale_cost' => 'Totale Cost',
      'minimum-subscription-for-the-service' => 'Minimum subscription for the service',
      'descrip_forex_value' => 'The value of the trading amounts is less than the minimum subscription for the service',
