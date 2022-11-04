@@ -92,18 +92,18 @@ class myProfitsOrderAffiliateDataTable extends DataTable
         if($this->status == 'pending'):
             return [
                 Column::make('id'),
-                Column::make('user_name')->title('اسم المستخدم'),
-                Column::make('withdraw_value')->title(' قيمة المبلغ المطلوب للسحب'),
-                Column::make('status')->title('حالة الطلب'),
-                Column::make('created_at')->title('تاريخ الانشاء')
+                Column::make('user_name')->title(__('master.user-name')),
+                Column::make('withdraw_value')->title(__('master.amount-required-for-withdrawal')),
+                Column::make('status')->title(__('master.order_status')),
+                Column::make('created_at')->title(__('master.created_at'))
             ];
         else:
             return [
                 Column::make('id'),
-                Column::make('user_name')->title('اسم المستخدم'),
-                Column::make('withdraw_value')->title(' قيمة المبلغ المسحوب'),
-                Column::make('status')->title('حالة الطلب'),
-                Column::make('created_at')->title('تاريخ الانشاء')
+                Column::make('user_name')->title(__('master.user-name')),
+                Column::make('withdraw_value')->title(__('master.amount-required-for-withdrawal')),
+                Column::make('status')->title(__('master.order_status')),
+                Column::make('created_at')->title(__('master.created_at'))
             ];
         endif;
     }

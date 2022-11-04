@@ -17,7 +17,7 @@
 @section('plugins.niceSelect',true)
 
 @section('content_header')
-  طلبات السحب الارباح التسويق
+  {{ __('master.affiliate-marketing-withdrawal-request') }}
 @stop
 
 
@@ -33,9 +33,9 @@
                     </div>
             @endif
             <select name="status" class="status affiliate-status-select">
-                 <option value="">حالة الطلب</option>
-                 <option value="1">موافق عليه</option>
-                 <option value="2">مرفوض</option>
+                 <option value="">{{  __('master.order_status') }}</option>
+                 <option value="1">{{ __('master.accepted') }}</option>
+                 <option value="2">{{ __('master.refused') }}</option>
 
             </select>
             {!! $dataTable->table() !!}
