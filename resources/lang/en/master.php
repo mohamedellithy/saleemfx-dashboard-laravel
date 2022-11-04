@@ -105,8 +105,9 @@ return [
      'amount-required-for-withdrawal' => 'Amount required for withdrawal',
      'send-request' => 'Send Request',
      'alert_withdraw' => 'You cannot make withdrawals from your balance. Your current balance is not enough to complete the withdrawal process',
-     '' => '',
-     '' => '',
+     'invitee' => 'Invitee',
+     'profit_value' => 'Profit Value',
+     'the-date-of-adding-the-profit' => 'The date of adding the profit',
      '' => '',
      '' => ''
 

@@ -88,10 +88,10 @@ class myProfitAffiliatesDataTable extends DataTable
         return [
 
             Column::make('id'),
-            Column::make('inviter')->title('المسوق الالكترونى'),
-            Column::make('invitee')->title('المدعو'),
-            Column::make('value_profits')->title('قيمة الربح'),
-            Column::make('created_at')->title('تاريخ اضافة الربح'),
+            Column::make('inviter')->title(__('master.affiliater-marketing')),
+            Column::make('invitee')->title(__('master.invitee')),
+            Column::make('value_profits')->title(__('master.profit_value')),
+            Column::make('created_at')->title(__('master.the-date-of-adding-the-profit')),
         ];
     }
 

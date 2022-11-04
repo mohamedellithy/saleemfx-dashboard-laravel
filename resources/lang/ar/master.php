@@ -28,7 +28,7 @@ return [
     'invited-clients'            => 'دعوة العملاء',
     'affiliate-marketing-profit' => 'أرباح التسويق بالعمولة',
     'withdrawal-requests-marketing-profits' => 'طلبات سحب الارباح',
-    'affiliater-marketing'       => 'مسوقي بالعمولة',
+    'affiliater-marketing'       => 'مسوق بالعمولة',
     'show_my_account'            => 'عرض حسباتى',
     'create_new_account'         => 'انشاء حساب جديد',
     'edit_forex_account'         => 'تعديل حساب التداول',
@@ -107,9 +107,9 @@ return [
     'amount-required-for-withdrawal' => 'قيمة المبلغ المطلوب للسحب ',
     'send-request' => 'ارسال الطلب',
     'alert_withdraw' => 'لا يمكنك اجراء عمليات سحب من الرصيد رصيدك الحالى غير كافى لاتمام عملية السحب',
-    '' => '',
-    '' => '',
-     '' => '',
+    'invitee' => 'مدعو',
+    'profit_value' => 'قيمة الربح',
+     'the-date-of-adding-the-profit' => 'تاريخ اضافة الربح',
      '' => '',
      '' => ''
 
