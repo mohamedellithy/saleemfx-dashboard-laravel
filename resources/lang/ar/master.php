@@ -92,7 +92,12 @@ return [
     'download' => 'تحميل',
     'join-recommendation-services' => 'الانضمام لخدمة التوصيات',
     'request' => 'طلب',
+    'directrix_saleem_services' => 'خدمات مؤشر سليم',
+    'file_name_of_saleem_index' => 'اسم ملف مؤشر سليم',
     '' => '',
-    '' => ''
+    '' => '',
+    '' => '',
+    '' => '',
+
 
 ];

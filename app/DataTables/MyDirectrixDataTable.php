@@ -22,20 +22,20 @@ class MyDirectrixDataTable extends DataTable
         return datatables()
             ->of($query)
             ->addColumn('action', function(Directrix $row){
-                $data ='<a href="'.url('storage/'.$row->attachments()->first()->attachment_url).'" class="btn btn-sm btn-success btn-sm" download>تحميل</a>';
+                $data ='<a href="'.url('storage/'.$row->attachments()->first()->attachment_url).'" class="btn btn-sm btn-success btn-sm" download>'.__('master.download').'</a>';
                 if($row->allow == 0):
                     $order = auth()->user()->directrix_orders()->where('directrix_file_id',$row->id)->first();
                     if(empty($order)):
                         $data ='<form method="post" action="'.url('directrix-files-orders').'">
                                     <input type="hidden" name="_token" value="'.csrf_token().'">
                                     <input type="hidden" name="directrix_file_id" value="'.$row->id.'">
-                                    <button type="submit" href="'.url('storage/'.$row->attachments()->first()->attachment_url).'" class="btn btn-sm btn-warning btn-sm"> طلب  </button>
+                                    <button type="submit" href="'.url('storage/'.$row->attachments()->first()->attachment_url).'" class="btn btn-sm btn-warning btn-sm"> '.__('master.request').'  </button>
                                 </form>';
                     else:
                         if($order->status == 0):
-                            $data = '<label class="badge bg-primary bg-sm" style="padding: 8px;">جارى مراجعة الطلب</label>';
+                            $data = '<label class="badge bg-primary bg-sm" style="padding: 8px;">'.__('master.waiting-for-request-review').'</label>';
                         elseif($order->status == 2):
-                            $data = '<label class="badge bg-danger bg-sm" style="padding: 8px;">تم رفض الطلب</label>';
+                            $data = '<label class="badge bg-danger bg-sm" style="padding: 8px;">'.__('master.refused').'</label>';
                         endif;
                     endif;
                 endif;
@@ -90,10 +90,10 @@ class MyDirectrixDataTable extends DataTable
     {
         return [
             Column::make('id'),
-            Column::make('name')->title('اسم ملف المؤشر'),
-            Column::make('description')->title('وصف ملف المؤشر'),
-            Column::make('created_at')->title('تاريخ'),
-            Column::computed('action')->title('تحميل')
+            Column::make('name')->title(__('master.directrix_saleem_services')),
+            Column::make('description')->title(__('master.file_name_of_saleem_index')),
+            Column::make('created_at')->title(__('master.created_at')),
+            Column::computed('action')->title(__('master.download'))
                   ->exportable(false)
                   ->printable(false)
                   ->width(160)
