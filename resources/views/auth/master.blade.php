@@ -117,13 +117,19 @@
             border-bottom: 0px solid rgba(0,0,0,.125) !important;
         }
 
+        body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .content-wrapper, 
+        body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-footer, 
+        body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-header{
+            margin-left: 0px;
+        }
+
     </style>
 @endpush
 
 
 @section('content_header')
    <script src="//code.tidio.co/8gymtjkfn2j8zfkjnelcojeyywgdathr.js" async></script>
-   
+
 @stop
 
 @section('content_top_nav_left')
@@ -132,15 +138,15 @@
           <img class="logo-dashboard" src="{{ asset('images/social11.png')}}" >
        </a>
     </li>
-    
-    
+
+
     <x-menu-items></x-menu-items>
     <x-mobile-menu></x-mobile-menu>
 
 
-   
-    
-    
+
+
+
     @if(!auth()->user())
           <!-- mobile -->
         <li class="dashboard-name-menu login-register-item mobile">
@@ -149,6 +155,6 @@
         <li class="dashboard-name-menu login-register-item mobile">
             <a href="{{ route('register') }}">  انشاء حساب </a>
         </li>
-        
+
     @endif
 @endsection
