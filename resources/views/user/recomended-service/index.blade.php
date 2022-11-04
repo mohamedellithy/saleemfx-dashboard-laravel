@@ -14,7 +14,7 @@
 @section('plugins.Select2', true)
 
 @section('content_header')
-  خدمة التوصيات
+  {{ __('master.recommended-services') }}
 @stop
 
 
@@ -23,23 +23,20 @@
         <div class="row">
             <div class="container-image-chashback col-md-6 col-xs-12">
                 <img src="{{ asset('images/cashback.jpg') }}"/>
-                <h2 class="title-image-chashback"> الانضمام لخدمة التوصيات </h2>
-                <p  class="description-image-cachback">
-                     طريقة لكتابة النصوص في النشر والتصميم الجرافيكي تستخدم بشكل شائع لتوضيح الشكل المرئي للمستند أو الخط دون الاعتماد على محتوى ذي
-                </p>
+                <h2 class="title-image-chashback"> {{ __('master.join-recommendation-services') }}</h2>
 
                 @if($service->user_not_have_order)
 
-                    <button type="button" type-form="create" class="btn btn-warning activateServices" order-id="" SERVICES-ID="{{ $service->ID }}"> الاشتراك فى الخدمة </button>
+                    <button type="button" type-form="create" class="btn btn-warning activateServices" order-id="" SERVICES-ID="{{ $service->ID }}"> {{ __('master.subscription-to-the-service') }} </button>
 
                 @elseif($service->user_have_order_expire_at)
 
-                    <a href="{{ url('my-services') }}" type="button" type-form="create" class="btn btn-warning"> تجديد الخدمة </a>
+                    <a href="{{ url('my-services') }}" type="button" type-form="create" class="btn btn-warning"> {{ __('master.renew-your-subscription-to-the-service') }}</a>
 
                 @elseif($service->user_have_order_and_allow)
 
                     <p class="alert alert-info">
-                        بانتظار قبول الطلب من المسؤل فى الموقع
+                        {{ __('master.accept_request_form_admin') }}
                     </p>
 
                 @endif
@@ -54,7 +51,7 @@
                     <!-- /.box-header -->
                     <div class="box-body recomended-services-button">
                         <img src="{{ asset('images/26196843.jpg') }}" class="img-responsive" />
-                         <a href="{{ Options()->setting['telegram_channel_link'] ?? '' }}" target="_blank" class="btn btn-success"> الانضمام الى خدمة التوصيات </a>
+                         <a href="{{ Options()->setting['telegram_channel_link'] ?? '' }}" target="_blank" class="btn btn-success"> {{ __('master.join-recommendation-services') }} </a>
                     </div>
                 </div>
 

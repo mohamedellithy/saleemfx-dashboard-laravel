@@ -88,7 +88,7 @@ return [
      'expert-file-name' => 'Expert file name',
      'description-of-the-expert-file' => 'Description of the expert file',
      'download' => 'download',
-     '' => '',
+     'join-recommendation-services' => 'Join Recommendation Services',
      '' => '',
      '' => '',
      '' => '',

@@ -90,7 +90,7 @@ return [
     'expert-file-name' => 'اسم ملف الاكسبرت',
     'description-of-the-expert-file' => 'وصف ملف الاكسبرت',
     'download' => 'تحميل',
-    '' => '',
+    'join-recommendation-services' => 'الانضمام لخدمة التوصيات',
     '' => '',
     '' => '',
     '' => ''
