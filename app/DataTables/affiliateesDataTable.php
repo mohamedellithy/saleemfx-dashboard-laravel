@@ -79,9 +79,9 @@ class affiliateesDataTable extends DataTable
         return [
 
             Column::make('id'),
-            Column::make('username')->title('اسم المستخدم'),
-            Column::make('email')->title('البريد اللكترونى'),
-            Column::make('created_at')->title('تاريخ التسجيل'),
+            Column::make('username')->title(__('master.user-name')),
+            Column::make('email')->title(__('master.email')),
+            Column::make('created_at')->title(__('master.created_at')),
 
         ];
     }

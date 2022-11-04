@@ -25,7 +25,7 @@
 
 
 @section('content_header')
-  العملاء المدعويين
+  {{ __('master.invited-clients') }}
 @stop
 
 @section('plugins.niceSelect',true)

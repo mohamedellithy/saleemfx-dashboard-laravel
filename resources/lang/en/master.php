@@ -97,6 +97,8 @@ return [
      'invite_your_friends' => 'Invite your friends and relatives by e-mail',
      'Write-your-email-here' => 'Write your email here',
      'send-invitation' => 'send invitation',
+     'user-name' => 'User Name',
+     'email' => 'Email',
      '' => '',
      '' => ''
 
