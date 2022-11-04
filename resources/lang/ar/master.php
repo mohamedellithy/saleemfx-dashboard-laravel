@@ -87,6 +87,12 @@ return [
     'totale_cost' => 'اجمالى التكلفة',
     'minimum-subscription-for-the-service' => 'الحد الادنى للاشتراك فى الخدمة',
     'descrip_forex_value' => 'قيمة مبالغ التداول أقل من الحد الادنى للاشتراك في الخدمة ',
+    'expert-file-name' => 'اسم ملف الاكسبرت',
+    'description-of-the-expert-file' => 'وصف ملف الاكسبرت',
+    'download' => 'تحميل',
     '' => '',
+    '' => '',
+    '' => '',
+    '' => ''
 
 ];

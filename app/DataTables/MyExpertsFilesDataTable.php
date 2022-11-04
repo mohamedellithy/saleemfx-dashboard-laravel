@@ -90,10 +90,10 @@ class MyExpertsFilesDataTable extends DataTable
     {
         return [
             Column::make('id'),
-            Column::make('name')->title('اسم ملف الاكسبرت'),
-            Column::make('description')->title('وصف ملف الاكسبرت'),
-            Column::make('created_at')->title('تاريخ'),
-            Column::computed('action')->title('تحميل')
+            Column::make('name')->title(__('master.expert-file-name')),
+            Column::make('description')->title(__('master.description-of-the-expert-file')),
+            Column::make('created_at')->title(__('master.created_at')),
+            Column::computed('action')->title(__('master.download'))
                   ->exportable(false)
                   ->printable(false)
                   ->width(160)
