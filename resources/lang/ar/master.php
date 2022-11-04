@@ -110,6 +110,12 @@ return [
     'invitee' => 'مدعو',
     'profit_value' => 'قيمة الربح',
      'the-date-of-adding-the-profit' => 'تاريخ اضافة الربح',
+     'with-Seleem-you-are-in-the-right' => 'مع سليم انت فى السليم',
+     'email_or_username' => 'البريد الالكترونى أو اسم المستخدم ',
+     'Don-t-have-an-account_Sign_up' => 'لا تمتلك حساب ؟ قم بالتسجيل',
+     'did-you-forget-your-password' => 'هل نسيت كلمة المرور ؟',
+     '' => '',
+     '' => '',
      '' => '',
      '' => ''
 

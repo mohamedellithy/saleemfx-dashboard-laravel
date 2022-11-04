@@ -108,6 +108,12 @@ return [
      'invitee' => 'Invitee',
      'profit_value' => 'Profit Value',
      'the-date-of-adding-the-profit' => 'The date of adding the profit',
+     'with-Seleem-you-are-in-the-right' => 'With Saleem you are in the right',
+     'email_or_username' => 'Email Or Username',
+     'Don-t-have-an-account_Sign_up' => 'Don\'t have an account? Sign up',
+     'did-you-forget-your-password' => 'did you forget your password ?',
+     '' => '',
+     '' => '',
      '' => '',
      '' => ''
 
