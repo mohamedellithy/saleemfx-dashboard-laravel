@@ -21,7 +21,11 @@ Route::get('comman-arisan', function () {
 });
 
 Route::get('/switch/{lang}',function($lang){
-    auth()->user()->update(["lang" => $lang]);
+    if(auth()->user()):
+        auth()->user()->update(["lang" => $lang]);
+    else:
+       session(['app_lang' => $lang]);
+    endif;
     return redirect()->back();
 });
 

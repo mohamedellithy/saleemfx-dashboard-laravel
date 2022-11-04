@@ -16,6 +16,8 @@ class LanguageSwitcher
     public function handle($request, Closure $next){
         if(auth()->check()):
             app()->setLocale(auth()->user()->lang ?: 'ar');
+        else:
+            app()->setLocale(session('app_lang') ?: 'ar');
         endif;
         return $next($request);
     }
