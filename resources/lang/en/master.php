@@ -89,6 +89,7 @@ return [
      'description-of-the-expert-file' => 'Description of the expert file',
      'download' => 'download',
      'join-recommendation-services' => 'Join Recommendation Services',
+     'request' => 'Request',
      '' => '',
      '' => '',
      '' => '',

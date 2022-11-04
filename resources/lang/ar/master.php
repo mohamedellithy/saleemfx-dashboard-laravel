@@ -91,7 +91,7 @@ return [
     'description-of-the-expert-file' => 'وصف ملف الاكسبرت',
     'download' => 'تحميل',
     'join-recommendation-services' => 'الانضمام لخدمة التوصيات',
-    '' => '',
+    'request' => 'طلب',
     '' => '',
     '' => ''
 
