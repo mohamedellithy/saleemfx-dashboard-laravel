@@ -547,3 +547,6 @@ div.dataTables_wrapper div.dataTables_filter {
     color: white;
     border: 0px;
 }
+.login-register-item {
+    float: left;
+}
