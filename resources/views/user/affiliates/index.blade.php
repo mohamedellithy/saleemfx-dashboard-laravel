@@ -21,7 +21,7 @@
 @section('plugins.Select2', true)
 
 @section('content_header')
-  التسويق بالعمولة
+  {{ __('master.affiliate-marketing') }}
 @stop
 
 
@@ -49,25 +49,23 @@
             @if(!auth()->user()->is_affiliater())
                 <div class="container-image-chashback col-md-6 col-xs-12">
                     <img src="{{ asset('images/affiliate-blogs.png') }}"/>
-                    <h2 class="title-image-chashback"> التسويق بالعمولة </h2>
-                    <p  class="description-image-cachback">
-                    طريقة لكتابة النصوص في النشر والتصميم الجرافيكي تستخدم بشكل شائع لتوضيح الشكل المرئي للمستند أو الخط دون الاعتماد على محتوى ذي
-                    </p>
+                    <h2 class="title-image-chashback"> {{ __('master.affiliate-marketing') }}</h2>
+
                     <form method="post" action="{{ url('affiliates/store') }}">
                         @csrf()
                         <button class="btn btn-success create-new-account" data-toggle="modal" data-target="#modal-lg">
                             <i class="fas fa-plus"></i>
-                            انشاء حساب مسوق بالعمولة
+                            {{ __('master.create_new_account_affiliate') }}
                         </button>
                     </form>
 
                 </div>
             @else
-           
+
             <div class="col-md-12 col-xs-12">
                 <div class="card card-primary card-outline">
                     <div class="card-header">
-                        <h5 class="card-title m-0">التسويق بالعمولة</h5>
+                        <h5 class="card-title m-0">{{ __('master.affiliate-marketing') }}</h5>
                     </div>
                     <div class="card-body">
                     <!-- /.card-header -->
@@ -75,7 +73,7 @@
                             <table class="table">
                                 <tbody>
                                     <tr>
-                                        <td> رابط حسابك على الافيليت</td>
+                                        <td> {{ __('master.Link-to-your-affiliate-account') }} </td>
                                         <td>
                                             <input id="affiliateUrl" class="form-control" type="url" value="{{ url('register?reference_id='.auth()->user()->affiliates->code_affiliate) }}" readonly/>
                                         </td>
@@ -92,17 +90,17 @@
                                     <tbody>
                                         <tr>
                                             <td colspan="3">
-                                                <p class="text-center heading-invitation"> قم بدعوة أصدقائك و أقاربك عن طريق البريد الالكترونى </p>
+                                                <p class="text-center heading-invitation"> {{ __('master.invite_your_friends')  }}</p>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td colspan="3">
-                                                <input class="form-control" type="email" name="invitee_email" value="" placeholder="قم بكتابة بريد الالكتروني هنا " required/>
+                                                <input class="form-control" type="email" name="invitee_email" value="" placeholder="{{ __('master.Write-your-email-here') }}" required/>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td colspan="3" class="button-invite-send">
-                                                <button type="submit" class="btn btn-success"> ارسال الدعوة</button>
+                                                <button type="submit" class="btn btn-success"> {{ __('master.send-invitation')  }}</button>
                                             </td>
                                         </tr>
                                     </tbody>

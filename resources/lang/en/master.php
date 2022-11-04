@@ -92,10 +92,11 @@ return [
      'request' => 'Request',
      'directrix_saleem_services' => 'Saleem Index Services',
      'file_name_of_saleem_index' => 'File Name Of Saleem Index',
-     '' => '',
-     '' => '',
-     '' => '',
-     '' => '',
+     'create_new_account_affiliate' => 'Create New Account Affiliater',
+     'Link-to-your-affiliate-account' => 'Link to your affiliate account',
+     'invite_your_friends' => 'Invite your friends and relatives by e-mail',
+     'Write-your-email-here' => 'Write your email here',
+     'send-invitation' => 'send invitation',
      '' => '',
      '' => ''
 
