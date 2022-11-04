@@ -25,7 +25,7 @@
 
 
 @section('content_header')
-  العملاء المدعويين
+  {{ __('master.affiliate-marketing-profit') }}
 @stop
 
 @section('plugins.niceSelect',true)
@@ -39,7 +39,7 @@
                             <span class="info-box-icon bg-warning"><i class="fas fa-money-bill"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">اجمالى أرباح التسويق</span>
+                                <span class="info-box-text">{{ __('master.total-marketing-profit') }}</span>
                                 <span class="info-box-number">{{ auth()->user()->affiliates ? amount_currency(auth()->user()->affiliates->value_comissions() ) : 0 }}</span>
                             </div>
                             <!-- /.info-box-content -->
@@ -52,7 +52,7 @@
                                 <span class="info-box-icon bg-warning"><i class="fas fa-money-bill"></i></span>
 
                                 <div class="info-box-content">
-                                    <span class="info-box-text">اجمالى أرباح التسويق</span>
+                                    <span class="info-box-text">{{ __('master.total-marketing-profit') }}</span>
                                     <span class="info-box-number">{{ auth()->user()->affiliates ? amount_currency(auth()->user()->affiliates->value_salaries() ) : 0 }}</span>
                                 </div>
                                 <!-- /.info-box-content -->
@@ -66,7 +66,7 @@
                             <span class="info-box-icon bg-warning"><i class="fas fa-check-circle"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text"> اجمالى المسحوب</span>
+                                <span class="info-box-text"> {{ __('master.total_withdraw') }}</span>
                                 <span class="info-box-number">{{ amount_currency(auth()->user()->total_cashbacks_withdraws()) }}</span>
                             </div>
                             <!-- /.info-box-content -->
@@ -79,7 +79,7 @@
                             <span class="info-box-icon bg-warning"><i class="fas fa-fist-raised"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text"> طلبات السحب المعلقة</span>
+                                <span class="info-box-text"> {{ __('master.totale_withdraw_orders_pending') }} </span>
                                 <span class="info-box-number">{{ amount_currency(auth()->user()->withdraw_cashbacks_pendings_total()) }}</span>
                             </div>
                             <!-- /.info-box-content -->
@@ -92,7 +92,7 @@
         <div class="text-left container-button-create-account">
             <button class="btn btn-success create-new-account" data-toggle="modal" data-target="#modal-lg">
                 <i class="fas fa-plus"></i>
-                    طلبات سحب الرباح
+                    {{ __('master.withdrawal-requests-marketing-profits') }}
             </button>
         </div>
         <div class="container mt-5">
@@ -112,34 +112,34 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">طلب سحب أرباح التسويق بالعمولة</h4>
+                    <h4 class="modal-title">{{ __('master.affiliate-marketing-withdrawal-request') }}</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p class="badge badge-info" style="font-size:100%"> أرباح التسويق بالعمولة    : {{ auth()->user()->affiliates ? amount_currency(auth()->user()->affiliates->value_profits() ) : 0 }}</p>
+                    <p class="badge badge-info" style="font-size:100%"> {{ __('master.affiliate-marketing-earnings') }}    : {{ auth()->user()->affiliates ? amount_currency(auth()->user()->affiliates->value_profits() ) : 0 }}</p>
                     @if( auth()->user()->affiliates && auth()->user()->affiliates->value_profits() > 0)
                         <form method="post" action="{{ url('affiliatees/order-withdraw') }}">
                             @csrf
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="input-group mb-3">
-                                        <p class="label-model">قيمة المبلغ المطلوب للسحب</p>
+                                        <p class="label-model">{{ __('master.amount-required-for-withdrawal') }}</p>
                                         <input name="value" type="number" class="form-control" max="{{ auth()->user()->affiliates->value_profits() }}" required>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="input-group container-button">
                                         <button type="submit" class="btn btn-success">
-                                            ارسال الطلب
+                                            {{ __('master.send-request') }}
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         </form>
                     @else
-                        <p class="alert alert-danger">   لا يمكنك اجراء عمليات سحب من الرصيد رصيدك الحالى غير كافى لاتمام عملية السحب</p>
+                        <p class="alert alert-danger">   {{ __('master.alert_withdraw') }}</p>
                     @endif
                 </div>
 

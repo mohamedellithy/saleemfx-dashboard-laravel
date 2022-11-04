@@ -101,8 +101,17 @@ return [
     'send-invitation' => 'ارسال الدعوة',
     'user-name' => 'اسم المستخدم',
     'email' => 'البريد الالكترونى',
+    'total-marketing-profit' => 'اجمالى أرباح التسويق',
+    'affiliate-marketing-withdrawal-request' => 'طلب سحب أرباح التسويق بالعمولة',
+    'affiliate-marketing-earnings' => 'أرباح التسويق بالعمولة',
+    'amount-required-for-withdrawal' => 'قيمة المبلغ المطلوب للسحب ',
+    'send-request' => 'ارسال الطلب',
+    'alert_withdraw' => 'لا يمكنك اجراء عمليات سحب من الرصيد رصيدك الحالى غير كافى لاتمام عملية السحب',
     '' => '',
     '' => '',
+     '' => '',
+     '' => '',
+     '' => ''
 
 
 ];

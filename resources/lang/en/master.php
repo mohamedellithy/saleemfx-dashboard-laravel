@@ -99,6 +99,14 @@ return [
      'send-invitation' => 'send invitation',
      'user-name' => 'User Name',
      'email' => 'Email',
+     'total-marketing-profit' => 'Total Marketing Profit',
+     'affiliate-marketing-withdrawal-request' => 'affiliate-marketing-withdrawal-request',
+     'affiliate-marketing-earnings' => 'Affiliate Marketing Earnings',
+     'amount-required-for-withdrawal' => 'Amount required for withdrawal',
+     'send-request' => 'Send Request',
+     'alert_withdraw' => 'You cannot make withdrawals from your balance. Your current balance is not enough to complete the withdrawal process',
+     '' => '',
+     '' => '',
      '' => '',
      '' => ''
 
