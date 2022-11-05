@@ -112,9 +112,22 @@ return [
      'email_or_username' => 'Email Or Username',
      'Don-t-have-an-account_Sign_up' => 'Don\'t have an account? Sign up',
      'did-you-forget-your-password' => 'did you forget your password ?',
-     '' => '',
-     '' => '',
-     '' => '',
-     '' => ''
-
+     'In-the-affiliate-marketing-program' => 'In the affiliate marketing program',
+     'first-name' => 'First Name',
+     'last-name' => 'Last Name',
+     'phone-number' => 'phone number',
+     'email' => 'Email',
+     'password' => 'Password',
+     'confirm_password' => 'Confirm Password',
+     'do-you-have-an-account-sign-in' => 'Do you have an account? Sign in',
+     'confirm-your-email' => 'Confirm your email',
+     'new-verification-link-has-been-sent-to-your-email-address' => 'A new verification link has been sent to your email address',
+     'before-proceeding-please-check-your-email-for-verification-link' => 'Before proceeding, please check your email for verification link',
+     'If-you-did-not-receive-the-email' => 'If you did not receive the email',
+     'click-here-to-order-another' => 'Click here to order another',
+     'send' => 'send',
+     'Forgot-your-password' => 'Forgot your password',
+     'set-password' => 'Set password',
+     'please-confirm-the-password' => 'Please confirm the password'
+ 
 ];

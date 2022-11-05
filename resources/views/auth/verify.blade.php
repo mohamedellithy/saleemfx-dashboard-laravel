@@ -5,24 +5,23 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
            <div class="title title-forex-login">
-                <h3> مع سليم انت فى السليم </h3>
+                <h3> {{ __('master.with-Seleem-you-are-in-the-right') }} </h3>
             </div> 
             <div class="card ">
-                <div class="card-header card-header-login">قم بتأكيد بريدك الاكترونى </div>
+                <div class="card-header card-header-login"> {{ __('master.confirm-your-email') }} </div>
 
                 <div class="card-body">
                     @if (session('resent'))
                         <div class="alert alert-info" role="alert">
-{{ __('
-تم إرسال رابط تحقق جديد إلى عنوان بريدك الإلكتروني.') }}
+                            {{ __('master.new-verification-link-has-been-sent-to-your-email-address') }}
                         </div>
                     @endif
 
-                    <div class="alert alert-success" role="alert"> {{ __('قبل المتابعة ، يرجى التحقق من بريدك الإلكتروني للحصول على رابط التحقق.') }} 
-                    {{ __('إذا لم تستلم البريد الإلكتروني') }},
+                    <div class="alert alert-success" role="alert"> {{ __('master.before-proceeding-please-check-your-email-for-verification-link') }} 
+                    {{ __('master.If-you-did-not-receive-the-email') }},
                     <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                         @csrf
-                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('انقر هنا لطلب آخر') }}</button>.
+                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('master.click-here-to-order-another') }}</button>.
                     </form>
                     </div>
                 </div>
